@@ -8,7 +8,7 @@ def find_numbers(begin: int, end: int) -> list:
     """
     :param begin: range start, int
     :param end: range end, int
-    :return: list of query numbers
+    :return: list of numbers where number %7==0 and number %5 != 0
 
     >>> find_numbers(5, 15)
     [7, 14]
@@ -40,8 +40,8 @@ def factorial(number: int) -> int:
     :param number: input number, int
     :return: factorial(number), int
 
-    >>> factorial(4)
-    24
+    >>> factorial(8)
+    40320
     """
     if (number == 0 or number == 1):
         return 1
