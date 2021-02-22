@@ -115,7 +115,8 @@ with DAG('test_airflow_pipeline', default_args =default_args,
         )
     choose_best_model = PythonOperator(
         task_id = 'choose_best_model',
-        python_callable = _choose_best_model
+        python_callable = _choose_best_model,
+        trigger_rule = 'one_success'
     )
 
     create_table >> iris_data_generation >> store_iris_sql >> extract_iris_with_hooh >> tasks >> choose_best_model
