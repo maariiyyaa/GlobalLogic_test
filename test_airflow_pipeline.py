@@ -42,7 +42,7 @@ def _extract_iris_with_hook(ti):
 
 def _train_model(ti, **kwargs):
     dataset = np.array(ti.xcom_pull(key = 'iris_data',
-                                    task_ids = 'extract_iris_with_hooh'))
+                                    task_ids = 'extract_iris_with_hook'))
     features = dataset[:, :3]
     target = dataset[:,4]
     Xtrain, Xtest, Ytrain, Ytest = train_test_split(features, target, test_size = 0.2)
@@ -95,8 +95,8 @@ with DAG('test_airflow_pipeline', default_args =default_args,
         sql = '''COPY iris FROM '/tmp/iris.csv' DELIMITER ',' CSV'''
     )
     
-    extract_iris_with_hooh = PythonOperator(
-        task_id = 'extract_iris_with_hooh',
+    extract_iris_with_hook = PythonOperator(
+        task_id = 'extract_iris_with_hook',
         python_callable = _extract_iris_with_hook
     )
 
@@ -119,4 +119,4 @@ with DAG('test_airflow_pipeline', default_args =default_args,
         trigger_rule = 'one_success'
     )
 
-    create_table >> iris_data_generation >> store_iris_sql >> extract_iris_with_hooh >> tasks >> choose_best_model
+    create_table >> iris_data_generation >> store_iris_sql >> extract_iris_with_hook >> tasks >> choose_best_model
