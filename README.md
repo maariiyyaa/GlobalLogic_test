@@ -1,1 +1,1 @@
-# GlobalLogic_test
+# GlobalLogic_education
