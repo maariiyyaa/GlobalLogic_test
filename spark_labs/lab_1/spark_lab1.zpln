@@ -1,0 +1,1778 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%pyspark\nimport pyspark.sql.functions as F\nimport pyspark.sql.functions as F\nfrom pyspark.sql.window import Window",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:04:55+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632819207721_192056699",
+      "id": "paragraph_1632819207721_192056699",
+      "dateCreated": "2021-09-28T08:53:27+0000",
+      "dateStarted": "2021-09-30T07:04:55+0000",
+      "dateFinished": "2021-09-30T07:05:23+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:7849"
+    },
+    {
+      "text": "%pyspark\n\npath_to_airlines = 'gs://procamp-test/datasets/airlines.csv'\npath_to_airports = 'gs://procamp-test/datasets/airports.csv'\npath_to_flights = 'gs://procamp-test/datasets/flights.csv'\n\n\nairlines_df = spark.read.format('CSV')\\\n                .option('inferschema', True) \\\n                .option('sep', ',')\\\n                .option('header', True)\\\n                .load(path_to_airlines).cache()\nairports_df = spark.read.format('CSV')\\\n                .option('inferschema', True) \\\n                .option('sep', ',')\\\n                .option('header', True)\\\n                .load(path_to_airports).cache()\nflights_df = spark.read.format('CSV')\\\n                .option('inferschema', True) \\\n                .option('sep', ',')\\\n                .option('header', True)\\\n                .load(path_to_flights).cache()",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:05:27+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": true,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "YEAR0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "MONTH1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "DAY2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "DAY_OF_WEEK3",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "AIRLINE4",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "FLIGHT_NUMBER5",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "TAIL_NUMBER6",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "ORIGIN_AIRPORT7",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "DESTINATION_AIRPORT8",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "SCHEDULED_DEPARTURE9",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "DEPARTURE_TIME10",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "DEPARTURE_DELAY11",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "TAXI_OUT12",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "WHEELS_OFF13",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "SCHEDULED_TIME14",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "ELAPSED_TIME15",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "AIR_TIME16",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "DISTANCE17",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "WHEELS_ON18",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "TAXI_IN19",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "SCHEDULED_ARRIVAL20",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "ARRIVAL_TIME21",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "ARRIVAL_DELAY22",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "DIVERTED23",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CANCELLED24",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CANCELLATION_REASON25",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "AIR_SYSTEM_DELAY26",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "SECURITY_DELAY27",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "AIRLINE_DELAY28",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "LATE_AIRCRAFT_DELAY29",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "WEATHER_DELAY30",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "updated": false,
+                    "names": {
+                      "YEAR": "string",
+                      "MONTH": "string",
+                      "DAY": "string",
+                      "DAY_OF_WEEK": "string",
+                      "AIRLINE": "string",
+                      "FLIGHT_NUMBER": "string",
+                      "TAIL_NUMBER": "string",
+                      "ORIGIN_AIRPORT": "string",
+                      "DESTINATION_AIRPORT": "string",
+                      "SCHEDULED_DEPARTURE": "string",
+                      "DEPARTURE_TIME": "string",
+                      "DEPARTURE_DELAY": "string",
+                      "TAXI_OUT": "string",
+                      "WHEELS_OFF": "string",
+                      "SCHEDULED_TIME": "string",
+                      "ELAPSED_TIME": "string",
+                      "AIR_TIME": "string",
+                      "DISTANCE": "string",
+                      "WHEELS_ON": "string",
+                      "TAXI_IN": "string",
+                      "SCHEDULED_ARRIVAL": "string",
+                      "ARRIVAL_TIME": "string",
+                      "ARRIVAL_DELAY": "string",
+                      "DIVERTED": "string",
+                      "CANCELLED": "string",
+                      "CANCELLATION_REASON": "string",
+                      "AIR_SYSTEM_DELAY": "string",
+                      "SECURITY_DELAY": "string",
+                      "AIRLINE_DELAY": "string",
+                      "LATE_AIRCRAFT_DELAY": "string",
+                      "WEATHER_DELAY": "string"
+                    }
+                  },
+                  "updated": false,
+                  "initialized": false,
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  }
+                },
+                "multiBarChart": {
+                  "rotate": {
+                    "degree": "-45"
+                  },
+                  "xLabelStatus": "default"
+                },
+                "pieChart": {}
+              },
+              "commonSetting": {},
+              "keys": [
+                {
+                  "name": "DAY",
+                  "index": 2,
+                  "aggr": "sum"
+                }
+              ],
+              "groups": [
+                {
+                  "name": "DAY_OF_WEEK",
+                  "index": 3,
+                  "aggr": "sum"
+                }
+              ],
+              "values": [
+                {
+                  "name": "AIR_TIME",
+                  "index": 16,
+                  "aggr": "sum"
+                }
+              ]
+            },
+            "helium": {}
+          }
+        },
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=0",
+              "$$hashKey": "object:8260"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=1",
+              "$$hashKey": "object:8261"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=2",
+              "$$hashKey": "object:8262"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=3",
+              "$$hashKey": "object:8263"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=4",
+              "$$hashKey": "object:8264"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=5",
+              "$$hashKey": "object:8265"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632819277670_1825459284",
+      "id": "paragraph_1632819277670_1825459284",
+      "dateCreated": "2021-09-28T08:54:37+0000",
+      "dateStarted": "2021-09-30T07:05:27+0000",
+      "dateFinished": "2021-09-30T07:06:04+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7850"
+    },
+    {
+      "text": "%pyspark\nz.show(flights_df.select(flights_df.ORIGIN_AIRPORT).distinct())\n#Airport names have numbers",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:06:15+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "ORIGIN_AIRPORT": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "ORIGIN_AIRPORT\nBGM\nPSE\nINL\nDLG\n12888\nMSY\nPPG\n12003\n15041\nGEG\nSNA\nBUR\nGRB\nGTF\n14986\n13851\nIDA\n11150\n15412\nGRR\n13367\n11537\nJLN\nEUG\nPSG\nGSO\nPVD\nMYR\n13244\nOAK\n13232\n11109\nMSN\nFAR\nCOD\nFSM\nBTM\nMQT\n10918\n11865\nSCC\n12402\nESC\n11471\n13076\nDCA\n14783\n15249\n12255\n10561\n14674\nCID\nMLU\nPIB\nLWS\nGTR\n11049\n11648\nWRG\n13029\n10685\nHLN\nCIU\n13204\n14150\nIAG\n14100\n15607\n14252\n10926\n13342\n11695\nRDM\nLEX\nJMS\nORF\nSCE\n10728\nEVV\nKTN\n11973\nCWA\nCRW\n11884\n12016\n12523\n10792\n13433\nSAV\nGCK\nTRI\nCDV\n10874\n13873\n10423\n14222\nCMH\n14489\n14520\n15991\nTYR\nCAK\nADK\n10739\nCHO\n11057\nMOB\n10732\n13127\n13296\nPNS\nDIK\n14108\n13476\n12898\nCEC\n13931\nLIH\n12448\n11980\n11898\nIAH\n10268\n12389\n15389\n11193\nHNL\n11540\n14113\nERI\nSHV\nGST\n11982\n15376\nCVG\nSJC\nTOL\n12191\n11097\nBUF\nLGA\nTLH\n11867\nCDC\n12206\n10185\nACT\nRDD\nHPN\n11697\n13303\nAUS\nMLI\nGCC\n10299\n12217\n10136\n14814\n11525\n15497\nSJU\n12266\n12335\n11274\nATW\nDHN\n13277\n12819\nLGB\nAVL\nGJT\n13158\n11638\n11986\n14730\nBFL\nGFK\nCNY\n13485\n11624\n14256\nRNO\nSRQ\n14842\nBJI\nSBN\nEYW\n10631\n15024\n12992\n13964\n10165\nTTN\n10408\n15070\nJAC\nRST\nCHS\n15016\n14696\n14908\nRSW\nTUL\nHRL\n15841\nAMA\nISP\n14685\n10713\nBOS\n14262\nMAF\nMLB\n11921\nEWR\n12441\n12758\n10581\nLAS\nBIS\n13184\nFAI\nJAN\nITO\n12278\n11577\n14843\nIMT\n11995\n11481\n12391\nXNA\n14492\n15048\nDLH\n13795\n12265\n11637\n14321\n12954\nHYA\n13577\n10990\n11977\n14307\n10577\n10135\nDEN\nRHI\nEWN\n11111\n15370\n14122\n15323\n11905\nSGU\n14109\nCPR\nALB\n11298\n10157\nGRI\nLNK\nOME\n11423\nBOI\nIAD\nSBA\nPSP\n15401\nLAR\nHOB\nMEI\n10372\nBRO\nDRO\nBRD\n15919\n13871\nBMI\nRKS\nSEA\n15411\n11203\n11259\n12982\nLAN\nCMI\nVEL\n11778\n12896\n12129\n10154\nPBG\nLRD\n14576\n11003\nHYS\nVLD\n11447\n11433\n14543\nMCI\nFLG\n12156\nGRK\n12478\nBNA\nCLT\nCLL\nTVC\nUST\n10146\nPSC\nBLI\n13377\n12884\n12451\nORH\n14107\n14711\nPBI\nABQ\n10397\n14679\n10754\nSDF\n10551\nACV\nLAW\n11067\nBDL\nDAL\nMRY\nITH\n12915\nDBQ\n11618\n15304\n14905\n12007\nCLE\n10785\n14193\n10333\nPDX\nACK\n11267\n11617\n11612\nMFR\nMIA\nTWF\nILG\n10140\n15356\n13061\nTPA\nBWI\n12951\n11413\n12511\n16218\nCMX\nAPN\n13891\nOKC\nROA\n14027\nSMF\nSPI\nBRW\nOTH\n14057\n11066\n13360\n13241\n14869\nABI\n11337\nELM\nMBS\n15295\nPHX\nABR\nDVL\nFCA\n12889\n10721\nPWM\nSTL\nBET\nABY\nDFW\nMHT\nABE\nTXK\nGSP\nLSE\nMMH\n11775\n10779\nSTX\nFAY\n14524\nHDN\nGUC\n10980\nEKO\nLBB\nCRP\n14709\n10747\n10781\n12339\nEGE\nFSD\nSWF\n14457\n13970\nSUN\nBQK\nCSG\nSFO\nMEM\nSAF\nELP\n13256\n10141\nBHM\n11292\n13830\n11013\nATL\nFLL\nPIH\nFNT\n11953\n11146\n10170\n12173\n13486\n14025\nRIC\nAKN\n13422\n11823\n11076\n15624\n10279\n11122\nDAY\nPHF\nOMA\n10599\n11996\nSJT\n13796\nLCH\n13264\nSTC\n10431\nVPS\nMHK\nBPT\n12945\nLIT\nMVY\n14831\n13459\n12891\n12519\nFAT\nCAE\nICT\nECP\n11630\n10257\n11140\nORD\nAVP\n14960\n13933\nLBE\n13487\nBTV\nCOU\nMKG\n12094\nAEX\nSPS\nBIL\n12323\nSMX\nILM\nPUB\n10434\nPIA\n12953\n13541\nGUM\n11278\nBQN\nRDU\nHIB\nMFE\n10155\nMKE\nSYR\nISN\n12892\n11721\n14794\n14683\nHSV\nLFT\n11042\nPIT\nACY\nTUS\nMTJ\nROW\n10529\nMDW\nAZO\n13198\n11308\n14588\n11503\nPLN\n14689\nOAJ\nCOS\n15380\n10469\nJNU\n14747\n14574\nIND\nALO\n14098\n10849\n13230\nEAU\nKOA\n10693\n14698\nGPT\n10620\n10731\nMGM\n13495\n11252\n11587\nTYS\nHOU\nDTW\nCHA\n10994\nYUM\nADQ\n14893\n11315\n14006\n13502\nONT\nMDT\nFWA\n14570\n11603\nJAX\n12264\nLAX\nMSP\nMOT\n15096\n12343\nBTR\nSIT\nBGR\n11641\n12177\n15027\nMCO\nSGF\nROC\nOTZ\nAGS\nWYS\nSAN\n14771\n13930\n14635\nBZN\n14487\n10208\nGGG\n14633\nYAK\n10627\n10821\n12197\n12280\n13344\nANC\nJFK\nPAH\nSUX\nDAB\n10158\n10800\nMSO\nGNV\n10868\nPHL\nOGG\nDSM\n13290\nSLC\nSAT\nSTT\n14828\nRAP\nCLD\nSBP\nASE\n14254\n14952\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=6",
+              "$$hashKey": "object:8383"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=7",
+              "$$hashKey": "object:8384"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=8",
+              "$$hashKey": "object:8385"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=9",
+              "$$hashKey": "object:8386"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=10",
+              "$$hashKey": "object:8387"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632830632321_498353946",
+      "id": "paragraph_1632830632321_498353946",
+      "dateCreated": "2021-09-28T12:03:52+0000",
+      "dateStarted": "2021-09-30T07:06:15+0000",
+      "dateFinished": "2021-09-30T07:06:57+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7851"
+    },
+    {
+      "title": "Task 1",
+      "text": "%pyspark\n\npopular_flifhts_df = flights_df.groupBy( F.col('MONTH'), F.col('DESTINATION_AIRPORT')).count()\n\npopular_flifhts_df = popular_flifhts_df.withColumn(\"row_number\", \n                                                    F.row_number().over(Window.partitionBy('MONTH').orderBy(F.col('count').desc())))\n                                                    \nreport_df = popular_flifhts_df.where(popular_flifhts_df.row_number ==1).select(F.col('DESTINATION_AIRPORT').alias('dest_airport'), F.col('count').alias('max_count'))\nz.show(report_df)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:20:43+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 228,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "DESTINATION_AIRPORT0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {
+                          "priority": 0,
+                          "direction": "asc"
+                        },
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "MONTH1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "count2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "row_number3",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "dest_airport": "string",
+                      "max_count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "dest_airport": "string",
+                      "max_count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python",
+        "title": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "dest_airport\tmax_count\nATL\t31030\nATL\t29492\nATL\t32739\nATL\t32775\nATL\t32425\nATL\t31331\nATL\t31383\nATL\t33725\nATL\t33735\n10397\t32594\nATL\t30903\nATL\t27366\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=16",
+              "$$hashKey": "object:13432"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=17",
+              "$$hashKey": "object:13433"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=18",
+              "$$hashKey": "object:13434"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=19",
+              "$$hashKey": "object:13435"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=20",
+              "$$hashKey": "object:13436"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632827627648_299179097",
+      "id": "paragraph_1632827627648_299179097",
+      "dateCreated": "2021-09-28T11:13:47+0000",
+      "dateStarted": "2021-09-30T07:20:43+0000",
+      "dateFinished": "2021-09-30T07:20:48+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7852"
+    },
+    {
+      "text": "%pyspark\n\nreport_df = report_df.join(airports_df, report_df.dest_airport == airports_df.IATA_CODE, how = 'left')\\\n                     .select(F.coalesce(F.col('AIRPORT'), F.col('dest_airport')).alias('dest_airport'), F.col('max_count'))\n\nz.show(report_df)",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:20:48+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "dest_airport": "string",
+                      "max_count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "MONTH": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "dest_airport\tmax_count\nHartsfield-Jackson Atlanta International Airport\t31030\nHartsfield-Jackson Atlanta International Airport\t29492\nHartsfield-Jackson Atlanta International Airport\t32739\nHartsfield-Jackson Atlanta International Airport\t32775\nHartsfield-Jackson Atlanta International Airport\t32425\nHartsfield-Jackson Atlanta International Airport\t31331\nHartsfield-Jackson Atlanta International Airport\t31383\nHartsfield-Jackson Atlanta International Airport\t33725\nHartsfield-Jackson Atlanta International Airport\t33735\n10397\t32594\nHartsfield-Jackson Atlanta International Airport\t30903\nHartsfield-Jackson Atlanta International Airport\t27366\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=21",
+              "$$hashKey": "object:14245"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=22",
+              "$$hashKey": "object:14246"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=23",
+              "$$hashKey": "object:14247"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=24",
+              "$$hashKey": "object:14248"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=25",
+              "$$hashKey": "object:14249"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=26",
+              "$$hashKey": "object:14250"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632827797959_774889561",
+      "id": "paragraph_1632827797959_774889561",
+      "dateCreated": "2021-09-28T11:16:37+0000",
+      "dateStarted": "2021-09-30T07:20:48+0000",
+      "dateFinished": "2021-09-30T07:20:53+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7853"
+    },
+    {
+      "text": "%pyspark\nreport_df.coalesce(1).write.format(\"csv\")\\\n                     .option(\"header\", \"true\")\\\n                     .option(\"delimiter\", \"\\t\")\\\n                     .option(\"mode\", \"overwrite\").csv(\"gs://procamp-test/datasets/reports/task1/\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:22:10+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=28",
+              "$$hashKey": "object:14871"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=29",
+              "$$hashKey": "object:14872"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632828639138_1607705973",
+      "id": "paragraph_1632828639138_1607705973",
+      "dateCreated": "2021-09-28T11:30:39+0000",
+      "dateStarted": "2021-09-30T07:22:11+0000",
+      "dateFinished": "2021-09-30T07:22:16+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7854"
+    },
+    {
+      "text": "%pyspark\n\nperc_canceled_df = flights_df.groupBy(F.col('AIRLINE').alias('airline'), F.col('ORIGIN_AIRPORT').alias('origin_airport'))\\\n                             .agg(F.count(F.col('ORIGIN_AIRPORT')).alias('origin_counts'), \n                                  F.sum(F.col('CANCELLED')).alias('canceled_counts'))\n                                  \nperc_canceled_df = perc_canceled_df.withColumn('cancel_percentage', F.col('canceled_counts')/F.col('origin_counts'))\\\n                                   .withColumn('processed_counts', F.col('origin_counts') - F.col('canceled_counts'))\nz.show(perc_canceled_df)\n\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:22:35+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airline": "string",
+                      "origin_airport": "string",
+                      "origin_counts": "string",
+                      "canceled_counts": "string",
+                      "cancel_percentage": "string",
+                      "processed_counts": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airline": "string",
+                      "origin_airport": "string",
+                      "origin_counts": "string",
+                      "canceled_counts": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "airline\torigin_airport\torigin_counts\tcanceled_counts\tcancel_percentage\tprocessed_counts\nEV\tJAX\t2006\t58\t0.028913260219341975\t1948\nUA\tJFK\t3288\t49\t0.014902676399026763\t3239\nDL\tMSY\t6963\t36\t0.005170185264971995\t6927\nAS\tSLC\t2080\t3\t0.0014423076923076924\t2077\nWN\tALB\t4032\t70\t0.017361111111111112\t3962\nWN\tBWI\t64063\t1207\t0.018840828559386853\t62856\nVX\tLAS\t3766\t34\t0.009028146574614976\t3732\nEV\tLFT\t3498\t72\t0.02058319039451115\t3426\nDL\tSTL\t4641\t8\t0.0017237664296487825\t4633\nEV\tSYR\t1275\t42\t0.03294117647058824\t1233\nOO\tTUL\t1511\t23\t0.015221707478491065\t1488\nUS\tROC\t156\t2\t0.01282051282051282\t154\nB6\tSRQ\t849\t21\t0.024734982332155476\t828\nVX\tMCO\t334\t0\t0.0\t334\nAS\tIAH\t381\t2\t0.005249343832020997\t379\nWN\t10792\t491\t0\t0.0\t491\nMQ\t12953\t565\t19\t0.033628318584070796\t546\nVX\t14679\t177\t2\t0.011299435028248588\t175\nB6\t14122\t143\t0\t0.0\t143\nMQ\t10980\t31\t1\t0.03225806451612903\t30\nUS\tORD\t3452\t97\t0.02809965237543453\t3355\nOO\tEAU\t668\t33\t0.04940119760479042\t635\nMQ\tHSV\t682\t37\t0.054252199413489736\t645\nEV\tDIK\t341\t9\t0.026392961876832845\t332\nWN\tMAF\t3202\t66\t0.02061211742660837\t3136\nDL\tOAK\t919\t0\t0.0\t919\nUA\t14057\t551\t1\t0.0018148820326678765\t550\nDL\t10397\t20971\t3\t1.4305469457822706E-4\t20968\nNK\t11298\t762\t3\t0.003937007874015748\t759\nMQ\t12197\t88\t0\t0.0\t88\nVX\t14262\t18\t0\t0.0\t18\nMQ\tVPS\t512\t35\t0.068359375\t477\nB6\tPDX\t1300\t4\t0.003076923076923077\t1296\nUS\tMIA\t1794\t35\t0.01950947603121516\t1759\nDL\t12278\t92\t0\t0.0\t92\nEV\t11193\t223\t6\t0.026905829596412557\t217\nUA\t11057\t53\t0\t0.0\t53\nOO\t13303\t22\t0\t0.0\t22\nMQ\t12891\t30\t1\t0.03333333333333333\t29\nAA\tBWI\t4124\t55\t0.013336566440349175\t4069\nWN\tMDW\t76350\t1909\t0.025003274394237066\t74441\nOO\tEKO\t531\t14\t0.026365348399246705\t517\nWN\tBNA\t27340\t477\t0.017446964155084125\t26863\nMQ\tEYW\t549\t13\t0.023679417122040074\t536\nAA\tSDF\t298\t9\t0.030201342281879196\t289\nDL\tMHT\t448\t5\t0.011160714285714286\t443\nDL\t14783\t31\t0\t0.0\t31\nAA\t10792\t111\t1\t0.009009009009009009\t110\nVX\t12892\t1141\t0\t0.0\t1141\nOO\tISN\t1981\t18\t0.009086320040383645\t1963\nMQ\tSAF\t744\t34\t0.0456989247311828\t710\nEV\tTVC\t886\t29\t0.0327313769751693\t857\nOO\tCDC\t573\t1\t0.0017452006980802793\t572\nVX\tEWR\t1832\t20\t0.010917030567685589\t1812\nAS\tOME\t663\t27\t0.04072398190045249\t636\nUA\tMCI\t599\t10\t0.01669449081803005\t589\nAA\t11292\t810\t7\t0.008641975308641974\t803\nMQ\t11203\t84\t0\t0.0\t84\nEV\t14683\t39\t1\t0.02564102564102564\t38\nEV\t14633\t62\t0\t0.0\t62\nF9\tSLC\t1286\t8\t0.006220839813374806\t1278\nUA\tBDL\t572\t16\t0.027972027972027972\t556\nUS\tTPA\t3553\t44\t0.01238390092879257\t3509\nAS\tSCC\t855\t18\t0.021052631578947368\t837\nDL\tDLH\t199\t0\t0.0\t199\nAA\tPVD\t778\t2\t0.002570694087403599\t776\nUA\t13930\t6186\t7\t0.0011315874555447786\t6179\nHA\t14831\t62\t0\t0.0\t62\nNK\tOAK\t1616\t32\t0.019801980198019802\t1584\nUS\tDFW\t3082\t64\t0.020765736534717714\t3018\nVX\tDCA\t1234\t20\t0.01620745542949757\t1214\nOO\tBTR\t15\t1\t0.06666666666666667\t14\nMQ\t10792\t113\t0\t0.0\t113\nWN\t14492\t823\t0\t0.0\t823\nWN\t14635\t323\t0\t0.0\t323\nOO\t14262\t418\t0\t0.0\t418\nWN\t11140\t114\t1\t0.008771929824561403\t113\nAA\t13851\t137\t5\t0.0364963503649635\t132\nDL\t14814\t26\t0\t0.0\t26\nEV\t13184\t3\t0\t0.0\t3\nEV\t11109\t2\t0\t0.0\t2\nOO\tRDD\t727\t21\t0.02888583218707015\t706\nB6\tPVD\t994\t19\t0.019114688128772636\t975\nMQ\tTYR\t604\t44\t0.0728476821192053\t560\nDL\tFCA\t293\t1\t0.0034129692832764505\t292\nAA\t14492\t735\t7\t0.009523809523809525\t728\nAA\t12478\t1500\t3\t0.002\t1497\nMQ\t14492\t64\t3\t0.046875\t61\nF9\t14057\t86\t1\t0.011627906976744186\t85\nF9\t12339\t91\t0\t0.0\t91\nAS\t13796\t182\t0\t0.0\t182\nDL\t13342\t463\t0\t0.0\t463\nWN\t11042\t435\t0\t0.0\t435\nEV\t12451\t132\t1\t0.007575757575757576\t131\nAS\t13873\t62\t4\t0.06451612903225806\t58\nB6\tOAK\t1391\t9\t0.006470165348670022\t1382\nDL\tMDT\t926\t3\t0.0032397408207343412\t923\nUS\tPHL\t20501\t504\t0.024584166626018242\t19997\nDL\tGSO\t1899\t8\t0.00421274354923644\t1891\nEV\tLCH\t1195\t29\t0.024267782426778243\t1166\nOO\tPVD\t37\t0\t0.0\t37\nDL\t13487\t5491\t2\t3.6423238025860496E-4\t5489\nF9\t11298\t142\t0\t0.0\t142\nAS\t12819\t186\t4\t0.021505376344086023\t182\nOO\tDFW\t4131\t96\t0.023238925199709513\t4035\nMQ\tORF\t726\t91\t0.12534435261707988\t635\nEV\tOMA\t2944\t90\t0.030570652173913044\t2854\nEV\tRDU\t2500\t87\t0.0348\t2413\nUS\tKOA\t182\t1\t0.005494505494505495\t181\nDL\t14107\t600\t0\t0.0\t600\nDL\t13296\t54\t0\t0.0\t54\nEV\t10397\t5045\t6\t0.0011892963330029733\t5039\nB6\t14986\t93\t1\t0.010752688172043012\t92\nEV\tDAB\t2\t0\t0.0\t2\nNK\tPBG\t281\t2\t0.0071174377224199285\t279\nUS\tJFK\t1422\t60\t0.04219409282700422\t1362\nUA\tGUM\t334\t3\t0.008982035928143712\t331\nWN\tOMA\t5269\t47\t0.008920098690453597\t5222\nHA\tSAN\t334\t0\t0.0\t334\nMQ\tMTJ\t64\t2\t0.03125\t62\nDL\t10990\t31\t0\t0.0\t31\nEV\t12992\t238\t1\t0.004201680672268907\t237\nUS\tMKE\t351\t5\t0.014245014245014245\t346\nMQ\tBTR\t543\t36\t0.06629834254143646\t507\nOO\tJAX\t213\t4\t0.018779342723004695\t209\nB6\tRNO\t169\t1\t0.005917159763313609\t168\nOO\t10747\t38\t4\t0.10526315789473684\t34\nOO\t13184\t139\t2\t0.014388489208633094\t137\nNK\tLAS\t9037\t133\t0.01471727343144849\t8904\nNK\tBOS\t2226\t45\t0.02021563342318059\t2181\nOO\tOKC\t2600\t39\t0.015\t2561\nOO\tSBN\t3420\t68\t0.019883040935672516\t3352\nDL\tELP\t699\t1\t0.001430615164520744\t698\nUA\tKOA\t1295\t15\t0.011583011583011582\t1280\nF9\tBMI\t37\t1\t0.02702702702702703\t36\nEV\tAUS\t328\t5\t0.01524390243902439\t323\nOO\tTYS\t75\t2\t0.02666666666666667\t73\nAS\tDLG\t77\t0\t0.0\t77\nUA\tORF\t103\t4\t0.038834951456310676\t99\nNK\t10721\t248\t3\t0.012096774193548387\t245\nEV\t12915\t113\t2\t0.017699115044247787\t111\nB6\t14057\t93\t0\t0.0\t93\nF9\t10693\t53\t0\t0.0\t53\nMQ\tDTW\t2371\t220\t0.09278785322648671\t2151\nUS\tSAN\t1722\t18\t0.010452961672473868\t1704\nWN\tCLE\t4444\t66\t0.01485148514851485\t4378\nF9\tDCA\t989\t4\t0.004044489383215369\t985\nMQ\tMEM\t1324\t75\t0.05664652567975831\t1249\nDL\tICT\t861\t4\t0.004645760743321719\t857\nUA\tDSM\t696\t11\t0.015804597701149427\t685\nOO\tALB\t89\t2\t0.02247191011235955\t87\nAA\tPNS\t311\t3\t0.00964630225080386\t308\nOO\t12892\t2534\t10\t0.003946329913180742\t2524\nEV\t12511\t58\t0\t0.0\t58\nNK\t13198\t129\t1\t0.007751937984496124\t128\nNK\t13495\t155\t2\t0.012903225806451613\t153\nMQ\t14457\t54\t2\t0.037037037037037035\t52\nUS\tLAX\t3688\t27\t0.007321041214750542\t3661\nOO\tSNA\t2577\t57\t0.02211874272409779\t2520\nOO\tASE\t3028\t199\t0.06571994715984147\t2829\nMQ\tMKE\t45\t3\t0.06666666666666667\t42\nF9\tILG\t100\t5\t0.05\t95\nAS\tCDV\t662\t9\t0.013595166163141994\t653\nHA\tPPG\t107\t0\t0.0\t107\nDL\tDSM\t938\t4\t0.0042643923240938165\t934\nAA\t10721\t2552\t36\t0.014106583072100314\t2516\nEV\t13931\t173\t1\t0.005780346820809248\t172\nF9\t11193\t237\t0\t0.0\t237\nEV\t10208\t190\t0\t0.0\t190\nEV\t14027\t17\t0\t0.0\t17\nOO\t10792\t7\t0\t0.0\t7\nHA\tOGG\t12890\t54\t0.0041892940263770365\t12836\nNK\tBQN\t164\t2\t0.012195121951219513\t162\nEV\t11982\t282\t8\t0.028368794326241134\t274\nB6\t14321\t108\t0\t0.0\t108\nDL\t12448\t204\t0\t0.0\t204\nMQ\t10529\t30\t0\t0.0\t30\nF9\tIAH\t1529\t7\t0.004578155657292348\t1522\nEV\tFSD\t1777\t53\t0.029825548677546426\t1724\nOO\tSYR\t124\t6\t0.04838709677419355\t118\nUA\tBNA\t405\t4\t0.009876543209876543\t401\nDL\t11193\t500\t0\t0.0\t500\nHA\t12402\t480\t0\t0.0\t480\nEV\t15919\t297\t0\t0.0\t297\nMQ\t10397\t31\t0\t0.0\t31\nAS\tPHX\t2275\t1\t4.3956043956043956E-4\t2274\nMQ\tCAE\t178\t16\t0.0898876404494382\t162\nEV\tMAF\t1880\t51\t0.027127659574468086\t1829\nOO\tGEG\t2401\t24\t0.009995835068721367\t2377\nOO\tAMA\t458\t6\t0.013100436681222707\t452\nDL\t11775\t91\t0\t0.0\t91\nWN\t14321\t97\t0\t0.0\t97\nWN\t12451\t362\t0\t0.0\t362\nAA\t11540\t124\t0\t0.0\t124\nNK\t11042\t271\t4\t0.014760147601476014\t267\nOO\t12884\t114\t1\t0.008771929824561403\t113\nB6\t11292\t87\t0\t0.0\t87\nAS\t12266\t31\t0\t0.0\t31\nAA\t13230\t27\t0\t0.0\t27\nUA\t15376\t5\t0\t0.0\t5\nAA\tONT\t1950\t37\t0.018974358974358976\t1913\nEV\tATW\t1524\t62\t0.04068241469816273\t1462\nOO\tPAH\t666\t44\t0.06606606606606606\t622\nDL\tAUS\t3449\t10\t0.0028993911278631487\t3439\nWN\tBDL\t6048\t139\t0.022982804232804233\t5909\nMQ\t14524\t256\t4\t0.015625\t252\nOO\t14905\t62\t1\t0.016129032258064516\t61\nDL\tMSP\t55929\t96\t0.0017164619428203616\t55833\nDL\tIAH\t2927\t4\t0.0013665869490946361\t2923\nMQ\tAZO\t1264\t74\t0.058544303797468354\t1190\nDL\tECP\t1885\t5\t0.002652519893899204\t1880\nUA\tCLT\t271\t2\t0.007380073800738007\t269\nDL\tPHF\t84\t3\t0.03571428571428571\t81\nMQ\t10693\t398\t6\t0.01507537688442211\t392\nEV\t10980\t296\t1\t0.0033783783783783786\t295\nUA\t14635\t165\t0\t0.0\t165\nOO\t11267\t167\t0\t0.0\t167\nUS\tDEN\t2329\t24\t0.010304851867754402\t2305\nMQ\tGRK\t1440\t87\t0.06041666666666667\t1353\nUS\tMEM\t443\t14\t0.03160270880361174\t429\nEV\tROA\t1894\t57\t0.03009503695881732\t1837\nF9\tPHF\t3\t0\t0.0\t3\nDL\tFSD\t425\t0\t0.0\t425\nOO\t12278\t220\t3\t0.013636363636363636\t217\nDL\t13232\t241\t0\t0.0\t241\nDL\t10529\t412\t0\t0.0\t412\nAA\t14262\t85\t0\t0.0\t85\nDL\t13891\t31\t0\t0.0\t31\nDL\t11973\t102\t0\t0.0\t102\nUS\tSMF\t992\t6\t0.006048387096774193\t986\nUA\tDEN\t46218\t461\t0.00997446882167121\t45757\nAA\tMFE\t1452\t48\t0.03305785123966942\t1404\nF9\tSAN\t746\t4\t0.005361930294906166\t742\nMQ\tSDF\t752\t68\t0.09042553191489362\t684\nDL\t13931\t287\t0\t0.0\t287\nMQ\t15380\t96\t0\t0.0\t96\nNK\t12898\t117\t2\t0.017094017094017096\t115\nEV\t14574\t166\t0\t0.0\t166\nMQ\t13342\t24\t0\t0.0\t24\nAA\tPBI\t2922\t39\t0.013347022587268994\t2883\nB6\tHPN\t3617\t85\t0.023500138236107273\t3532\nUS\tCLE\t920\t9\t0.009782608695652175\t911\nUA\tCMH\t703\t11\t0.015647226173541962\t692\nDL\tMDW\t2525\t12\t0.004752475247524752\t2513\nWN\tFNT\t1490\t17\t0.011409395973154362\t1473\nUA\tROC\t412\t8\t0.019417475728155338\t404\nAA\t11057\t8258\t18\t0.0021797045289416324\t8240\nDL\t12951\t31\t0\t0.0\t31\nB6\t12892\t381\t2\t0.005249343832020997\t379\nB6\t10994\t159\t0\t0.0\t159\nAS\tCHS\t26\t0\t0.0\t26\nMQ\tCVG\t4885\t232\t0.04749232343909928\t4653\nOO\tSPI\t998\t42\t0.04208416833667335\t956\nOO\tBNA\t2983\t55\t0.01843781428092524\t2928\nUA\tIAH\t53985\t594\t0.011003056404556821\t53391\nDL\tLFT\t342\t1\t0.0029239766081871343\t341\nDL\tGRB\t617\t1\t0.0016207455429497568\t616\nAS\t10423\t31\t0\t0.0\t31\nB6\tJFK\t40455\t771\t0.019058212829069335\t39684\nDL\tROC\t1231\t4\t0.003249390739236393\t1227\nOO\tHLN\t1435\t9\t0.0062717770034843206\t1426\nOO\tRNO\t2687\t56\t0.02084108671380722\t2631\nMQ\tCWA\t740\t35\t0.0472972972972973\t705\nOO\tMSY\t568\t5\t0.008802816901408451\t563\nOO\tPHL\t10\t0\t0.0\t10\nDL\t14869\t3117\t0\t0.0\t3117\nEV\t12266\t4730\t47\t0.009936575052854123\t4683\nF9\t13871\t17\t0\t0.0\t17\nUA\tMSP\t3208\t46\t0.014339152119700748\t3162\nEV\tPNS\t1814\t34\t0.018743109151047408\t1780\nUS\tONT\t597\t5\t0.008375209380234505\t592\nEV\tPVD\t1092\t69\t0.06318681318681318\t1023\nHA\tSJC\t667\t4\t0.005997001499250375\t663\nB6\tACK\t492\t6\t0.012195121951219513\t486\nDL\t12892\t2646\t0\t0.0\t2646\nDL\t13204\t1349\t1\t7.412898443291327E-4\t1348\nF9\t15356\t277\t0\t0.0\t277\nB6\t14492\t256\t0\t0.0\t256\nOO\t14100\t21\t0\t0.0\t21\nB6\t15024\t69\t0\t0.0\t69\nB6\tSJU\t10351\t98\t0.009467684281711911\t10253\nUA\tSAT\t2700\t29\t0.01074074074074074\t2671\nWN\tSJU\t3102\t3\t9.671179883945841E-4\t3099\nAA\tDAY\t930\t23\t0.024731182795698924\t907\nWN\tMEM\t2823\t40\t0.014169323414806943\t2783\nB6\t14843\t839\t1\t0.0011918951132300357\t838\nDL\t11721\t88\t0\t0.0\t88\nNK\t12953\t341\t5\t0.01466275659824047\t336\nUA\t10140\t108\t0\t0.0\t108\nUA\t12339\t168\t0\t0.0\t168\nMQ\t12896\t27\t1\t0.037037037037037035\t26\nAA\tMDT\t49\t0\t0.0\t49\nMQ\tCMH\t4624\t262\t0.05666089965397924\t4362\nMQ\tSJT\t1469\t63\t0.04288631722260041\t1406\nDL\tSAV\t3142\t13\t0.004137492043284532\t3129\nEV\tMOB\t3618\t59\t0.01630735212824765\t3559\nUA\tICT\t461\t5\t0.010845986984815618\t456\nDL\tSTX\t37\t0\t0.0\t37\nUA\tABQ\t343\t3\t0.008746355685131196\t340\nEV\t12197\t318\t0\t0.0\t318\nDL\t11953\t26\t0\t0.0\t26\nOO\t11823\t314\t0\t0.0\t314\nB6\t14747\t168\t1\t0.005952380952380952\t167\nHA\t14107\t31\t0\t0.0\t31\nUA\t12278\t39\t0\t0.0\t39\nB6\t15027\t31\t0\t0.0\t31\nWN\tSJC\t21297\t300\t0.01408649105507818\t20997\nOO\tBRD\t589\t7\t0.011884550084889643\t582\nWN\tORF\t2125\t40\t0.018823529411764704\t2085\nAS\tKTN\t2203\t26\t0.011802088061733999\t2177\nEV\tCLL\t716\t24\t0.0335195530726257\t692\nOO\t13198\t177\t0\t0.0\t177\nB6\t12451\t275\t3\t0.01090909090909091\t272\nMQ\t14674\t62\t2\t0.03225806451612903\t60\nOO\tOMA\t2164\t24\t0.011090573012939002\t2140\nMQ\tCID\t2725\t146\t0.053577981651376144\t2579\nOO\tFSD\t2036\t54\t0.026522593320235755\t1982\nUS\tCLT\t44373\t595\t0.013409055056002523\t43778\nAA\tELP\t1359\t26\t0.01913171449595291\t1333\nUA\tOKC\t588\t3\t0.00510204081632653\t585\nEV\tSAF\t530\t15\t0.02830188679245283\t515\nMQ\tSHV\t249\t24\t0.0963855421686747\t225\nEV\tCMH\t2495\t98\t0.03927855711422846\t2397\nOO\tPBI\t78\t2\t0.02564102564102564\t76\nAS\t14747\t4609\t2\t4.3393360815795185E-4\t4607\nAA\t12266\t820\t5\t0.006097560975609756\t815\nEV\t11617\t55\t0\t0.0\t55\nAS\t14057\t1215\t0\t0.0\t1215\nOO\t14893\t667\t5\t0.0074962518740629685\t662\nEV\t13244\t392\t6\t0.015306122448979591\t386\nOO\t15041\t62\t2\t0.03225806451612903\t60\nF9\tATL\t4494\t23\t0.005117935024477081\t4471\nAS\tBUR\t1011\t0\t0.0\t1011\nMQ\tSTL\t1320\t105\t0.07954545454545454\t1215\nUS\tSYR\t321\t5\t0.01557632398753894\t316\nF9\tMDW\t51\t1\t0.0196078431372549\t50\nF9\tDSM\t173\t0\t0.0\t173\nAA\tGEG\t263\t1\t0.0038022813688212928\t262\nEV\t10599\t301\t2\t0.006644518272425249\t299\nEV\t10785\t200\t2\t0.01\t198\nNK\t10397\t634\t3\t0.00473186119873817\t631\nMQ\t11423\t176\t0\t0.0\t176\nDL\t12478\t2326\t0\t0.0\t2326\nEV\t13241\t84\t1\t0.011904761904761904\t83\nUA\tMIA\t3170\t58\t0.01829652996845426\t3112\nUS\tSNA\t772\t7\t0.009067357512953367\t765\nWN\tMSY\t17472\t170\t0.00972985347985348\t17302\nB6\tPIT\t1492\t24\t0.0160857908847185\t1468\nMQ\tRST\t1323\t67\t0.050642479213907785\t1256\nEV\tDSM\t1246\t33\t0.026484751203852328\t1213\nF9\t12889\t450\t2\t0.0044444444444444444\t448\nMQ\t12915\t85\t5\t0.058823529411764705\t80\nMQ\t13422\t88\t3\t0.03409090909090909\t85\nOO\t12992\t111\t0\t0.0\t111\nUA\t10299\t57\t0\t0.0\t57\nMQ\tCMI\t2116\t117\t0.055293005671077505\t1999\nWN\tEWR\t5487\t212\t0.038636777838527425\t5275\nUA\tIND\t1115\t13\t0.011659192825112108\t1102\nEV\tSDF\t2079\t83\t0.03992303992303992\t1996\nMQ\tCHO\t264\t30\t0.11363636363636363\t234\nEV\tBGR\t177\t3\t0.01694915254237288\t174\nEV\t10185\t225\t1\t0.0044444444444444444\t224\nMQ\t11823\t181\t0\t0.0\t181\nOO\t10157\t122\t3\t0.02459016393442623\t119\nEV\t12448\t362\t5\t0.013812154696132596\t357\nOO\tMGM\t15\t0\t0.0\t15\nOO\tGCC\t997\t11\t0.011033099297893681\t986\nWN\tCLT\t1791\t31\t0.017308766052484645\t1760\nOO\tGJT\t1983\t9\t0.0045385779122541605\t1974\nB6\tSAV\t1002\t20\t0.01996007984031936\t982\nMQ\tASE\t534\t77\t0.1441947565543071\t457\nMQ\tCHA\t674\t35\t0.05192878338278932\t639\nDL\tMSO\t597\t0\t0.0\t597\nEV\tCOS\t508\t13\t0.025590551181102362\t495\nDL\t14683\t275\t0\t0.0\t275\nF9\t13930\t455\t0\t0.0\t455\nOO\t10627\t208\t1\t0.004807692307692308\t207\nAA\t11423\t115\t3\t0.02608695652173913\t112\nNK\t14679\t186\t0\t0.0\t186\nOO\t13256\t20\t1\t0.05\t19\nMQ\t15249\t20\t0\t0.0\t20\nOO\t11066\t91\t0\t0.0\t91\nUS\tPVD\t600\t27\t0.045\t573\nF9\tRSW\t1359\t18\t0.013245033112582781\t1341\nEV\tBTV\t1763\t61\t0.03460011344299489\t1702\nAS\tORD\t1748\t9\t0.005148741418764302\t1739\nAS\tFLL\t334\t0\t0.0\t334\nOO\tLNK\t1138\t18\t0.015817223198594025\t1120\nAA\t12339\t395\t4\t0.010126582278481013\t391\nUA\t10529\t78\t0\t0.0\t78\nOO\t11921\t151\t0\t0.0\t151\nNK\t14057\t62\t0\t0.0\t62\nF9\t13485\t18\t0\t0.0\t18\nOO\tMLU\t4\t0\t0.0\t4\nUA\tSFO\t45587\t482\t0.010573189725140939\t45105\nNK\tPHX\t966\t25\t0.025879917184265012\t941\nDL\tORD\t6962\t27\t0.003878195920712439\t6935\nMQ\tMOB\t878\t35\t0.03986332574031891\t843\nAS\tBLI\t711\t3\t0.004219409282700422\t708\nNK\tLBE\t1281\t36\t0.02810304449648712\t1245\nOO\tBTM\t667\t19\t0.02848575712143928\t648\nAS\tDCA\t1325\t2\t0.0015094339622641509\t1323\nWN\tIAD\t2195\t27\t0.012300683371298405\t2168\nDL\t14747\t1274\t0\t0.0\t1274\nAA\t13930\t5111\t18\t0.0035218156916454707\t5093\nWN\t15016\t2545\t5\t0.0019646365422396855\t2540\nWN\t13931\t216\t0\t0.0\t216\nEV\t14524\t532\t6\t0.011278195488721804\t526\nAA\t13495\t512\t5\t0.009765625\t507\nB6\t13796\t122\t1\t0.00819672131147541\t121\nAA\t14730\t26\t0\t0.0\t26\nOO\tITH\t22\t2\t0.09090909090909091\t20\nMQ\tMAF\t1112\t91\t0.08183453237410072\t1021\nEV\tEYW\t430\t2\t0.004651162790697674\t428\nOO\tCHO\t1040\t50\t0.04807692307692308\t990\nF9\tBIS\t102\t1\t0.00980392156862745\t101\nEV\tBIL\t82\t3\t0.036585365853658534\t79\nEV\tITH\t12\t2\t0.16666666666666666\t10\nWN\t11278\t1306\t2\t0.0015313935681470138\t1304\nDL\t10792\t210\t1\t0.004761904761904762\t209\nAS\t14679\t477\t0\t0.0\t477\nVX\t10721\t142\t0\t0.0\t142\nUA\t11423\t62\t0\t0.0\t62\nMQ\t10747\t4\t0\t0.0\t4\nMQ\tAMA\t1079\t82\t0.07599629286376275\t997\nEV\tAGS\t1653\t15\t0.009074410163339383\t1638\nOO\tTVC\t345\t6\t0.017391304347826087\t339\nDL\t14771\t1036\t0\t0.0\t1036\nDL\t12217\t172\t0\t0.0\t172\nEV\t14321\t151\t2\t0.013245033112582781\t149\nF9\t15497\t14\t0\t0.0\t14\nOO\tESC\t573\t17\t0.029668411867364748\t556\nOO\tMSP\t25513\t183\t0.007172813859600988\t25330\nNK\tTPA\t2623\t49\t0.018680899733130005\t2574\nWN\tATL\t39513\t506\t0.012805911978336243\t39007\nF9\tPBI\t189\t5\t0.026455026455026454\t184\nVX\tPDX\t342\t0\t0.0\t342\nDL\tMOT\t4\t0\t0.0\t4\nAS\tIAD\t265\t1\t0.0037735849056603774\t264\nEV\t11308\t118\t0\t0.0\t118\nEV\t13277\t221\t0\t0.0\t221\nB6\t14771\t468\t0\t0.0\t468\nWN\t12391\t366\t0\t0.0\t366\nMQ\t13076\t92\t0\t0.0\t92\nDL\t13830\t85\t0\t0.0\t85\nOO\tGSO\t3\t0\t0.0\t3\nOO\tFWA\t3012\t62\t0.020584329349269587\t2950\nAS\tADQ\t460\t23\t0.05\t437\nOO\tBDL\t530\t11\t0.020754716981132074\t519\nB6\t14027\t542\t4\t0.007380073800738007\t538\nDL\t10849\t91\t0\t0.0\t91\nDL\t14635\t341\t0\t0.0\t341\nOO\t14150\t62\t0\t0.0\t62\nAS\t10821\t62\t0\t0.0\t62\nVX\t13930\t146\t0\t0.0\t146\nMQ\tBHM\t933\t23\t0.02465166130760986\t910\nAA\tSTX\t546\t1\t0.0018315018315018315\t545\nF9\tFLL\t707\t12\t0.016973125884016973\t695\nF9\tFAT\t2\t0\t0.0\t2\nMQ\tBRO\t103\t10\t0.0970873786407767\t93\nEV\tRSW\t55\t2\t0.03636363636363636\t53\nNK\tCRW\t64\t0\t0.0\t64\nOO\tWYS\t208\t0\t0.0\t208\nUA\t14908\t487\t0\t0.0\t487\nMQ\t15016\t52\t0\t0.0\t52\nAS\t13891\t92\t0\t0.0\t92\nEV\tIAH\t58330\t1031\t0.017675295731184638\t57299\nMQ\tBUF\t987\t51\t0.05167173252279635\t936\nUS\tOGG\t305\t9\t0.029508196721311476\t296\nAA\tBUF\t541\t4\t0.0073937153419593345\t537\nDL\t11637\t109\t2\t0.01834862385321101\t107\nUA\t13495\t607\t1\t0.0016474464579901153\t606\nDL\t14057\t531\t0\t0.0\t531\nDL\t15370\t120\t0\t0.0\t120\nUA\t14027\t129\t0\t0.0\t129\nEV\t15380\t53\t0\t0.0\t53\nMQ\tIAH\t27\t2\t0.07407407407407407\t25\nUS\tLAS\t3024\t33\t0.010912698412698412\t2991\nF9\tMSN\t214\t2\t0.009345794392523364\t212\nAA\tRNO\t1645\t28\t0.01702127659574468\t1617\nNK\tDEN\t3691\t77\t0.020861555134109998\t3614\nEV\tACT\t1041\t21\t0.020172910662824207\t1020\nDL\t15304\t848\t0\t0.0\t848\nWN\t14576\t150\t0\t0.0\t150\nWN\t14869\t853\t0\t0.0\t853\nMQ\t12951\t118\t4\t0.03389830508474576\t114\nF9\t13303\t185\t0\t0.0\t185\nVX\t11697\t89\t0\t0.0\t89\nAA\t12896\t31\t1\t0.03225806451612903\t30\nOO\t15096\t27\t0\t0.0\t27\nEV\tCHS\t2708\t108\t0.03988183161004431\t2600\nF9\tIAD\t1944\t23\t0.011831275720164609\t1921\nAA\tJAX\t2360\t28\t0.011864406779661017\t2332\nOO\tPIH\t654\t2\t0.0030581039755351682\t652\nEV\tFSM\t1425\t24\t0.016842105263157894\t1401\nMQ\tMDT\t827\t37\t0.044740024183796856\t790\nOO\tBRO\t53\t1\t0.018867924528301886\t52\nAA\t15370\t216\t2\t0.009259259259259259\t214\nWN\t11066\t905\t0\t0.0\t905\nB6\t10821\t163\t0\t0.0\t163\nB6\t15304\t465\t3\t0.0064516129032258064\t462\nAA\tLAS\t11359\t106\t0.009331807377409983\t11253\nB6\tBQN\t888\t5\t0.00563063063063063\t883\nOO\tBFL\t2637\t42\t0.015927189988623434\t2595\nF9\tMCI\t348\t2\t0.005747126436781609\t346\nUS\tFLL\t3125\t48\t0.01536\t3077\nMQ\tLIT\t2421\t120\t0.04956629491945477\t2301\nF9\tMEM\t364\t1\t0.0027472527472527475\t363\nF9\tSBA\t3\t0\t0.0\t3\nAS\tADK\t96\t7\t0.07291666666666667\t89\nVX\tPSP\t211\t1\t0.004739336492890996\t210\nAS\tGST\t77\t1\t0.012987012987012988\t76\nWN\t10529\t484\t1\t0.002066115702479339\t483\nAS\t14869\t186\t0\t0.0\t186\nB6\t13204\t1529\t10\t0.006540222367560497\t1519\nUA\t13931\t27\t0\t0.0\t27\nF9\t11995\t18\t0\t0.0\t18\nMQ\tCLL\t1595\t85\t0.05329153605015674\t1510\nMQ\tGSO\t1276\t99\t0.07758620689655173\t1177\nB6\tIAD\t1892\t60\t0.03171247357293869\t1832\nEV\tOKC\t1791\t52\t0.029034059184812954\t1739\nAA\tGUC\t118\t5\t0.0423728813559322\t113\nDL\t15624\t115\t0\t0.0\t115\nOO\t12888\t53\t1\t0.018867924528301886\t52\nNK\t12892\t488\t2\t0.004098360655737705\t486\nMQ\t14730\t31\t0\t0.0\t31\nUS\tSLC\t1258\t17\t0.013513513513513514\t1241\nEV\tDAL\t537\t18\t0.0335195530726257\t519\nUS\tLIH\t185\t3\t0.016216216216216217\t182\nOO\t14952\t93\t0\t0.0\t93\nB6\tPSE\t749\t11\t0.014686248331108143\t738\nMQ\tCHS\t507\t21\t0.04142011834319527\t486\nUA\tMSY\t4506\t43\t0.00954283177984909\t4463\nMQ\tFAR\t1330\t57\t0.04285714285714286\t1273\nAS\tJNU\t3895\t41\t0.010526315789473684\t3854\nEV\tHPN\t2861\t119\t0.04159384830478854\t2742\nHA\tOAK\t769\t3\t0.0039011703511053317\t766\nEV\tABQ\t417\t8\t0.019184652278177457\t409\nDL\tTLH\t1241\t5\t0.0040290088638195\t1236\nAS\tPSG\t664\t9\t0.01355421686746988\t655\nEV\tCHO\t577\t17\t0.029462738301559793\t560\nUA\tSRQ\t417\t12\t0.02877697841726619\t405\nMQ\tSAT\t101\t4\t0.039603960396039604\t97\nAA\t14683\t511\t14\t0.0273972602739726\t497\nUA\t13871\t114\t0\t0.0\t114\nDL\t14908\t257\t0\t0.0\t257\nUA\t11066\t86\t1\t0.011627906976744186\t85\nEV\t14960\t6\t0\t0.0\t6\nOO\t13502\t6\t0\t0.0\t6\nDL\tDFW\t5095\t15\t0.002944062806673209\t5080\nNK\tSAN\t1844\t33\t0.01789587852494577\t1811\nUS\tPWM\t181\t9\t0.049723756906077346\t172\nVX\tBOS\t1593\t24\t0.015065913370998116\t1569\nEV\tGRK\t2593\t69\t0.026610104126494408\t2524\nAA\tBOI\t359\t2\t0.005571030640668524\t357\nEV\t13377\t279\t4\t0.014336917562724014\t275\nB6\tDCA\t9518\t163\t0.01712544652237865\t9355\nOO\tCMX\t668\t45\t0.06736526946107785\t623\nUA\tDFW\t3505\t56\t0.015977175463623396\t3449\nMQ\tMSP\t187\t20\t0.10695187165775401\t167\nEV\tBQK\t878\t9\t0.010250569476082005\t869\nUA\tBIL\t652\t3\t0.004601226993865031\t649\nF9\tOKC\t56\t4\t0.07142857142857142\t52\nEV\tRST\t693\t10\t0.01443001443001443\t683\nAA\t10821\t522\t3\t0.005747126436781609\t519\nOO\t10990\t120\t1\t0.008333333333333333\t119\nEV\t12206\t115\t4\t0.034782608695652174\t111\nEV\t14576\t147\t1\t0.006802721088435374\t146\nDL\t15919\t62\t0\t0.0\t62\nDL\t15376\t61\t0\t0.0\t61\nDL\tLAX\t25171\t54\t0.002145325970362719\t25117\nUA\tEWR\t43002\t706\t0.01641784103064974\t42296\nAA\tHDN\t139\t6\t0.04316546762589928\t133\nOO\tLGA\t102\t4\t0.0392156862745098\t98\nOO\tSDF\t328\t8\t0.024390243902439025\t320\nAA\tROC\t154\t1\t0.006493506493506494\t153\nMQ\t13851\t229\t3\t0.013100436681222707\t226\nWN\t10140\t1006\t0\t0.0\t1006\nUA\t12478\t294\t1\t0.003401360544217687\t293\nDL\t12264\t264\t0\t0.0\t264\nUA\t13204\t1022\t1\t9.784735812133072E-4\t1021\nUA\tSMF\t2246\t29\t0.012911843276936777\t2217\nAA\tPDX\t2724\t29\t0.010646108663729809\t2695\nAS\tMSP\t587\t2\t0.0034071550255536627\t585\nMQ\tOKC\t2089\t83\t0.03973192915270465\t2006\nAA\tHOU\t169\t9\t0.05325443786982249\t160\nDL\tPWM\t676\t5\t0.0073964497041420114\t671\nF9\tGSO\t133\t0\t0.0\t133\nUA\tCHS\t3\t0\t0.0\t3\nDL\t10257\t146\t0\t0.0\t146\nMQ\tSGF\t3607\t124\t0.03437759911283615\t3483\nDL\tPBI\t5706\t44\t0.0077111812127585\t5662\nWN\tGRR\t1862\t25\t0.01342642320085929\t1837\nB6\tPHL\t1607\t41\t0.02551337896701929\t1566\nMQ\tMIA\t5325\t109\t0.02046948356807512\t5216\nB6\tCHS\t1799\t36\t0.020011117287381877\t1763\nOO\tCNY\t206\t1\t0.0048543689320388345\t205\nOO\t13342\t724\t1\t0.0013812154696132596\t723\nWN\t12339\t826\t0\t0.0\t826\nAS\t13930\t181\t0\t0.0\t181\nEV\t14588\t4\t0\t0.0\t4\nAS\tRDU\t61\t0\t0.0\t61\nAA\tTPA\t8203\t73\t0.008899183225649152\t8130\nF9\tSFO\t1946\t4\t0.0020554984583761563\t1942\nEV\tEWR\t31568\t1787\t0.05660795742524075\t29781\nOO\tPHX\t18552\t223\t0.012020267356619232\t18329\nDL\tAVL\t643\t4\t0.006220839813374806\t639\nDL\tEYW\t994\t4\t0.004024144869215292\t990\nAS\tTPA\t334\t0\t0.0\t334\nDL\tKOA\t347\t1\t0.002881844380403458\t346\nMQ\t11111\t123\t0\t0.0\t123\nF9\t14107\t144\t0\t0.0\t144\nMQ\t14960\t116\t4\t0.034482758620689655\t112\nWN\t11884\t269\t1\t0.0037174721189591076\t268\nWN\t11721\t93\t0\t0.0\t93\nMQ\t11413\t92\t1\t0.010869565217391304\t91\nHA\t14057\t31\t0\t0.0\t31\nOO\tRAP\t2260\t20\t0.008849557522123894\t2240\nB6\tBTV\t1023\t26\t0.02541544477028348\t997\nOO\tBUR\t4028\t60\t0.014895729890764648\t3968\nUA\tMTJ\t74\t1\t0.013513513513513514\t73\nOO\tPIT\t475\t9\t0.018947368421052633\t466\nDL\t14252\t59\t0\t0.0\t59\nB6\t11618\t547\t4\t0.007312614259597806\t543\nOO\t13487\t2430\t3\t0.0012345679012345679\t2427\nWN\tBOS\t9956\t221\t0.0221976697468863\t9735\nUS\tSJC\t790\t6\t0.007594936708860759\t784\nAS\tMSY\t334\t3\t0.008982035928143712\t331\nOO\tEWR\t2\t0\t0.0\t2\nNK\t13930\t976\t2\t0.0020491803278688526\t974\nUA\t11298\t329\t1\t0.00303951367781155\t328\nEV\t13930\t3842\t8\t0.002082248828735034\t3834\nAA\t13256\t119\t4\t0.03361344537815126\t115\nEV\t15376\t30\t0\t0.0\t30\nVX\tHNL\t60\t1\t0.016666666666666666\t59\nOO\tSAT\t3473\t42\t0.012093291102792975\t3431\nOO\tSMF\t6075\t126\t0.02074074074074074\t5949\nUS\tRNO\t571\t4\t0.0070052539404553416\t567\nVX\tAUS\t1399\t28\t0.020014295925661188\t1371\nWN\tCHS\t2392\t40\t0.016722408026755852\t2352\nAA\tMTJ\t31\t2\t0.06451612903225806\t29\nDL\tSBN\t14\t0\t0.0\t14\nWN\t11697\t1178\t8\t0.006791171477079796\t1170\nOO\t10620\t106\t1\t0.009433962264150943\t105\nUA\t12016\t31\t2\t0.06451612903225806\t29\nAA\t12441\t9\t0\t0.0\t9\nOO\t11292\t4028\t15\t0.003723932472691162\t4013\nUA\t15016\t32\t0\t0.0\t32\nMQ\tALO\t617\t35\t0.05672609400324149\t582\nUA\tJAC\t1015\t14\t0.013793103448275862\t1001\nDL\tSRQ\t2104\t6\t0.0028517110266159697\t2098\nUS\tABQ\t48\t0\t0.0\t48\nOO\t13871\t168\t1\t0.005952380952380952\t167\nAA\t11066\t226\t4\t0.017699115044247787\t222\nAA\t12323\t66\t1\t0.015151515151515152\t65\nEV\t14307\t72\t2\t0.027777777777777776\t70\nMQ\tLRD\t934\t41\t0.043897216274089934\t893\nB6\tDTW\t1193\t20\t0.016764459346186086\t1173\nUS\tPBI\t1861\t34\t0.018269747447608814\t1827\nDL\tBUF\t2384\t3\t0.0012583892617449664\t2381\nDL\tBIL\t982\t0\t0.0\t982\nDL\tXNA\t538\t2\t0.0037174721189591076\t536\nOO\tLSE\t492\t9\t0.018292682926829267\t483\nOO\t11315\t61\t0\t0.0\t61\nDL\t15380\t31\t0\t0.0\t31\nDL\t11423\t88\t0\t0.0\t88\nOO\t11122\t138\t1\t0.007246376811594203\t137\nMQ\t11995\t53\t3\t0.05660377358490566\t50\nEV\t10728\t87\t2\t0.022988505747126436\t85\nEV\t12339\t268\t3\t0.011194029850746268\t265\nB6\t11057\t116\t0\t0.0\t116\nHA\tITO\t5462\t9\t0.0016477480776272428\t5453\nOO\tHYS\t573\t15\t0.02617801047120419\t558\nMQ\tBIS\t666\t22\t0.03303303303303303\t644\nWN\tBOI\t2950\t11\t0.003728813559322034\t2939\nEV\tLRD\t1268\t23\t0.018138801261829655\t1245\nOO\tJAC\t1311\t33\t0.02517162471395881\t1278\nAS\tKOA\t1390\t1\t7.194244604316547E-4\t1389\nOO\tCWA\t61\t1\t0.01639344262295082\t60\nDL\tEVV\t354\t0\t0.0\t354\nUA\tMEM\t112\t5\t0.044642857142857144\t107\nOO\t14570\t191\t2\t0.010471204188481676\t189\nWN\t11292\t5250\t2\t3.8095238095238096E-4\t5248\nVX\t14747\t194\t0\t0.0\t194\nAS\t10721\t124\t0\t0.0\t124\nEV\t11066\t198\t3\t0.015151515151515152\t195\nMQ\t12451\t89\t0\t0.0\t89\nAS\t13970\t62\t1\t0.016129032258064516\t61\nOO\t10918\t53\t0\t0.0\t53\nEV\tMEI\t907\t14\t0.015435501653803748\t893\nOO\tMLI\t499\t23\t0.04609218436873747\t476\nDL\tTRI\t479\t3\t0.006263048016701462\t476\nEV\tAZO\t254\t12\t0.047244094488188976\t242\nOO\tMFE\t426\t21\t0.04929577464788732\t405\nEV\tMTJ\t151\t0\t0.0\t151\nAA\t10693\t478\t6\t0.012552301255230125\t472\nDL\t14986\t177\t0\t0.0\t177\nWN\t10800\t1250\t11\t0.0088\t1239\nEV\tLAN\t1067\t38\t0.03561387066541706\t1029\nF9\tSEA\t798\t7\t0.008771929824561403\t791\nDL\tABE\t311\t3\t0.00964630225080386\t308\nAA\tXNA\t18\t0\t0.0\t18\nAA\t14100\t3773\t15\t0.003975616220514179\t3758\nOO\t11140\t51\t0\t0.0\t51\nF9\t13486\t13\t0\t0.0\t13\nAA\tOMA\t1574\t37\t0.023506988564167726\t1537\nDL\tRIC\t2587\t15\t0.005798221878623889\t2572\nF9\tDFW\t1288\t5\t0.0038819875776397515\t1283\nWN\tCMH\t10016\t101\t0.010083865814696485\t9915\nDL\tPIT\t3497\t16\t0.004575350300257364\t3481\nAA\tCOS\t1080\t24\t0.022222222222222223\t1056\nDL\tRSW\t5526\t24\t0.004343105320304018\t5502\nDL\tABQ\t1239\t1\t8.071025020177562E-4\t1238\nEV\tIAD\t3350\t171\t0.05104477611940299\t3179\nAA\tLBB\t299\t5\t0.016722408026755852\t294\nDL\t11697\t903\t0\t0.0\t903\nWN\t11423\t88\t0\t0.0\t88\nOO\t14794\t203\t0\t0.0\t203\nEV\t10868\t345\t18\t0.05217391304347826\t327\nUA\t14869\t136\t0\t0.0\t136\nOO\t14685\t4\t0\t0.0\t4\nAS\tLIH\t1196\t2\t0.0016722408026755853\t1194\nOO\t14869\t3904\t6\t0.0015368852459016393\t3898\nOO\t12389\t195\t1\t0.005128205128205128\t194\nDL\t10874\t118\t0\t0.0\t118\nOO\t12519\t75\t0\t0.0\t75\nOO\tMSN\t1454\t43\t0.029573590096286108\t1411\nEV\tSJT\t159\t14\t0.0880503144654088\t145\nEV\tAVL\t1387\t34\t0.024513338139870222\t1353\nDL\tCRW\t317\t3\t0.00946372239747634\t314\nEV\t10577\t62\t0\t0.0\t62\nOO\t10713\t716\t2\t0.002793296089385475\t714\nUA\t14122\t236\t0\t0.0\t236\nDL\t11884\t115\t0\t0.0\t115\nUA\t13244\t50\t0\t0.0\t50\nB6\t10732\t62\t0\t0.0\t62\nDL\tJFK\t25394\t303\t0.011931952429707805\t25091\nVX\tSFO\t15940\t92\t0.005771643663739021\t15848\nAA\tTUS\t2790\t64\t0.022939068100358423\t2726\nEV\tELP\t1539\t19\t0.012345679012345678\t1520\nOO\tCLE\t468\t10\t0.021367521367521368\t458\nWN\t14307\t538\t0\t0.0\t538\nWN\t15376\t357\t0\t0.0\t357\nAS\t11618\t62\t0\t0.0\t62\nAS\t11292\t127\t0\t0.0\t127\nMQ\tTXK\t522\t51\t0.09770114942528736\t471\nDL\tRDU\t5100\t26\t0.005098039215686275\t5074\nOO\tDRO\t1186\t30\t0.025295109612141653\t1156\nMQ\tSUX\t620\t29\t0.0467741935483871\t591\nWN\tHRL\t1880\t20\t0.010638297872340425\t1860\nMQ\tDRO\t798\t13\t0.016290726817042606\t785\nMQ\tCLE\t1990\t115\t0.05778894472361809\t1875\nEV\tBGM\t200\t3\t0.015\t197\nUA\t10423\t503\t10\t0.019880715705765408\t493\nWN\t12191\t4325\t20\t0.004624277456647399\t4305\nWN\t13891\t903\t0\t0.0\t903\nDL\t11298\t465\t0\t0.0\t465\nEV\t15412\t473\t6\t0.012684989429175475\t467\nOO\t13486\t128\t0\t0.0\t128\nUA\t10257\t57\t0\t0.0\t57\nUA\t14524\t31\t0\t0.0\t31\nAS\t13198\t31\t0\t0.0\t31\nOO\tAUS\t2910\t50\t0.01718213058419244\t2860\nNK\tDFW\t8519\t127\t0.014907853034393709\t8392\nOO\tCLD\t641\t13\t0.0202808112324493\t628\nAA\tSJC\t2876\t45\t0.01564673157162726\t2831\nF9\tCVG\t2030\t10\t0.0049261083743842365\t2020\nAA\tRSW\t2848\t33\t0.011587078651685394\t2815\nMQ\tMQT\t286\t8\t0.027972027972027972\t278\nOO\tMEM\t1105\t31\t0.028054298642533938\t1074\nOO\tMDW\t355\t4\t0.011267605633802818\t351\nDL\t12889\t1089\t0\t0.0\t1089\nEV\t11921\t30\t0\t0.0\t30\nOO\t10721\t21\t0\t0.0\t21\nEV\tISN\t561\t11\t0.0196078431372549\t550\nEV\tBHM\t3273\t95\t0.029025358997861288\t3178\nOO\tPUB\t264\t11\t0.041666666666666664\t253\nEV\tBOS\t2300\t85\t0.03695652173913044\t2215\nWN\tPWM\t1014\t20\t0.01972386587771203\t994\nAS\tPHL\t334\t1\t0.0029940119760479044\t333\nEV\t11775\t88\t0\t0.0\t88\nWN\t10994\t253\t0\t0.0\t253\nMQ\t13290\t151\t1\t0.006622516556291391\t150\nEV\t14696\t40\t0\t0.0\t40\nHA\t14679\t31\t0\t0.0\t31\nB6\t10154\t28\t0\t0.0\t28\nOO\tBJI\t667\t3\t0.004497751124437781\t664\nDL\tMCO\t15420\t89\t0.005771725032425422\t15331\nEV\tABE\t1911\t35\t0.018315018315018316\t1876\nWN\tDEN\t55768\t492\t0.008822263663749821\t55276\nAS\tSAN\t5139\t11\t0.0021404942595835766\t5128\nDL\tFLL\t10582\t75\t0.007087507087507087\t10507\nAS\tHNL\t2357\t6\t0.002545608824777259\t2351\nEV\tAEX\t2306\t41\t0.01777970511708586\t2265\nDL\tFAI\t232\t0\t0.0\t232\nOO\t13796\t236\t0\t0.0\t236\nWN\t12953\t975\t4\t0.0041025641025641026\t971\nDL\t10423\t332\t1\t0.0030120481927710845\t331\nAA\t15024\t98\t0\t0.0\t98\nOO\t14814\t33\t0\t0.0\t33\nF9\tPHX\t1870\t15\t0.008021390374331552\t1855\nVX\tSAN\t1742\t15\t0.008610792192881744\t1727\nWN\tICT\t1544\t25\t0.016191709844559584\t1519\nEV\tFWA\t330\t5\t0.015151515151515152\t325\nOO\tCHS\t570\t8\t0.014035087719298246\t562\nDL\tJNU\t139\t0\t0.0\t139\nOO\t14487\t62\t0\t0.0\t62\nDL\t10208\t33\t0\t0.0\t33\nUA\t11292\t4722\t5\t0.0010588733587462938\t4717\nB6\t12954\t659\t2\t0.0030349013657056147\t657\nMQ\t15370\t89\t0\t0.0\t89\nF9\t14908\t61\t0\t0.0\t61\nNK\t14025\t13\t0\t0.0\t13\nUA\t15024\t2\t0\t0.0\t2\nOO\tSLC\t44514\t223\t0.005009659882284225\t44291\nWN\tSAN\t30884\t415\t0.013437378577904417\t30469\nOO\tDIK\t597\t8\t0.01340033500837521\t589\nUA\tEGE\t256\t7\t0.02734375\t249\nDL\tPSP\t155\t1\t0.0064516129032258064\t154\nAA\t14057\t360\t1\t0.002777777777777778\t359\nEV\t11278\t264\t3\t0.011363636363636364\t261\nEV\t12945\t308\t1\t0.003246753246753247\t307\nOO\t12523\t31\t3\t0.0967741935483871\t28\nDL\t14321\t86\t0\t0.0\t86\nOO\t11637\t141\t0\t0.0\t141\nAS\t13495\t31\t0\t0.0\t31\nOO\tHIB\t898\t20\t0.022271714922048998\t878\nOO\tTUS\t6392\t57\t0.008917396745932416\t6335\nMQ\tSPS\t967\t43\t0.04446742502585315\t924\nAA\tRDU\t5406\t85\t0.015723270440251572\t5321\nWN\tTUS\t4201\t20\t0.00476077124494168\t4181\nMQ\tGCK\t636\t23\t0.036163522012578615\t613\nB6\tRIC\t2114\t38\t0.017975402081362345\t2076\nMQ\tMLU\t49\t6\t0.12244897959183673\t43\nOO\tELP\t1426\t16\t0.011220196353436185\t1410\nOO\tLFT\t104\t2\t0.019230769230769232\t102\nDL\t14492\t524\t0\t0.0\t524\nUA\t14100\t384\t2\t0.005208333333333333\t382\nF9\t12266\t149\t0\t0.0\t149\nOO\t10693\t252\t1\t0.003968253968253968\t251\nDL\t13244\t422\t0\t0.0\t422\nHA\t13796\t60\t0\t0.0\t60\nDL\t12266\t221\t0\t0.0\t221\nOO\t12954\t115\t0\t0.0\t115\nEV\t14952\t57\t1\t0.017543859649122806\t56\nMQ\t13061\t57\t2\t0.03508771929824561\t55\nB6\t14831\t52\t1\t0.019230769230769232\t51\nOO\t10469\t1\t0\t0.0\t1\nEV\tMKE\t2655\t87\t0.0327683615819209\t2568\nWN\tPVD\t5979\t138\t0.02308078273958856\t5841\nUS\tBUF\t665\t11\t0.016541353383458645\t654\nF9\tSNA\t767\t2\t0.002607561929595828\t765\nOO\tMCI\t1596\t34\t0.021303258145363407\t1562\nDL\tDAL\t1437\t13\t0.009046624913013222\t1424\nMQ\t13367\t176\t2\t0.011363636363636364\t174\nEV\t13795\t112\t0\t0.0\t112\nAA\t13342\t148\t3\t0.02027027027027027\t145\nOO\t14107\t1410\t5\t0.0035460992907801418\t1405\nMQ\t13158\t30\t1\t0.03333333333333333\t29\nEV\tRIC\t5311\t215\t0.04048201845226888\t5096\nWN\tPIT\t8701\t99\t0.011378002528445006\t8602\nUS\tOMA\t347\t4\t0.011527377521613832\t343\nAA\tEGE\t884\t30\t0.033936651583710405\t854\nUS\tSAT\t336\t9\t0.026785714285714284\t327\nAS\tBRW\t855\t27\t0.031578947368421054\t828\nEV\tTXK\t456\t9\t0.019736842105263157\t447\nEV\t11778\t154\t4\t0.025974025974025976\t150\nMQ\t13459\t26\t0\t0.0\t26\nMQ\t13487\t3\t0\t0.0\t3\nF9\tMSO\t91\t2\t0.02197802197802198\t89\nEV\tLAW\t672\t40\t0.05952380952380952\t632\nEV\tGRR\t1720\t76\t0.044186046511627906\t1644\nDL\tONT\t211\t0\t0.0\t211\nDL\tAVP\t125\t0\t0.0\t125\nB6\tSTX\t334\t1\t0.0029940119760479044\t333\nAA\t14869\t330\t4\t0.012121212121212121\t326\nWN\t10397\t3585\t5\t0.001394700139470014\t3580\nAA\t14307\t208\t4\t0.019230769230769232\t204\nOO\t10279\t35\t0\t0.0\t35\nMQ\tJAN\t1242\t63\t0.050724637681159424\t1179\nEV\tGUC\t168\t12\t0.07142857142857142\t156\nEV\tHOB\t571\t23\t0.040280210157618214\t548\nWN\tROC\t1935\t26\t0.013436692506459949\t1909\nWN\tECP\t1608\t5\t0.003109452736318408\t1603\nWN\tLBB\t2234\t54\t0.024171888988361683\t2180\nAS\tAUS\t400\t0\t0.0\t400\nOO\tOTH\t275\t10\t0.03636363636363636\t265\nWN\t10279\t145\t2\t0.013793103448275862\t143\nUA\t14831\t136\t0\t0.0\t136\nEV\t13061\t146\t3\t0.02054794520547945\t143\nNK\tMSP\t3495\t86\t0.024606580829756794\t3409\nOO\tONT\t5033\t84\t0.016689847009735744\t4949\nAA\tOKC\t1693\t43\t0.025398700531600708\t1650\nB6\tMSY\t1125\t18\t0.016\t1107\nDL\tRNO\t929\t0\t0.0\t929\nEV\tLIT\t2890\t76\t0.02629757785467128\t2814\nDL\tSTT\t940\t6\t0.006382978723404255\t934\nAS\tATL\t429\t1\t0.002331002331002331\t428\nF9\t14771\t192\t0\t0.0\t192\nOO\t12003\t190\t0\t0.0\t190\nOO\t10739\t53\t0\t0.0\t53\nHA\t14771\t62\t0\t0.0\t62\nF9\tDEN\t21175\t51\t0.002408500590318772\t21124\nUA\tATL\t3405\t89\t0.026138032305433188\t3316\nMQ\tLSE\t1153\t54\t0.046834345186470075\t1099\nEV\tFNT\t924\t28\t0.030303030303030304\t896\nDL\tBIS\t277\t0\t0.0\t277\nDL\t12953\t2050\t0\t0.0\t2050\nOO\t14543\t57\t0\t0.0\t57\nVX\t12953\t110\t2\t0.01818181818181818\t108\nEV\t11953\t151\t0\t0.0\t151\nAS\t15376\t31\t0\t0.0\t31\nDL\tBNA\t4662\t27\t0.005791505791505791\t4635\nF9\tPHL\t2605\t34\t0.013051823416506719\t2571\nAA\tAUS\t8044\t210\t0.026106414719045252\t7834\nEV\tERI\t746\t36\t0.04825737265415549\t710\nAA\tSNA\t4983\t89\t0.017860726469997992\t4894\nUS\tATL\t2939\t48\t0.016332085743450152\t2891\nUS\tBDL\t833\t22\t0.026410564225690276\t811\nOO\tICT\t2520\t82\t0.03253968253968254\t2438\nAA\t14524\t226\t2\t0.008849557522123894\t224\nDL\t10721\t1201\t0\t0.0\t1201\nDL\t15016\t551\t0\t0.0\t551\nDL\t13851\t168\t0\t0.0\t168\nAA\t11109\t87\t0\t0.0\t87\nMQ\t11003\t170\t2\t0.011764705882352941\t168\nEV\t14711\t62\t0\t0.0\t62\nB6\t14869\t124\t0\t0.0\t124\nMQ\t11278\t7\t0\t0.0\t7\nOO\t10257\t6\t0\t0.0\t6\nEV\tCWA\t619\t20\t0.03231017770597738\t599\nMQ\tJLN\t373\t26\t0.06970509383378017\t347\nEV\tPIB\t573\t7\t0.012216404886561954\t566\nWN\tAUS\t17372\t192\t0.011052268017499424\t17180\nHA\tSFO\t668\t4\t0.005988023952095809\t664\nOO\tCEC\t190\t16\t0.08421052631578947\t174\nB6\tSAN\t1258\t17\t0.013513513513513514\t1241\nOO\tCAE\t35\t2\t0.05714285714285714\t33\nEV\tSPI\t338\t6\t0.01775147928994083\t332\nDL\t13486\t30\t0\t0.0\t30\nAA\tBOS\t17629\t401\t0.022746610698281242\t17228\nOO\tSTC\t83\t5\t0.060240963855421686\t78\nDL\tMKE\t4654\t8\t0.0017189514396218307\t4646\nWN\tLAX\t37511\t796\t0.02122044200367892\t36715\nHA\tPHX\t334\t0\t0.0\t334\nMQ\tLAW\t659\t54\t0.0819423368740516\t605\nEV\tSGF\t1583\t34\t0.02147820593809223\t1549\nB6\t15096\t148\t1\t0.006756756756756757\t147\nOO\t10408\t132\t1\t0.007575757575757576\t131\nAS\t12982\t91\t0\t0.0\t91\nDL\t10781\t24\t0\t0.0\t24\nAS\tANC\t12149\t103\t0.008478064038192444\t12046\nAA\tSLC\t3015\t46\t0.015257048092868989\t2969\nDL\tOKC\t1494\t5\t0.0033467202141900937\t1489\nEV\tBTR\t6291\t126\t0.020028612303290415\t6165\nAA\tPHL\t21093\t152\t0.007206182145735552\t20941\nWN\tPDX\t10919\t34\t0.0031138382635772506\t10885\nAA\tJAC\t416\t7\t0.016826923076923076\t409\nB6\tANC\t386\t1\t0.0025906735751295338\t385\nOO\t10779\t62\t1\t0.016129032258064516\t61\nOO\tMOB\t67\t2\t0.029850746268656716\t65\nAA\tMCO\t13057\t128\t0.009803170713027495\t12929\nUA\tDCA\t4632\t105\t0.02266839378238342\t4527\nEV\tTUS\t534\t8\t0.0149812734082397\t526\nUS\tCMH\t500\t7\t0.014\t493\nDL\tGNV\t272\t1\t0.003676470588235294\t271\nUA\t13487\t348\t1\t0.0028735632183908046\t347\nWN\t10257\t335\t0\t0.0\t335\nWN\t11618\t514\t4\t0.007782101167315175\t510\nMQ\t11612\t141\t1\t0.0070921985815602835\t140\nVX\t11259\t543\t8\t0.014732965009208104\t535\nMQ\tFSM\t546\t34\t0.06227106227106227\t512\nEV\tLNK\t1498\t50\t0.03337783711615487\t1448\nMQ\tELP\t576\t22\t0.03819444444444445\t554\nWN\tMSP\t7272\t84\t0.01155115511551155\t7188\nEV\tCAK\t1531\t42\t0.027433050293925537\t1489\nB6\tDFW\t598\t17\t0.028428093645484948\t581\nAS\tAKN\t63\t0\t0.0\t63\nUA\t11278\t465\t2\t0.004301075268817204\t463\nOO\t10423\t222\t13\t0.05855855855855856\t209\nAS\t10397\t62\t0\t0.0\t62\nB6\t13930\t205\t0\t0.0\t205\nEV\t11986\t128\t3\t0.0234375\t125\nAA\t13830\t162\t1\t0.006172839506172839\t161\nEV\t10140\t1\t0\t0.0\t1\nOO\tMAF\t1333\t43\t0.03225806451612903\t1290\nMQ\tGRR\t2750\t146\t0.05309090909090909\t2604\nOO\tLAS\t2421\t24\t0.009913258983890954\t2397\nEV\tDAY\t1810\t94\t0.051933701657458566\t1716\nHA\tJFK\t293\t0\t0.0\t293\nHA\tPDX\t334\t0\t0.0\t334\nAS\tBWI\t415\t1\t0.0024096385542168677\t414\nUA\tMFE\t272\t8\t0.029411764705882353\t264\nAA\t12889\t1294\t8\t0.0061823802163833074\t1286\nOO\t11471\t62\t0\t0.0\t62\nOO\t11865\t88\t0\t0.0\t88\nNK\t14100\t155\t2\t0.012903225806451613\t153\nWN\t14679\t2683\t7\t0.002609019754006709\t2676\nDL\t11540\t87\t0\t0.0\t87\nEV\t11624\t66\t0\t0.0\t66\n"
+          },
+          {
+            "type": "HTML",
+            "data": "<div class=\"result-alert alert-warning\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Output is truncated</strong> to 1000 rows. Learn more about <strong>zeppelin.spark.maxResult</strong></div>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=30",
+              "$$hashKey": "object:15118"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=31",
+              "$$hashKey": "object:15119"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=32",
+              "$$hashKey": "object:15120"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=33",
+              "$$hashKey": "object:15121"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632831368303_337798696",
+      "id": "paragraph_1632831368303_337798696",
+      "dateCreated": "2021-09-28T12:16:08+0000",
+      "dateStarted": "2021-09-30T07:22:35+0000",
+      "dateFinished": "2021-09-30T07:22:38+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7855"
+    },
+    {
+      "text": "%pyspark\nreport_df = perc_canceled_df.join(airports_df, perc_canceled_df.origin_airport == airports_df.IATA_CODE, how = 'left')\\\n                     .join(airlines_df, perc_canceled_df.airline == airlines_df.IATA_CODE, how = 'left')\\\n                     .select(airlines_df.AIRLINE.alias('airline_name'), F.coalesce(F.col('AIRPORT'), F.col('origin_airport')).alias('origin_airport_name'), F.col('cancel_percentage'), F.col('canceled_counts'), F.col('processed_counts'))\n                     \n                     \nz.show(report_df)                     ",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:24:53+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {
+                    "columns": [
+                      {
+                        "name": "airline0",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "origin_airport1",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "origin_counts2",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "canceled_counts3",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "cancel_percentage4",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "processed_counts5",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "IATA_CODE6",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "AIRPORT7",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "CITY8",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "STATE9",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "COUNTRY10",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "LATITUDE11",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "LONGITUDE12",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "IATA_CODE13",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      },
+                      {
+                        "name": "AIRLINE14",
+                        "visible": true,
+                        "width": "*",
+                        "sort": {},
+                        "filters": [
+                          {}
+                        ],
+                        "pinned": ""
+                      }
+                    ],
+                    "scrollFocus": {},
+                    "selection": [],
+                    "grouping": {
+                      "grouping": [],
+                      "aggregations": [],
+                      "rowExpandedStates": {}
+                    },
+                    "treeView": {},
+                    "pagination": {
+                      "paginationCurrentPage": 1,
+                      "paginationPageSize": 250
+                    }
+                  },
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airline_name": "string",
+                      "origin_airport_name": "string",
+                      "cancel_percentage": "string",
+                      "canceled_counts": "string",
+                      "processed_counts": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airline_name": "string",
+                      "origin_airport_name": "string",
+                      "cancel_percentage": "string",
+                      "canceled_counts": "string",
+                      "processed_counts": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "airline_name\torigin_airport_name\tcancel_percentage\tcanceled_counts\tprocessed_counts\nAtlantic Southeast Airlines\tJacksonville International Airport\t0.028913260219341975\t58\t1948\nUnited Air Lines Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.014902676399026763\t49\t3239\nDelta Air Lines Inc.\tLouis Armstrong New Orleans International Airport\t0.005170185264971995\t36\t6927\nAlaska Airlines Inc.\tSalt Lake City International Airport\t0.0014423076923076924\t3\t2077\nSouthwest Airlines Co.\tAlbany International Airport\t0.017361111111111112\t70\t3962\nSouthwest Airlines Co.\tBaltimore-Washington International Airport\t0.018840828559386853\t1207\t62856\nVirgin America\tMcCarran International Airport\t0.009028146574614976\t34\t3732\nAtlantic Southeast Airlines\tLafayette Regional Airport\t0.02058319039451115\t72\t3426\nDelta Air Lines Inc.\tSt. Louis International Airport at Lambert Field\t0.0017237664296487825\t8\t4633\nAtlantic Southeast Airlines\tSyracuse Hancock International Airport\t0.03294117647058824\t42\t1233\nSkywest Airlines Inc.\tTulsa International Airport\t0.015221707478491065\t23\t1488\nUS Airways Inc.\tGreater Rochester International Airport\t0.01282051282051282\t2\t154\nJetBlue Airways\tSarasota-Bradenton International Airport\t0.024734982332155476\t21\t828\nVirgin America\tOrlando International Airport\t0.0\t0\t334\nAlaska Airlines Inc.\tGeorge Bush Intercontinental Airport\t0.005249343832020997\t2\t379\nSouthwest Airlines Co.\t10792\t0.0\t0\t491\nAmerican Eagle Airlines Inc.\t12953\t0.033628318584070796\t19\t546\nVirgin America\t14679\t0.011299435028248588\t2\t175\nJetBlue Airways\t14122\t0.0\t0\t143\nAmerican Eagle Airlines Inc.\t10980\t0.03225806451612903\t1\t30\nUS Airways Inc.\tChicago O'Hare International Airport\t0.02809965237543453\t97\t3355\nSkywest Airlines Inc.\tChippewa Valley Regional Airport\t0.04940119760479042\t33\t635\nAmerican Eagle Airlines Inc.\tHuntsville International Airport\t0.054252199413489736\t37\t645\nAtlantic Southeast Airlines\tDickinson Theodore Roosevelt Regional Airport\t0.026392961876832845\t9\t332\nSouthwest Airlines Co.\tMidland International Airport\t0.02061211742660837\t66\t3136\nDelta Air Lines Inc.\tOakland International Airport\t0.0\t0\t919\nUnited Air Lines Inc.\t14057\t0.0018148820326678765\t1\t550\nDelta Air Lines Inc.\t10397\t1.4305469457822706E-4\t3\t20968\nSpirit Air Lines\t11298\t0.003937007874015748\t3\t759\nAmerican Eagle Airlines Inc.\t12197\t0.0\t0\t88\nVirgin America\t14262\t0.0\t0\t18\nAmerican Eagle Airlines Inc.\tDestin-Fort Walton Beach Airport/Eglin AFB\t0.068359375\t35\t477\nJetBlue Airways\tPortland International Airport\t0.003076923076923077\t4\t1296\nUS Airways Inc.\tMiami International Airport\t0.01950947603121516\t35\t1759\nDelta Air Lines Inc.\t12278\t0.0\t0\t92\nAtlantic Southeast Airlines\t11193\t0.026905829596412557\t6\t217\nUnited Air Lines Inc.\t11057\t0.0\t0\t53\nSkywest Airlines Inc.\t13303\t0.0\t0\t22\nAmerican Eagle Airlines Inc.\t12891\t0.03333333333333333\t1\t29\nAmerican Airlines Inc.\tBaltimore-Washington International Airport\t0.013336566440349175\t55\t4069\nSouthwest Airlines Co.\tChicago Midway International Airport\t0.025003274394237066\t1909\t74441\nSkywest Airlines Inc.\tElko Regional Airport\t0.026365348399246705\t14\t517\nSouthwest Airlines Co.\tNashville International Airport\t0.017446964155084125\t477\t26863\nAmerican Eagle Airlines Inc.\tKey West International Airport\t0.023679417122040074\t13\t536\nAmerican Airlines Inc.\tLouisville International Airport (Standiford Field)\t0.030201342281879196\t9\t289\nDelta Air Lines Inc.\tManchester-Boston Regional Airport\t0.011160714285714286\t5\t443\nDelta Air Lines Inc.\t14783\t0.0\t0\t31\nAmerican Airlines Inc.\t10792\t0.009009009009009009\t1\t110\nVirgin America\t12892\t0.0\t0\t1141\nSkywest Airlines Inc.\tSloulin Field International Airport\t0.009086320040383645\t18\t1963\nAmerican Eagle Airlines Inc.\tSanta Fe Municipal Airport\t0.0456989247311828\t34\t710\nAtlantic Southeast Airlines\tCherry Capital Airport\t0.0327313769751693\t29\t857\nSkywest Airlines Inc.\tCedar City Regional Airport\t0.0017452006980802793\t1\t572\nVirgin America\tNewark Liberty International Airport\t0.010917030567685589\t20\t1812\nAlaska Airlines Inc.\tNome Airport\t0.04072398190045249\t27\t636\nUnited Air Lines Inc.\tKansas City International Airport\t0.01669449081803005\t10\t589\nAmerican Airlines Inc.\t11292\t0.008641975308641974\t7\t803\nAmerican Eagle Airlines Inc.\t11203\t0.0\t0\t84\nAtlantic Southeast Airlines\t14683\t0.02564102564102564\t1\t38\nAtlantic Southeast Airlines\t14633\t0.0\t0\t62\nFrontier Airlines Inc.\tSalt Lake City International Airport\t0.006220839813374806\t8\t1278\nUnited Air Lines Inc.\tBradley International Airport\t0.027972027972027972\t16\t556\nUS Airways Inc.\tTampa International Airport\t0.01238390092879257\t44\t3509\nAlaska Airlines Inc.\tDeadhorse Airport (Prudhoe Bay Airport)\t0.021052631578947368\t18\t837\nDelta Air Lines Inc.\tDuluth International Airport\t0.0\t0\t199\nAmerican Airlines Inc.\tTheodore Francis Green State Airport\t0.002570694087403599\t2\t776\nUnited Air Lines Inc.\t13930\t0.0011315874555447786\t7\t6179\nHawaiian Airlines Inc.\t14831\t0.0\t0\t62\nSpirit Air Lines\tOakland International Airport\t0.019801980198019802\t32\t1584\nUS Airways Inc.\tDallas/Fort Worth International Airport\t0.020765736534717714\t64\t3018\nVirgin America\tRonald Reagan Washington National Airport\t0.01620745542949757\t20\t1214\nSkywest Airlines Inc.\tBaton Rouge Metropolitan Airport\t0.06666666666666667\t1\t14\nAmerican Eagle Airlines Inc.\t10792\t0.0\t0\t113\nSouthwest Airlines Co.\t14492\t0.0\t0\t823\nSouthwest Airlines Co.\t14635\t0.0\t0\t323\nSkywest Airlines Inc.\t14262\t0.0\t0\t418\nSouthwest Airlines Co.\t11140\t0.008771929824561403\t1\t113\nAmerican Airlines Inc.\t13851\t0.0364963503649635\t5\t132\nDelta Air Lines Inc.\t14814\t0.0\t0\t26\nAtlantic Southeast Airlines\t13184\t0.0\t0\t3\nAtlantic Southeast Airlines\t11109\t0.0\t0\t2\nSkywest Airlines Inc.\tRedding Municipal Airport\t0.02888583218707015\t21\t706\nJetBlue Airways\tTheodore Francis Green State Airport\t0.019114688128772636\t19\t975\nAmerican Eagle Airlines Inc.\tTyler Pounds Regional Airport\t0.0728476821192053\t44\t560\nDelta Air Lines Inc.\tGlacier Park International Airport\t0.0034129692832764505\t1\t292\nAmerican Airlines Inc.\t14492\t0.009523809523809525\t7\t728\nAmerican Airlines Inc.\t12478\t0.002\t3\t1497\nAmerican Eagle Airlines Inc.\t14492\t0.046875\t3\t61\nFrontier Airlines Inc.\t14057\t0.011627906976744186\t1\t85\nFrontier Airlines Inc.\t12339\t0.0\t0\t91\nAlaska Airlines Inc.\t13796\t0.0\t0\t182\nDelta Air Lines Inc.\t13342\t0.0\t0\t463\nSouthwest Airlines Co.\t11042\t0.0\t0\t435\nAtlantic Southeast Airlines\t12451\t0.007575757575757576\t1\t131\nAlaska Airlines Inc.\t13873\t0.06451612903225806\t4\t58\nJetBlue Airways\tOakland International Airport\t0.006470165348670022\t9\t1382\nDelta Air Lines Inc.\tHarrisburg International Airport\t0.0032397408207343412\t3\t923\nUS Airways Inc.\tPhiladelphia International Airport\t0.024584166626018242\t504\t19997\nDelta Air Lines Inc.\tPiedmont Triad International Airport\t0.00421274354923644\t8\t1891\nAtlantic Southeast Airlines\tLake Charles Regional Airport\t0.024267782426778243\t29\t1166\nSkywest Airlines Inc.\tTheodore Francis Green State Airport\t0.0\t0\t37\nDelta Air Lines Inc.\t13487\t3.6423238025860496E-4\t2\t5489\nFrontier Airlines Inc.\t11298\t0.0\t0\t142\nAlaska Airlines Inc.\t12819\t0.021505376344086023\t4\t182\nSkywest Airlines Inc.\tDallas/Fort Worth International Airport\t0.023238925199709513\t96\t4035\nAmerican Eagle Airlines Inc.\tNorfolk International Airport\t0.12534435261707988\t91\t635\nAtlantic Southeast Airlines\tEppley Airfield\t0.030570652173913044\t90\t2854\nAtlantic Southeast Airlines\tRaleigh-Durham International Airport\t0.0348\t87\t2413\nUS Airways Inc.\tKona International Airport at Keahole\t0.005494505494505495\t1\t181\nDelta Air Lines Inc.\t14107\t0.0\t0\t600\nDelta Air Lines Inc.\t13296\t0.0\t0\t54\nAtlantic Southeast Airlines\t10397\t0.0011892963330029733\t6\t5039\nJetBlue Airways\t14986\t0.010752688172043012\t1\t92\nAtlantic Southeast Airlines\tDaytona Beach International Airport\t0.0\t0\t2\nSpirit Air Lines\tPlattsburgh International Airport\t0.0071174377224199285\t2\t279\nUS Airways Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.04219409282700422\t60\t1362\nUnited Air Lines Inc.\tGuam International Airport\t0.008982035928143712\t3\t331\nSouthwest Airlines Co.\tEppley Airfield\t0.008920098690453597\t47\t5222\nHawaiian Airlines Inc.\tSan Diego International Airport (Lindbergh Field)\t0.0\t0\t334\nAmerican Eagle Airlines Inc.\tMontrose Regional Airport\t0.03125\t2\t62\nDelta Air Lines Inc.\t10990\t0.0\t0\t31\nAtlantic Southeast Airlines\t12992\t0.004201680672268907\t1\t237\nUS Airways Inc.\tGeneral Mitchell International Airport\t0.014245014245014245\t5\t346\nAmerican Eagle Airlines Inc.\tBaton Rouge Metropolitan Airport\t0.06629834254143646\t36\t507\nSkywest Airlines Inc.\tJacksonville International Airport\t0.018779342723004695\t4\t209\nJetBlue Airways\tReno/Tahoe International Airport\t0.005917159763313609\t1\t168\nSkywest Airlines Inc.\t10747\t0.10526315789473684\t4\t34\nSkywest Airlines Inc.\t13184\t0.014388489208633094\t2\t137\nSpirit Air Lines\tMcCarran International Airport\t0.01471727343144849\t133\t8904\nSpirit Air Lines\tGen. Edward Lawrence Logan International Airport\t0.02021563342318059\t45\t2181\nSkywest Airlines Inc.\tWill Rogers World Airport\t0.015\t39\t2561\nSkywest Airlines Inc.\tSouth Bend International Airport (South Bend Regional)\t0.019883040935672516\t68\t3352\nDelta Air Lines Inc.\tEl Paso International Airport\t0.001430615164520744\t1\t698\nUnited Air Lines Inc.\tKona International Airport at Keahole\t0.011583011583011582\t15\t1280\nFrontier Airlines Inc.\tCentral Illinois Regional Airport at Bloomington-Normal\t0.02702702702702703\t1\t36\nAtlantic Southeast Airlines\tAustin-Bergstrom International Airport\t0.01524390243902439\t5\t323\nSkywest Airlines Inc.\tMcGhee Tyson Airport\t0.02666666666666667\t2\t73\nAlaska Airlines Inc.\tDillingham Airport\t0.0\t0\t77\nUnited Air Lines Inc.\tNorfolk International Airport\t0.038834951456310676\t4\t99\nSpirit Air Lines\t10721\t0.012096774193548387\t3\t245\nAtlantic Southeast Airlines\t12915\t0.017699115044247787\t2\t111\nJetBlue Airways\t14057\t0.0\t0\t93\nFrontier Airlines Inc.\t10693\t0.0\t0\t53\nAmerican Eagle Airlines Inc.\tDetroit Metropolitan Airport\t0.09278785322648671\t220\t2151\nUS Airways Inc.\tSan Diego International Airport (Lindbergh Field)\t0.010452961672473868\t18\t1704\nSouthwest Airlines Co.\tCleveland Hopkins International Airport\t0.01485148514851485\t66\t4378\nFrontier Airlines Inc.\tRonald Reagan Washington National Airport\t0.004044489383215369\t4\t985\nAmerican Eagle Airlines Inc.\tMemphis International Airport\t0.05664652567975831\t75\t1249\nDelta Air Lines Inc.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.004645760743321719\t4\t857\nUnited Air Lines Inc.\tDes Moines International Airport\t0.015804597701149427\t11\t685\nSkywest Airlines Inc.\tAlbany International Airport\t0.02247191011235955\t2\t87\nAmerican Airlines Inc.\tPensacola International Airport (Pensacola Gulf Coast Regional Airport)\t0.00964630225080386\t3\t308\nSkywest Airlines Inc.\t12892\t0.003946329913180742\t10\t2524\nAtlantic Southeast Airlines\t12511\t0.0\t0\t58\nSpirit Air Lines\t13198\t0.007751937984496124\t1\t128\nSpirit Air Lines\t13495\t0.012903225806451613\t2\t153\nAmerican Eagle Airlines Inc.\t14457\t0.037037037037037035\t2\t52\nUS Airways Inc.\tLos Angeles International Airport\t0.007321041214750542\t27\t3661\nSkywest Airlines Inc.\tJohn Wayne Airport (Orange County Airport)\t0.02211874272409779\t57\t2520\nSkywest Airlines Inc.\tAspen-Pitkin County Airport\t0.06571994715984147\t199\t2829\nAmerican Eagle Airlines Inc.\tGeneral Mitchell International Airport\t0.06666666666666667\t3\t42\nFrontier Airlines Inc.\tWilmington Airport\t0.05\t5\t95\nAlaska Airlines Inc.\tMerle K. (Mudhole) Smith Airport\t0.013595166163141994\t9\t653\nHawaiian Airlines Inc.\tPago Pago International Airport (Tafuna Airport)\t0.0\t0\t107\nDelta Air Lines Inc.\tDes Moines International Airport\t0.0042643923240938165\t4\t934\nAmerican Airlines Inc.\t10721\t0.014106583072100314\t36\t2516\nAtlantic Southeast Airlines\t13931\t0.005780346820809248\t1\t172\nFrontier Airlines Inc.\t11193\t0.0\t0\t237\nAtlantic Southeast Airlines\t10208\t0.0\t0\t190\nAtlantic Southeast Airlines\t14027\t0.0\t0\t17\nSkywest Airlines Inc.\t10792\t0.0\t0\t7\nHawaiian Airlines Inc.\tKahului Airport\t0.0041892940263770365\t54\t12836\nSpirit Air Lines\tRafael Hernández Airport\t0.012195121951219513\t2\t162\nAtlantic Southeast Airlines\t11982\t0.028368794326241134\t8\t274\nJetBlue Airways\t14321\t0.0\t0\t108\nDelta Air Lines Inc.\t12448\t0.0\t0\t204\nAmerican Eagle Airlines Inc.\t10529\t0.0\t0\t30\nFrontier Airlines Inc.\tGeorge Bush Intercontinental Airport\t0.004578155657292348\t7\t1522\nAtlantic Southeast Airlines\tSioux Falls Regional Airport\t0.029825548677546426\t53\t1724\nSkywest Airlines Inc.\tSyracuse Hancock International Airport\t0.04838709677419355\t6\t118\nUnited Air Lines Inc.\tNashville International Airport\t0.009876543209876543\t4\t401\nDelta Air Lines Inc.\t11193\t0.0\t0\t500\nHawaiian Airlines Inc.\t12402\t0.0\t0\t480\nAtlantic Southeast Airlines\t15919\t0.0\t0\t297\nAmerican Eagle Airlines Inc.\t10397\t0.0\t0\t31\nAlaska Airlines Inc.\tPhoenix Sky Harbor International Airport\t4.3956043956043956E-4\t1\t2274\nAmerican Eagle Airlines Inc.\tColumbia Metropolitan Airport\t0.0898876404494382\t16\t162\nAtlantic Southeast Airlines\tMidland International Airport\t0.027127659574468086\t51\t1829\nSkywest Airlines Inc.\tSpokane International Airport\t0.009995835068721367\t24\t2377\nSkywest Airlines Inc.\tRick Husband Amarillo International Airport\t0.013100436681222707\t6\t452\nDelta Air Lines Inc.\t11775\t0.0\t0\t91\nSouthwest Airlines Co.\t14321\t0.0\t0\t97\nSouthwest Airlines Co.\t12451\t0.0\t0\t362\nAmerican Airlines Inc.\t11540\t0.0\t0\t124\nSpirit Air Lines\t11042\t0.014760147601476014\t4\t267\nSkywest Airlines Inc.\t12884\t0.008771929824561403\t1\t113\nJetBlue Airways\t11292\t0.0\t0\t87\nAlaska Airlines Inc.\t12266\t0.0\t0\t31\nAmerican Airlines Inc.\t13230\t0.0\t0\t27\nUnited Air Lines Inc.\t15376\t0.0\t0\t5\nAmerican Airlines Inc.\tOntario International Airport\t0.018974358974358976\t37\t1913\nAtlantic Southeast Airlines\tAppleton International Airport\t0.04068241469816273\t62\t1462\nSkywest Airlines Inc.\tBarkley Regional Airport\t0.06606606606606606\t44\t622\nDelta Air Lines Inc.\tAustin-Bergstrom International Airport\t0.0028993911278631487\t10\t3439\nSouthwest Airlines Co.\tBradley International Airport\t0.022982804232804233\t139\t5909\nAmerican Eagle Airlines Inc.\t14524\t0.015625\t4\t252\nSkywest Airlines Inc.\t14905\t0.016129032258064516\t1\t61\nDelta Air Lines Inc.\tMinneapolis-Saint Paul International Airport\t0.0017164619428203616\t96\t55833\nDelta Air Lines Inc.\tGeorge Bush Intercontinental Airport\t0.0013665869490946361\t4\t2923\nAmerican Eagle Airlines Inc.\tKalamazoo/Battle Creek International Airport\t0.058544303797468354\t74\t1190\nDelta Air Lines Inc.\tNorthwest Florida Beaches International Airport\t0.002652519893899204\t5\t1880\nUnited Air Lines Inc.\tCharlotte Douglas International Airport\t0.007380073800738007\t2\t269\nDelta Air Lines Inc.\tNewport News/Williamsburg International Airport\t0.03571428571428571\t3\t81\nAmerican Eagle Airlines Inc.\t10693\t0.01507537688442211\t6\t392\nAtlantic Southeast Airlines\t10980\t0.0033783783783783786\t1\t295\nUnited Air Lines Inc.\t14635\t0.0\t0\t165\nSkywest Airlines Inc.\t11267\t0.0\t0\t167\nUS Airways Inc.\tDenver International Airport\t0.010304851867754402\t24\t2305\nAmerican Eagle Airlines Inc.\tKilleen-Fort Hood Regional Airport\t0.06041666666666667\t87\t1353\nUS Airways Inc.\tMemphis International Airport\t0.03160270880361174\t14\t429\nAtlantic Southeast Airlines\tRoanoke Regional Airport (Woodrum Field)\t0.03009503695881732\t57\t1837\nFrontier Airlines Inc.\tNewport News/Williamsburg International Airport\t0.0\t0\t3\nDelta Air Lines Inc.\tSioux Falls Regional Airport\t0.0\t0\t425\nSkywest Airlines Inc.\t12278\t0.013636363636363636\t3\t217\nDelta Air Lines Inc.\t13232\t0.0\t0\t241\nDelta Air Lines Inc.\t10529\t0.0\t0\t412\nAmerican Airlines Inc.\t14262\t0.0\t0\t85\nDelta Air Lines Inc.\t13891\t0.0\t0\t31\nDelta Air Lines Inc.\t11973\t0.0\t0\t102\nUS Airways Inc.\tSacramento International Airport\t0.006048387096774193\t6\t986\nUnited Air Lines Inc.\tDenver International Airport\t0.00997446882167121\t461\t45757\nAmerican Airlines Inc.\tMcAllen-Miller International Airport (McAllen Miller International)\t0.03305785123966942\t48\t1404\nFrontier Airlines Inc.\tSan Diego International Airport (Lindbergh Field)\t0.005361930294906166\t4\t742\nAmerican Eagle Airlines Inc.\tLouisville International Airport (Standiford Field)\t0.09042553191489362\t68\t684\nDelta Air Lines Inc.\t13931\t0.0\t0\t287\nAmerican Eagle Airlines Inc.\t15380\t0.0\t0\t96\nSpirit Air Lines\t12898\t0.017094017094017096\t2\t115\nAtlantic Southeast Airlines\t14574\t0.0\t0\t166\nAmerican Eagle Airlines Inc.\t13342\t0.0\t0\t24\nAmerican Airlines Inc.\tPalm Beach International Airport\t0.013347022587268994\t39\t2883\nJetBlue Airways\tWestchester County Airport\t0.023500138236107273\t85\t3532\nUS Airways Inc.\tCleveland Hopkins International Airport\t0.009782608695652175\t9\t911\nUnited Air Lines Inc.\tPort Columbus International Airport\t0.015647226173541962\t11\t692\nDelta Air Lines Inc.\tChicago Midway International Airport\t0.004752475247524752\t12\t2513\nSouthwest Airlines Co.\tBishop International Airport\t0.011409395973154362\t17\t1473\nUnited Air Lines Inc.\tGreater Rochester International Airport\t0.019417475728155338\t8\t404\nAmerican Airlines Inc.\t11057\t0.0021797045289416324\t18\t8240\nDelta Air Lines Inc.\t12951\t0.0\t0\t31\nJetBlue Airways\t12892\t0.005249343832020997\t2\t379\nJetBlue Airways\t10994\t0.0\t0\t159\nAlaska Airlines Inc.\tCharleston International Airport/Charleston AFB\t0.0\t0\t26\nAmerican Eagle Airlines Inc.\tCincinnati/Northern Kentucky International Airport\t0.04749232343909928\t232\t4653\nSkywest Airlines Inc.\tAbraham Lincoln Capital Airport\t0.04208416833667335\t42\t956\nSkywest Airlines Inc.\tNashville International Airport\t0.01843781428092524\t55\t2928\nUnited Air Lines Inc.\tGeorge Bush Intercontinental Airport\t0.011003056404556821\t594\t53391\nDelta Air Lines Inc.\tLafayette Regional Airport\t0.0029239766081871343\t1\t341\nDelta Air Lines Inc.\tGreen Bay-Austin Straubel International Airport\t0.0016207455429497568\t1\t616\nAlaska Airlines Inc.\t10423\t0.0\t0\t31\nJetBlue Airways\tJohn F. Kennedy International Airport (New York International Airport)\t0.019058212829069335\t771\t39684\nDelta Air Lines Inc.\tGreater Rochester International Airport\t0.003249390739236393\t4\t1227\nSkywest Airlines Inc.\tHelena Regional Airport\t0.0062717770034843206\t9\t1426\nSkywest Airlines Inc.\tReno/Tahoe International Airport\t0.02084108671380722\t56\t2631\nAmerican Eagle Airlines Inc.\tCentral Wisconsin Airport\t0.0472972972972973\t35\t705\nSkywest Airlines Inc.\tLouis Armstrong New Orleans International Airport\t0.008802816901408451\t5\t563\nSkywest Airlines Inc.\tPhiladelphia International Airport\t0.0\t0\t10\nDelta Air Lines Inc.\t14869\t0.0\t0\t3117\nAtlantic Southeast Airlines\t12266\t0.009936575052854123\t47\t4683\nFrontier Airlines Inc.\t13871\t0.0\t0\t17\nUnited Air Lines Inc.\tMinneapolis-Saint Paul International Airport\t0.014339152119700748\t46\t3162\nAtlantic Southeast Airlines\tPensacola International Airport (Pensacola Gulf Coast Regional Airport)\t0.018743109151047408\t34\t1780\nUS Airways Inc.\tOntario International Airport\t0.008375209380234505\t5\t592\nAtlantic Southeast Airlines\tTheodore Francis Green State Airport\t0.06318681318681318\t69\t1023\nHawaiian Airlines Inc.\tNorman Y. Mineta San José International Airport\t0.005997001499250375\t4\t663\nJetBlue Airways\tNantucket Memorial Airport\t0.012195121951219513\t6\t486\nDelta Air Lines Inc.\t12892\t0.0\t0\t2646\nDelta Air Lines Inc.\t13204\t7.412898443291327E-4\t1\t1348\nFrontier Airlines Inc.\t15356\t0.0\t0\t277\nJetBlue Airways\t14492\t0.0\t0\t256\nSkywest Airlines Inc.\t14100\t0.0\t0\t21\nJetBlue Airways\t15024\t0.0\t0\t69\nJetBlue Airways\tLuis Muñoz Marín International Airport\t0.009467684281711911\t98\t10253\nUnited Air Lines Inc.\tSan Antonio International Airport\t0.01074074074074074\t29\t2671\nSouthwest Airlines Co.\tLuis Muñoz Marín International Airport\t9.671179883945841E-4\t3\t3099\nAmerican Airlines Inc.\tJames M. Cox Dayton International Airport\t0.024731182795698924\t23\t907\nSouthwest Airlines Co.\tMemphis International Airport\t0.014169323414806943\t40\t2783\nJetBlue Airways\t14843\t0.0011918951132300357\t1\t838\nDelta Air Lines Inc.\t11721\t0.0\t0\t88\nSpirit Air Lines\t12953\t0.01466275659824047\t5\t336\nUnited Air Lines Inc.\t10140\t0.0\t0\t108\nUnited Air Lines Inc.\t12339\t0.0\t0\t168\nAmerican Eagle Airlines Inc.\t12896\t0.037037037037037035\t1\t26\nAmerican Airlines Inc.\tHarrisburg International Airport\t0.0\t0\t49\nAmerican Eagle Airlines Inc.\tPort Columbus International Airport\t0.05666089965397924\t262\t4362\nAmerican Eagle Airlines Inc.\tSan Angelo Regional Airport (Mathis Field)\t0.04288631722260041\t63\t1406\nDelta Air Lines Inc.\tSavannah/Hilton Head International Airport\t0.004137492043284532\t13\t3129\nAtlantic Southeast Airlines\tMobile Regional Airport\t0.01630735212824765\t59\t3559\nUnited Air Lines Inc.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.010845986984815618\t5\t456\nDelta Air Lines Inc.\tHenry E. Rohlsen Airport\t0.0\t0\t37\nUnited Air Lines Inc.\tAlbuquerque International Sunport\t0.008746355685131196\t3\t340\nAtlantic Southeast Airlines\t12197\t0.0\t0\t318\nDelta Air Lines Inc.\t11953\t0.0\t0\t26\nSkywest Airlines Inc.\t11823\t0.0\t0\t314\nJetBlue Airways\t14747\t0.005952380952380952\t1\t167\nHawaiian Airlines Inc.\t14107\t0.0\t0\t31\nUnited Air Lines Inc.\t12278\t0.0\t0\t39\nJetBlue Airways\t15027\t0.0\t0\t31\nSouthwest Airlines Co.\tNorman Y. Mineta San José International Airport\t0.01408649105507818\t300\t20997\nSkywest Airlines Inc.\tBrainerd Lakes Regional Airport\t0.011884550084889643\t7\t582\nSouthwest Airlines Co.\tNorfolk International Airport\t0.018823529411764704\t40\t2085\nAlaska Airlines Inc.\tKetchikan International Airport\t0.011802088061733999\t26\t2177\nAtlantic Southeast Airlines\tEasterwood Airport\t0.0335195530726257\t24\t692\nSkywest Airlines Inc.\t13198\t0.0\t0\t177\nJetBlue Airways\t12451\t0.01090909090909091\t3\t272\nAmerican Eagle Airlines Inc.\t14674\t0.03225806451612903\t2\t60\nSkywest Airlines Inc.\tEppley Airfield\t0.011090573012939002\t24\t2140\nAmerican Eagle Airlines Inc.\tThe Eastern Iowa Airport\t0.053577981651376144\t146\t2579\nSkywest Airlines Inc.\tSioux Falls Regional Airport\t0.026522593320235755\t54\t1982\nUS Airways Inc.\tCharlotte Douglas International Airport\t0.013409055056002523\t595\t43778\nAmerican Airlines Inc.\tEl Paso International Airport\t0.01913171449595291\t26\t1333\nUnited Air Lines Inc.\tWill Rogers World Airport\t0.00510204081632653\t3\t585\nAtlantic Southeast Airlines\tSanta Fe Municipal Airport\t0.02830188679245283\t15\t515\nAmerican Eagle Airlines Inc.\tShreveport Regional Airport\t0.0963855421686747\t24\t225\nAtlantic Southeast Airlines\tPort Columbus International Airport\t0.03927855711422846\t98\t2397\nSkywest Airlines Inc.\tPalm Beach International Airport\t0.02564102564102564\t2\t76\nAlaska Airlines Inc.\t14747\t4.3393360815795185E-4\t2\t4607\nAmerican Airlines Inc.\t12266\t0.006097560975609756\t5\t815\nAtlantic Southeast Airlines\t11617\t0.0\t0\t55\nAlaska Airlines Inc.\t14057\t0.0\t0\t1215\nSkywest Airlines Inc.\t14893\t0.0074962518740629685\t5\t662\nAtlantic Southeast Airlines\t13244\t0.015306122448979591\t6\t386\nSkywest Airlines Inc.\t15041\t0.03225806451612903\t2\t60\nFrontier Airlines Inc.\tHartsfield-Jackson Atlanta International Airport\t0.005117935024477081\t23\t4471\nAlaska Airlines Inc.\tBob Hope Airport (Hollywood Burbank Airport)\t0.0\t0\t1011\nAmerican Eagle Airlines Inc.\tSt. Louis International Airport at Lambert Field\t0.07954545454545454\t105\t1215\nUS Airways Inc.\tSyracuse Hancock International Airport\t0.01557632398753894\t5\t316\nFrontier Airlines Inc.\tChicago Midway International Airport\t0.0196078431372549\t1\t50\nFrontier Airlines Inc.\tDes Moines International Airport\t0.0\t0\t173\nAmerican Airlines Inc.\tSpokane International Airport\t0.0038022813688212928\t1\t262\nAtlantic Southeast Airlines\t10599\t0.006644518272425249\t2\t299\nAtlantic Southeast Airlines\t10785\t0.01\t2\t198\nSpirit Air Lines\t10397\t0.00473186119873817\t3\t631\nAmerican Eagle Airlines Inc.\t11423\t0.0\t0\t176\nDelta Air Lines Inc.\t12478\t0.0\t0\t2326\nAtlantic Southeast Airlines\t13241\t0.011904761904761904\t1\t83\nUnited Air Lines Inc.\tMiami International Airport\t0.01829652996845426\t58\t3112\nUS Airways Inc.\tJohn Wayne Airport (Orange County Airport)\t0.009067357512953367\t7\t765\nSouthwest Airlines Co.\tLouis Armstrong New Orleans International Airport\t0.00972985347985348\t170\t17302\nJetBlue Airways\tPittsburgh International Airport\t0.0160857908847185\t24\t1468\nAmerican Eagle Airlines Inc.\tRochester International Airport\t0.050642479213907785\t67\t1256\nAtlantic Southeast Airlines\tDes Moines International Airport\t0.026484751203852328\t33\t1213\nFrontier Airlines Inc.\t12889\t0.0044444444444444444\t2\t448\nAmerican Eagle Airlines Inc.\t12915\t0.058823529411764705\t5\t80\nAmerican Eagle Airlines Inc.\t13422\t0.03409090909090909\t3\t85\nSkywest Airlines Inc.\t12992\t0.0\t0\t111\nUnited Air Lines Inc.\t10299\t0.0\t0\t57\nAmerican Eagle Airlines Inc.\tUniversity of Illinois - Willard Airport\t0.055293005671077505\t117\t1999\nSouthwest Airlines Co.\tNewark Liberty International Airport\t0.038636777838527425\t212\t5275\nUnited Air Lines Inc.\tIndianapolis International Airport\t0.011659192825112108\t13\t1102\nAtlantic Southeast Airlines\tLouisville International Airport (Standiford Field)\t0.03992303992303992\t83\t1996\nAmerican Eagle Airlines Inc.\tCharlottesville-Albemarle Airport\t0.11363636363636363\t30\t234\nAtlantic Southeast Airlines\tBangor International Airport\t0.01694915254237288\t3\t174\nAtlantic Southeast Airlines\t10185\t0.0044444444444444444\t1\t224\nAmerican Eagle Airlines Inc.\t11823\t0.0\t0\t181\nSkywest Airlines Inc.\t10157\t0.02459016393442623\t3\t119\nAtlantic Southeast Airlines\t12448\t0.013812154696132596\t5\t357\nSkywest Airlines Inc.\tMontgomery Regional Airport\t0.0\t0\t15\nSkywest Airlines Inc.\tGillette-Campbell County Airport\t0.011033099297893681\t11\t986\nSouthwest Airlines Co.\tCharlotte Douglas International Airport\t0.017308766052484645\t31\t1760\nSkywest Airlines Inc.\tGrand Junction Regional Airport (Walker Field)\t0.0045385779122541605\t9\t1974\nJetBlue Airways\tSavannah/Hilton Head International Airport\t0.01996007984031936\t20\t982\nAmerican Eagle Airlines Inc.\tAspen-Pitkin County Airport\t0.1441947565543071\t77\t457\nAmerican Eagle Airlines Inc.\tChattanooga Metropolitan Airport (Lovell Field)\t0.05192878338278932\t35\t639\nDelta Air Lines Inc.\tMissoula International Airport\t0.0\t0\t597\nAtlantic Southeast Airlines\tCity of Colorado Springs Municipal Airport\t0.025590551181102362\t13\t495\nDelta Air Lines Inc.\t14683\t0.0\t0\t275\nFrontier Airlines Inc.\t13930\t0.0\t0\t455\nSkywest Airlines Inc.\t10627\t0.004807692307692308\t1\t207\nAmerican Airlines Inc.\t11423\t0.02608695652173913\t3\t112\nSpirit Air Lines\t14679\t0.0\t0\t186\nSkywest Airlines Inc.\t13256\t0.05\t1\t19\nAmerican Eagle Airlines Inc.\t15249\t0.0\t0\t20\nSkywest Airlines Inc.\t11066\t0.0\t0\t91\nUS Airways Inc.\tTheodore Francis Green State Airport\t0.045\t27\t573\nFrontier Airlines Inc.\tSouthwest Florida International Airport\t0.013245033112582781\t18\t1341\nAtlantic Southeast Airlines\tBurlington International Airport\t0.03460011344299489\t61\t1702\nAlaska Airlines Inc.\tChicago O'Hare International Airport\t0.005148741418764302\t9\t1739\nAlaska Airlines Inc.\tFort Lauderdale-Hollywood International Airport\t0.0\t0\t334\nSkywest Airlines Inc.\tLincoln Airport (Lincoln Municipal)\t0.015817223198594025\t18\t1120\nAmerican Airlines Inc.\t12339\t0.010126582278481013\t4\t391\nUnited Air Lines Inc.\t10529\t0.0\t0\t78\nSkywest Airlines Inc.\t11921\t0.0\t0\t151\nSpirit Air Lines\t14057\t0.0\t0\t62\nFrontier Airlines Inc.\t13485\t0.0\t0\t18\nSkywest Airlines Inc.\tMonroe Regional Airport\t0.0\t0\t4\nUnited Air Lines Inc.\tSan Francisco International Airport\t0.010573189725140939\t482\t45105\nSpirit Air Lines\tPhoenix Sky Harbor International Airport\t0.025879917184265012\t25\t941\nDelta Air Lines Inc.\tChicago O'Hare International Airport\t0.003878195920712439\t27\t6935\nAmerican Eagle Airlines Inc.\tMobile Regional Airport\t0.03986332574031891\t35\t843\nAlaska Airlines Inc.\tBellingham International Airport\t0.004219409282700422\t3\t708\nSpirit Air Lines\tArnold Palmer Regional Airport\t0.02810304449648712\t36\t1245\nSkywest Airlines Inc.\tBert Mooney Airport\t0.02848575712143928\t19\t648\nAlaska Airlines Inc.\tRonald Reagan Washington National Airport\t0.0015094339622641509\t2\t1323\nSouthwest Airlines Co.\tWashington Dulles International Airport\t0.012300683371298405\t27\t2168\nDelta Air Lines Inc.\t14747\t0.0\t0\t1274\nAmerican Airlines Inc.\t13930\t0.0035218156916454707\t18\t5093\nSouthwest Airlines Co.\t15016\t0.0019646365422396855\t5\t2540\nSouthwest Airlines Co.\t13931\t0.0\t0\t216\nAtlantic Southeast Airlines\t14524\t0.011278195488721804\t6\t526\nAmerican Airlines Inc.\t13495\t0.009765625\t5\t507\nJetBlue Airways\t13796\t0.00819672131147541\t1\t121\nAmerican Airlines Inc.\t14730\t0.0\t0\t26\nSkywest Airlines Inc.\tIthaca Tompkins Regional Airport\t0.09090909090909091\t2\t20\nAmerican Eagle Airlines Inc.\tMidland International Airport\t0.08183453237410072\t91\t1021\nAtlantic Southeast Airlines\tKey West International Airport\t0.004651162790697674\t2\t428\nSkywest Airlines Inc.\tCharlottesville-Albemarle Airport\t0.04807692307692308\t50\t990\nFrontier Airlines Inc.\tBismarck Municipal Airport\t0.00980392156862745\t1\t101\nAtlantic Southeast Airlines\tBillings Logan International Airport\t0.036585365853658534\t3\t79\nAtlantic Southeast Airlines\tIthaca Tompkins Regional Airport\t0.16666666666666666\t2\t10\nSouthwest Airlines Co.\t11278\t0.0015313935681470138\t2\t1304\nDelta Air Lines Inc.\t10792\t0.004761904761904762\t1\t209\nAlaska Airlines Inc.\t14679\t0.0\t0\t477\nVirgin America\t10721\t0.0\t0\t142\nUnited Air Lines Inc.\t11423\t0.0\t0\t62\nAmerican Eagle Airlines Inc.\t10747\t0.0\t0\t4\nAmerican Eagle Airlines Inc.\tRick Husband Amarillo International Airport\t0.07599629286376275\t82\t997\nAtlantic Southeast Airlines\tAugusta Regional Airport (Bush Field)\t0.009074410163339383\t15\t1638\nSkywest Airlines Inc.\tCherry Capital Airport\t0.017391304347826087\t6\t339\nDelta Air Lines Inc.\t14771\t0.0\t0\t1036\nDelta Air Lines Inc.\t12217\t0.0\t0\t172\nAtlantic Southeast Airlines\t14321\t0.013245033112582781\t2\t149\nFrontier Airlines Inc.\t15497\t0.0\t0\t14\nSkywest Airlines Inc.\tDelta County Airport\t0.029668411867364748\t17\t556\nSkywest Airlines Inc.\tMinneapolis-Saint Paul International Airport\t0.007172813859600988\t183\t25330\nSpirit Air Lines\tTampa International Airport\t0.018680899733130005\t49\t2574\nSouthwest Airlines Co.\tHartsfield-Jackson Atlanta International Airport\t0.012805911978336243\t506\t39007\nFrontier Airlines Inc.\tPalm Beach International Airport\t0.026455026455026454\t5\t184\nVirgin America\tPortland International Airport\t0.0\t0\t342\nDelta Air Lines Inc.\tMinot International Airport\t0.0\t0\t4\nAlaska Airlines Inc.\tWashington Dulles International Airport\t0.0037735849056603774\t1\t264\nAtlantic Southeast Airlines\t11308\t0.0\t0\t118\nAtlantic Southeast Airlines\t13277\t0.0\t0\t221\nJetBlue Airways\t14771\t0.0\t0\t468\nSouthwest Airlines Co.\t12391\t0.0\t0\t366\nAmerican Eagle Airlines Inc.\t13076\t0.0\t0\t92\nDelta Air Lines Inc.\t13830\t0.0\t0\t85\nSkywest Airlines Inc.\tPiedmont Triad International Airport\t0.0\t0\t3\nSkywest Airlines Inc.\tFort Wayne International Airport\t0.020584329349269587\t62\t2950\nAlaska Airlines Inc.\tKodiak Airport\t0.05\t23\t437\nSkywest Airlines Inc.\tBradley International Airport\t0.020754716981132074\t11\t519\nJetBlue Airways\t14027\t0.007380073800738007\t4\t538\nDelta Air Lines Inc.\t10849\t0.0\t0\t91\nDelta Air Lines Inc.\t14635\t0.0\t0\t341\nSkywest Airlines Inc.\t14150\t0.0\t0\t62\nAlaska Airlines Inc.\t10821\t0.0\t0\t62\nVirgin America\t13930\t0.0\t0\t146\nAmerican Eagle Airlines Inc.\tBirmingham-Shuttlesworth International Airport\t0.02465166130760986\t23\t910\nAmerican Airlines Inc.\tHenry E. Rohlsen Airport\t0.0018315018315018315\t1\t545\nFrontier Airlines Inc.\tFort Lauderdale-Hollywood International Airport\t0.016973125884016973\t12\t695\nFrontier Airlines Inc.\tFresno Yosemite International Airport\t0.0\t0\t2\nAmerican Eagle Airlines Inc.\tBrownsville/South Padre Island International Airport\t0.0970873786407767\t10\t93\nAtlantic Southeast Airlines\tSouthwest Florida International Airport\t0.03636363636363636\t2\t53\nSpirit Air Lines\tYeager Airport\t0.0\t0\t64\nSkywest Airlines Inc.\tWesterly State Airport\t0.0\t0\t208\nUnited Air Lines Inc.\t14908\t0.0\t0\t487\nAmerican Eagle Airlines Inc.\t15016\t0.0\t0\t52\nAlaska Airlines Inc.\t13891\t0.0\t0\t92\nAtlantic Southeast Airlines\tGeorge Bush Intercontinental Airport\t0.017675295731184638\t1031\t57299\nAmerican Eagle Airlines Inc.\tBuffalo Niagara International Airport\t0.05167173252279635\t51\t936\nUS Airways Inc.\tKahului Airport\t0.029508196721311476\t9\t296\nAmerican Airlines Inc.\tBuffalo Niagara International Airport\t0.0073937153419593345\t4\t537\nDelta Air Lines Inc.\t11637\t0.01834862385321101\t2\t107\nUnited Air Lines Inc.\t13495\t0.0016474464579901153\t1\t606\nDelta Air Lines Inc.\t14057\t0.0\t0\t531\nDelta Air Lines Inc.\t15370\t0.0\t0\t120\nUnited Air Lines Inc.\t14027\t0.0\t0\t129\nAtlantic Southeast Airlines\t15380\t0.0\t0\t53\nAmerican Eagle Airlines Inc.\tGeorge Bush Intercontinental Airport\t0.07407407407407407\t2\t25\nUS Airways Inc.\tMcCarran International Airport\t0.010912698412698412\t33\t2991\nFrontier Airlines Inc.\tDane County Regional Airport\t0.009345794392523364\t2\t212\nAmerican Airlines Inc.\tReno/Tahoe International Airport\t0.01702127659574468\t28\t1617\nSpirit Air Lines\tDenver International Airport\t0.020861555134109998\t77\t3614\nAtlantic Southeast Airlines\tWaco Regional Airport\t0.020172910662824207\t21\t1020\nDelta Air Lines Inc.\t15304\t0.0\t0\t848\nSouthwest Airlines Co.\t14576\t0.0\t0\t150\nSouthwest Airlines Co.\t14869\t0.0\t0\t853\nAmerican Eagle Airlines Inc.\t12951\t0.03389830508474576\t4\t114\nFrontier Airlines Inc.\t13303\t0.0\t0\t185\nVirgin America\t11697\t0.0\t0\t89\nAmerican Airlines Inc.\t12896\t0.03225806451612903\t1\t30\nSkywest Airlines Inc.\t15096\t0.0\t0\t27\nAtlantic Southeast Airlines\tCharleston International Airport/Charleston AFB\t0.03988183161004431\t108\t2600\nFrontier Airlines Inc.\tWashington Dulles International Airport\t0.011831275720164609\t23\t1921\nAmerican Airlines Inc.\tJacksonville International Airport\t0.011864406779661017\t28\t2332\nSkywest Airlines Inc.\tPocatello Regional Airport\t0.0030581039755351682\t2\t652\nAtlantic Southeast Airlines\tFort Smith Regional Airport\t0.016842105263157894\t24\t1401\nAmerican Eagle Airlines Inc.\tHarrisburg International Airport\t0.044740024183796856\t37\t790\nSkywest Airlines Inc.\tBrownsville/South Padre Island International Airport\t0.018867924528301886\t1\t52\nAmerican Airlines Inc.\t15370\t0.009259259259259259\t2\t214\nSouthwest Airlines Co.\t11066\t0.0\t0\t905\nJetBlue Airways\t10821\t0.0\t0\t163\nJetBlue Airways\t15304\t0.0064516129032258064\t3\t462\nAmerican Airlines Inc.\tMcCarran International Airport\t0.009331807377409983\t106\t11253\nJetBlue Airways\tRafael Hernández Airport\t0.00563063063063063\t5\t883\nSkywest Airlines Inc.\tMeadows Field\t0.015927189988623434\t42\t2595\nFrontier Airlines Inc.\tKansas City International Airport\t0.005747126436781609\t2\t346\nUS Airways Inc.\tFort Lauderdale-Hollywood International Airport\t0.01536\t48\t3077\nAmerican Eagle Airlines Inc.\tBill and Hillary Clinton National Airport (Adams Field)\t0.04956629491945477\t120\t2301\nFrontier Airlines Inc.\tMemphis International Airport\t0.0027472527472527475\t1\t363\nFrontier Airlines Inc.\tSanta Barbara Municipal Airport (Santa Barbara Airport)\t0.0\t0\t3\nAlaska Airlines Inc.\tAdak Airport\t0.07291666666666667\t7\t89\nVirgin America\tPalm Springs International Airport\t0.004739336492890996\t1\t210\nAlaska Airlines Inc.\tGustavus Airport\t0.012987012987012988\t1\t76\nSouthwest Airlines Co.\t10529\t0.002066115702479339\t1\t483\nAlaska Airlines Inc.\t14869\t0.0\t0\t186\nJetBlue Airways\t13204\t0.006540222367560497\t10\t1519\nUnited Air Lines Inc.\t13931\t0.0\t0\t27\nFrontier Airlines Inc.\t11995\t0.0\t0\t18\nAmerican Eagle Airlines Inc.\tEasterwood Airport\t0.05329153605015674\t85\t1510\nAmerican Eagle Airlines Inc.\tPiedmont Triad International Airport\t0.07758620689655173\t99\t1177\nJetBlue Airways\tWashington Dulles International Airport\t0.03171247357293869\t60\t1832\nAtlantic Southeast Airlines\tWill Rogers World Airport\t0.029034059184812954\t52\t1739\nAmerican Airlines Inc.\tGunnison-Crested Butte Regional Airport\t0.0423728813559322\t5\t113\nDelta Air Lines Inc.\t15624\t0.0\t0\t115\nSkywest Airlines Inc.\t12888\t0.018867924528301886\t1\t52\nSpirit Air Lines\t12892\t0.004098360655737705\t2\t486\nAmerican Eagle Airlines Inc.\t14730\t0.0\t0\t31\nUS Airways Inc.\tSalt Lake City International Airport\t0.013513513513513514\t17\t1241\nAtlantic Southeast Airlines\tDallas Love Field\t0.0335195530726257\t18\t519\nUS Airways Inc.\tLihue Airport\t0.016216216216216217\t3\t182\nSkywest Airlines Inc.\t14952\t0.0\t0\t93\nJetBlue Airways\tMercedita Airport\t0.014686248331108143\t11\t738\nAmerican Eagle Airlines Inc.\tCharleston International Airport/Charleston AFB\t0.04142011834319527\t21\t486\nUnited Air Lines Inc.\tLouis Armstrong New Orleans International Airport\t0.00954283177984909\t43\t4463\nAmerican Eagle Airlines Inc.\tHector International Airport\t0.04285714285714286\t57\t1273\nAlaska Airlines Inc.\tJuneau International Airport\t0.010526315789473684\t41\t3854\nAtlantic Southeast Airlines\tWestchester County Airport\t0.04159384830478854\t119\t2742\nHawaiian Airlines Inc.\tOakland International Airport\t0.0039011703511053317\t3\t766\nAtlantic Southeast Airlines\tAlbuquerque International Sunport\t0.019184652278177457\t8\t409\nDelta Air Lines Inc.\tTallahassee International Airport\t0.0040290088638195\t5\t1236\nAlaska Airlines Inc.\tPetersburg James A. Johnson Airport\t0.01355421686746988\t9\t655\nAtlantic Southeast Airlines\tCharlottesville-Albemarle Airport\t0.029462738301559793\t17\t560\nUnited Air Lines Inc.\tSarasota-Bradenton International Airport\t0.02877697841726619\t12\t405\nAmerican Eagle Airlines Inc.\tSan Antonio International Airport\t0.039603960396039604\t4\t97\nAmerican Airlines Inc.\t14683\t0.0273972602739726\t14\t497\nUnited Air Lines Inc.\t13871\t0.0\t0\t114\nDelta Air Lines Inc.\t14908\t0.0\t0\t257\nUnited Air Lines Inc.\t11066\t0.011627906976744186\t1\t85\nAtlantic Southeast Airlines\t14960\t0.0\t0\t6\nSkywest Airlines Inc.\t13502\t0.0\t0\t6\nDelta Air Lines Inc.\tDallas/Fort Worth International Airport\t0.002944062806673209\t15\t5080\nSpirit Air Lines\tSan Diego International Airport (Lindbergh Field)\t0.01789587852494577\t33\t1811\nUS Airways Inc.\tPortland International Jetport\t0.049723756906077346\t9\t172\nVirgin America\tGen. Edward Lawrence Logan International Airport\t0.015065913370998116\t24\t1569\nAtlantic Southeast Airlines\tKilleen-Fort Hood Regional Airport\t0.026610104126494408\t69\t2524\nAmerican Airlines Inc.\tBoise Airport (Boise Air Terminal)\t0.005571030640668524\t2\t357\nAtlantic Southeast Airlines\t13377\t0.014336917562724014\t4\t275\nJetBlue Airways\tRonald Reagan Washington National Airport\t0.01712544652237865\t163\t9355\nSkywest Airlines Inc.\tHoughton County Memorial Airport\t0.06736526946107785\t45\t623\nUnited Air Lines Inc.\tDallas/Fort Worth International Airport\t0.015977175463623396\t56\t3449\nAmerican Eagle Airlines Inc.\tMinneapolis-Saint Paul International Airport\t0.10695187165775401\t20\t167\nAtlantic Southeast Airlines\tBrunswick Golden Isles Airport\t0.010250569476082005\t9\t869\nUnited Air Lines Inc.\tBillings Logan International Airport\t0.004601226993865031\t3\t649\nFrontier Airlines Inc.\tWill Rogers World Airport\t0.07142857142857142\t4\t52\nAtlantic Southeast Airlines\tRochester International Airport\t0.01443001443001443\t10\t683\nAmerican Airlines Inc.\t10821\t0.005747126436781609\t3\t519\nSkywest Airlines Inc.\t10990\t0.008333333333333333\t1\t119\nAtlantic Southeast Airlines\t12206\t0.034782608695652174\t4\t111\nAtlantic Southeast Airlines\t14576\t0.006802721088435374\t1\t146\nDelta Air Lines Inc.\t15919\t0.0\t0\t62\nDelta Air Lines Inc.\t15376\t0.0\t0\t61\nDelta Air Lines Inc.\tLos Angeles International Airport\t0.002145325970362719\t54\t25117\nUnited Air Lines Inc.\tNewark Liberty International Airport\t0.01641784103064974\t706\t42296\nAmerican Airlines Inc.\tYampa Valley Airport (Yampa Valley Regional)\t0.04316546762589928\t6\t133\nSkywest Airlines Inc.\tLaGuardia Airport (Marine Air Terminal)\t0.0392156862745098\t4\t98\nSkywest Airlines Inc.\tLouisville International Airport (Standiford Field)\t0.024390243902439025\t8\t320\nAmerican Airlines Inc.\tGreater Rochester International Airport\t0.006493506493506494\t1\t153\nAmerican Eagle Airlines Inc.\t13851\t0.013100436681222707\t3\t226\nSouthwest Airlines Co.\t10140\t0.0\t0\t1006\nUnited Air Lines Inc.\t12478\t0.003401360544217687\t1\t293\nDelta Air Lines Inc.\t12264\t0.0\t0\t264\nUnited Air Lines Inc.\t13204\t9.784735812133072E-4\t1\t1021\nUnited Air Lines Inc.\tSacramento International Airport\t0.012911843276936777\t29\t2217\nAmerican Airlines Inc.\tPortland International Airport\t0.010646108663729809\t29\t2695\nAlaska Airlines Inc.\tMinneapolis-Saint Paul International Airport\t0.0034071550255536627\t2\t585\nAmerican Eagle Airlines Inc.\tWill Rogers World Airport\t0.03973192915270465\t83\t2006\nAmerican Airlines Inc.\tWilliam P. Hobby Airport\t0.05325443786982249\t9\t160\nDelta Air Lines Inc.\tPortland International Jetport\t0.0073964497041420114\t5\t671\nFrontier Airlines Inc.\tPiedmont Triad International Airport\t0.0\t0\t133\nUnited Air Lines Inc.\tCharleston International Airport/Charleston AFB\t0.0\t0\t3\nDelta Air Lines Inc.\t10257\t0.0\t0\t146\nAmerican Eagle Airlines Inc.\tSpringfield-Branson National Airport\t0.03437759911283615\t124\t3483\nDelta Air Lines Inc.\tPalm Beach International Airport\t0.0077111812127585\t44\t5662\nSouthwest Airlines Co.\tGerald R. Ford International Airport\t0.01342642320085929\t25\t1837\nJetBlue Airways\tPhiladelphia International Airport\t0.02551337896701929\t41\t1566\nAmerican Eagle Airlines Inc.\tMiami International Airport\t0.02046948356807512\t109\t5216\nJetBlue Airways\tCharleston International Airport/Charleston AFB\t0.020011117287381877\t36\t1763\nSkywest Airlines Inc.\tCanyonlands Field\t0.0048543689320388345\t1\t205\nSkywest Airlines Inc.\t13342\t0.0013812154696132596\t1\t723\nSouthwest Airlines Co.\t12339\t0.0\t0\t826\nAlaska Airlines Inc.\t13930\t0.0\t0\t181\nAtlantic Southeast Airlines\t14588\t0.0\t0\t4\nAlaska Airlines Inc.\tRaleigh-Durham International Airport\t0.0\t0\t61\nAmerican Airlines Inc.\tTampa International Airport\t0.008899183225649152\t73\t8130\nFrontier Airlines Inc.\tSan Francisco International Airport\t0.0020554984583761563\t4\t1942\nAtlantic Southeast Airlines\tNewark Liberty International Airport\t0.05660795742524075\t1787\t29781\nSkywest Airlines Inc.\tPhoenix Sky Harbor International Airport\t0.012020267356619232\t223\t18329\nDelta Air Lines Inc.\tAsheville Regional Airport\t0.006220839813374806\t4\t639\nDelta Air Lines Inc.\tKey West International Airport\t0.004024144869215292\t4\t990\nAlaska Airlines Inc.\tTampa International Airport\t0.0\t0\t334\nDelta Air Lines Inc.\tKona International Airport at Keahole\t0.002881844380403458\t1\t346\nAmerican Eagle Airlines Inc.\t11111\t0.0\t0\t123\nFrontier Airlines Inc.\t14107\t0.0\t0\t144\nAmerican Eagle Airlines Inc.\t14960\t0.034482758620689655\t4\t112\nSouthwest Airlines Co.\t11884\t0.0037174721189591076\t1\t268\nSouthwest Airlines Co.\t11721\t0.0\t0\t93\nAmerican Eagle Airlines Inc.\t11413\t0.010869565217391304\t1\t91\nHawaiian Airlines Inc.\t14057\t0.0\t0\t31\nSkywest Airlines Inc.\tRapid City Regional Airport\t0.008849557522123894\t20\t2240\nJetBlue Airways\tBurlington International Airport\t0.02541544477028348\t26\t997\nSkywest Airlines Inc.\tBob Hope Airport (Hollywood Burbank Airport)\t0.014895729890764648\t60\t3968\nUnited Air Lines Inc.\tMontrose Regional Airport\t0.013513513513513514\t1\t73\nSkywest Airlines Inc.\tPittsburgh International Airport\t0.018947368421052633\t9\t466\nDelta Air Lines Inc.\t14252\t0.0\t0\t59\nJetBlue Airways\t11618\t0.007312614259597806\t4\t543\nSkywest Airlines Inc.\t13487\t0.0012345679012345679\t3\t2427\nSouthwest Airlines Co.\tGen. Edward Lawrence Logan International Airport\t0.0221976697468863\t221\t9735\nUS Airways Inc.\tNorman Y. Mineta San José International Airport\t0.007594936708860759\t6\t784\nAlaska Airlines Inc.\tLouis Armstrong New Orleans International Airport\t0.008982035928143712\t3\t331\nSkywest Airlines Inc.\tNewark Liberty International Airport\t0.0\t0\t2\nSpirit Air Lines\t13930\t0.0020491803278688526\t2\t974\nUnited Air Lines Inc.\t11298\t0.00303951367781155\t1\t328\nAtlantic Southeast Airlines\t13930\t0.002082248828735034\t8\t3834\nAmerican Airlines Inc.\t13256\t0.03361344537815126\t4\t115\nAtlantic Southeast Airlines\t15376\t0.0\t0\t30\nVirgin America\tHonolulu International Airport\t0.016666666666666666\t1\t59\nSkywest Airlines Inc.\tSan Antonio International Airport\t0.012093291102792975\t42\t3431\nSkywest Airlines Inc.\tSacramento International Airport\t0.02074074074074074\t126\t5949\nUS Airways Inc.\tReno/Tahoe International Airport\t0.0070052539404553416\t4\t567\nVirgin America\tAustin-Bergstrom International Airport\t0.020014295925661188\t28\t1371\nSouthwest Airlines Co.\tCharleston International Airport/Charleston AFB\t0.016722408026755852\t40\t2352\nAmerican Airlines Inc.\tMontrose Regional Airport\t0.06451612903225806\t2\t29\nDelta Air Lines Inc.\tSouth Bend International Airport (South Bend Regional)\t0.0\t0\t14\nSouthwest Airlines Co.\t11697\t0.006791171477079796\t8\t1170\nSkywest Airlines Inc.\t10620\t0.009433962264150943\t1\t105\nUnited Air Lines Inc.\t12016\t0.06451612903225806\t2\t29\nAmerican Airlines Inc.\t12441\t0.0\t0\t9\nSkywest Airlines Inc.\t11292\t0.003723932472691162\t15\t4013\nUnited Air Lines Inc.\t15016\t0.0\t0\t32\nAmerican Eagle Airlines Inc.\tWaterloo Regional Airport\t0.05672609400324149\t35\t582\nUnited Air Lines Inc.\tJackson Hole Airport\t0.013793103448275862\t14\t1001\nDelta Air Lines Inc.\tSarasota-Bradenton International Airport\t0.0028517110266159697\t6\t2098\nUS Airways Inc.\tAlbuquerque International Sunport\t0.0\t0\t48\nSkywest Airlines Inc.\t13871\t0.005952380952380952\t1\t167\nAmerican Airlines Inc.\t11066\t0.017699115044247787\t4\t222\nAmerican Airlines Inc.\t12323\t0.015151515151515152\t1\t65\nAtlantic Southeast Airlines\t14307\t0.027777777777777776\t2\t70\nAmerican Eagle Airlines Inc.\tLaredo International Airport\t0.043897216274089934\t41\t893\nJetBlue Airways\tDetroit Metropolitan Airport\t0.016764459346186086\t20\t1173\nUS Airways Inc.\tPalm Beach International Airport\t0.018269747447608814\t34\t1827\nDelta Air Lines Inc.\tBuffalo Niagara International Airport\t0.0012583892617449664\t3\t2381\nDelta Air Lines Inc.\tBillings Logan International Airport\t0.0\t0\t982\nDelta Air Lines Inc.\tNorthwest Arkansas Regional Airport\t0.0037174721189591076\t2\t536\nSkywest Airlines Inc.\tLa Crosse Regional Airport\t0.018292682926829267\t9\t483\nSkywest Airlines Inc.\t11315\t0.0\t0\t61\nDelta Air Lines Inc.\t15380\t0.0\t0\t31\nDelta Air Lines Inc.\t11423\t0.0\t0\t88\nSkywest Airlines Inc.\t11122\t0.007246376811594203\t1\t137\nAmerican Eagle Airlines Inc.\t11995\t0.05660377358490566\t3\t50\nAtlantic Southeast Airlines\t10728\t0.022988505747126436\t2\t85\nAtlantic Southeast Airlines\t12339\t0.011194029850746268\t3\t265\nJetBlue Airways\t11057\t0.0\t0\t116\nHawaiian Airlines Inc.\tHilo International Airport\t0.0016477480776272428\t9\t5453\nSkywest Airlines Inc.\tHays Regional Airport\t0.02617801047120419\t15\t558\nAmerican Eagle Airlines Inc.\tBismarck Municipal Airport\t0.03303303303303303\t22\t644\nSouthwest Airlines Co.\tBoise Airport (Boise Air Terminal)\t0.003728813559322034\t11\t2939\nAtlantic Southeast Airlines\tLaredo International Airport\t0.018138801261829655\t23\t1245\nSkywest Airlines Inc.\tJackson Hole Airport\t0.02517162471395881\t33\t1278\nAlaska Airlines Inc.\tKona International Airport at Keahole\t7.194244604316547E-4\t1\t1389\nSkywest Airlines Inc.\tCentral Wisconsin Airport\t0.01639344262295082\t1\t60\nDelta Air Lines Inc.\tEvansville Regional Airport\t0.0\t0\t354\nUnited Air Lines Inc.\tMemphis International Airport\t0.044642857142857144\t5\t107\nSkywest Airlines Inc.\t14570\t0.010471204188481676\t2\t189\nSouthwest Airlines Co.\t11292\t3.8095238095238096E-4\t2\t5248\nVirgin America\t14747\t0.0\t0\t194\nAlaska Airlines Inc.\t10721\t0.0\t0\t124\nAtlantic Southeast Airlines\t11066\t0.015151515151515152\t3\t195\nAmerican Eagle Airlines Inc.\t12451\t0.0\t0\t89\nAlaska Airlines Inc.\t13970\t0.016129032258064516\t1\t61\nSkywest Airlines Inc.\t10918\t0.0\t0\t53\nAtlantic Southeast Airlines\tMeridian Regional Airport\t0.015435501653803748\t14\t893\nSkywest Airlines Inc.\tQuad City International Airport\t0.04609218436873747\t23\t476\nDelta Air Lines Inc.\tTri-Cities Regional Airport\t0.006263048016701462\t3\t476\nAtlantic Southeast Airlines\tKalamazoo/Battle Creek International Airport\t0.047244094488188976\t12\t242\nSkywest Airlines Inc.\tMcAllen-Miller International Airport (McAllen Miller International)\t0.04929577464788732\t21\t405\nAtlantic Southeast Airlines\tMontrose Regional Airport\t0.0\t0\t151\nAmerican Airlines Inc.\t10693\t0.012552301255230125\t6\t472\nDelta Air Lines Inc.\t14986\t0.0\t0\t177\nSouthwest Airlines Co.\t10800\t0.0088\t11\t1239\nAtlantic Southeast Airlines\tCapital Region International Airport ( Lansing Capital City)\t0.03561387066541706\t38\t1029\nFrontier Airlines Inc.\tSeattle-Tacoma International Airport\t0.008771929824561403\t7\t791\nDelta Air Lines Inc.\tLehigh Valley International Airport\t0.00964630225080386\t3\t308\nAmerican Airlines Inc.\tNorthwest Arkansas Regional Airport\t0.0\t0\t18\nAmerican Airlines Inc.\t14100\t0.003975616220514179\t15\t3758\nSkywest Airlines Inc.\t11140\t0.0\t0\t51\nFrontier Airlines Inc.\t13486\t0.0\t0\t13\nAmerican Airlines Inc.\tEppley Airfield\t0.023506988564167726\t37\t1537\nDelta Air Lines Inc.\tRichmond International Airport\t0.005798221878623889\t15\t2572\nFrontier Airlines Inc.\tDallas/Fort Worth International Airport\t0.0038819875776397515\t5\t1283\nSouthwest Airlines Co.\tPort Columbus International Airport\t0.010083865814696485\t101\t9915\nDelta Air Lines Inc.\tPittsburgh International Airport\t0.004575350300257364\t16\t3481\nAmerican Airlines Inc.\tCity of Colorado Springs Municipal Airport\t0.022222222222222223\t24\t1056\nDelta Air Lines Inc.\tSouthwest Florida International Airport\t0.004343105320304018\t24\t5502\nDelta Air Lines Inc.\tAlbuquerque International Sunport\t8.071025020177562E-4\t1\t1238\nAtlantic Southeast Airlines\tWashington Dulles International Airport\t0.05104477611940299\t171\t3179\nAmerican Airlines Inc.\tLubbock Preston Smith International Airport\t0.016722408026755852\t5\t294\nDelta Air Lines Inc.\t11697\t0.0\t0\t903\nSouthwest Airlines Co.\t11423\t0.0\t0\t88\nSkywest Airlines Inc.\t14794\t0.0\t0\t203\nAtlantic Southeast Airlines\t10868\t0.05217391304347826\t18\t327\nUnited Air Lines Inc.\t14869\t0.0\t0\t136\nSkywest Airlines Inc.\t14685\t0.0\t0\t4\nAlaska Airlines Inc.\tLihue Airport\t0.0016722408026755853\t2\t1194\nSkywest Airlines Inc.\t14869\t0.0015368852459016393\t6\t3898\nSkywest Airlines Inc.\t12389\t0.005128205128205128\t1\t194\nDelta Air Lines Inc.\t10874\t0.0\t0\t118\nSkywest Airlines Inc.\t12519\t0.0\t0\t75\nSkywest Airlines Inc.\tDane County Regional Airport\t0.029573590096286108\t43\t1411\nAtlantic Southeast Airlines\tSan Angelo Regional Airport (Mathis Field)\t0.0880503144654088\t14\t145\nAtlantic Southeast Airlines\tAsheville Regional Airport\t0.024513338139870222\t34\t1353\nDelta Air Lines Inc.\tYeager Airport\t0.00946372239747634\t3\t314\nAtlantic Southeast Airlines\t10577\t0.0\t0\t62\nSkywest Airlines Inc.\t10713\t0.002793296089385475\t2\t714\nUnited Air Lines Inc.\t14122\t0.0\t0\t236\nDelta Air Lines Inc.\t11884\t0.0\t0\t115\nUnited Air Lines Inc.\t13244\t0.0\t0\t50\nJetBlue Airways\t10732\t0.0\t0\t62\nDelta Air Lines Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.011931952429707805\t303\t25091\nVirgin America\tSan Francisco International Airport\t0.005771643663739021\t92\t15848\nAmerican Airlines Inc.\tTucson International Airport\t0.022939068100358423\t64\t2726\nAtlantic Southeast Airlines\tEl Paso International Airport\t0.012345679012345678\t19\t1520\nSkywest Airlines Inc.\tCleveland Hopkins International Airport\t0.021367521367521368\t10\t458\nSouthwest Airlines Co.\t14307\t0.0\t0\t538\nSouthwest Airlines Co.\t15376\t0.0\t0\t357\nAlaska Airlines Inc.\t11618\t0.0\t0\t62\nAlaska Airlines Inc.\t11292\t0.0\t0\t127\nAmerican Eagle Airlines Inc.\tTexarkana Regional Airport (Webb Field)\t0.09770114942528736\t51\t471\nDelta Air Lines Inc.\tRaleigh-Durham International Airport\t0.005098039215686275\t26\t5074\nSkywest Airlines Inc.\tDurango-La Plata County Airport\t0.025295109612141653\t30\t1156\nAmerican Eagle Airlines Inc.\tSioux Gateway Airport\t0.0467741935483871\t29\t591\nSouthwest Airlines Co.\tValley International Airport\t0.010638297872340425\t20\t1860\nAmerican Eagle Airlines Inc.\tDurango-La Plata County Airport\t0.016290726817042606\t13\t785\nAmerican Eagle Airlines Inc.\tCleveland Hopkins International Airport\t0.05778894472361809\t115\t1875\nAtlantic Southeast Airlines\tGreater Binghamton Airport\t0.015\t3\t197\nUnited Air Lines Inc.\t10423\t0.019880715705765408\t10\t493\nSouthwest Airlines Co.\t12191\t0.004624277456647399\t20\t4305\nSouthwest Airlines Co.\t13891\t0.0\t0\t903\nDelta Air Lines Inc.\t11298\t0.0\t0\t465\nAtlantic Southeast Airlines\t15412\t0.012684989429175475\t6\t467\nSkywest Airlines Inc.\t13486\t0.0\t0\t128\nUnited Air Lines Inc.\t10257\t0.0\t0\t57\nUnited Air Lines Inc.\t14524\t0.0\t0\t31\nAlaska Airlines Inc.\t13198\t0.0\t0\t31\nSkywest Airlines Inc.\tAustin-Bergstrom International Airport\t0.01718213058419244\t50\t2860\nSpirit Air Lines\tDallas/Fort Worth International Airport\t0.014907853034393709\t127\t8392\nSkywest Airlines Inc.\tMcClellan-Palomar Airport\t0.0202808112324493\t13\t628\nAmerican Airlines Inc.\tNorman Y. Mineta San José International Airport\t0.01564673157162726\t45\t2831\nFrontier Airlines Inc.\tCincinnati/Northern Kentucky International Airport\t0.0049261083743842365\t10\t2020\nAmerican Airlines Inc.\tSouthwest Florida International Airport\t0.011587078651685394\t33\t2815\nAmerican Eagle Airlines Inc.\tSawyer International Airport\t0.027972027972027972\t8\t278\nSkywest Airlines Inc.\tMemphis International Airport\t0.028054298642533938\t31\t1074\nSkywest Airlines Inc.\tChicago Midway International Airport\t0.011267605633802818\t4\t351\nDelta Air Lines Inc.\t12889\t0.0\t0\t1089\nAtlantic Southeast Airlines\t11921\t0.0\t0\t30\nSkywest Airlines Inc.\t10721\t0.0\t0\t21\nAtlantic Southeast Airlines\tSloulin Field International Airport\t0.0196078431372549\t11\t550\nAtlantic Southeast Airlines\tBirmingham-Shuttlesworth International Airport\t0.029025358997861288\t95\t3178\nSkywest Airlines Inc.\tPueblo Memorial Airport\t0.041666666666666664\t11\t253\nAtlantic Southeast Airlines\tGen. Edward Lawrence Logan International Airport\t0.03695652173913044\t85\t2215\nSouthwest Airlines Co.\tPortland International Jetport\t0.01972386587771203\t20\t994\nAlaska Airlines Inc.\tPhiladelphia International Airport\t0.0029940119760479044\t1\t333\nAtlantic Southeast Airlines\t11775\t0.0\t0\t88\nSouthwest Airlines Co.\t10994\t0.0\t0\t253\nAmerican Eagle Airlines Inc.\t13290\t0.006622516556291391\t1\t150\nAtlantic Southeast Airlines\t14696\t0.0\t0\t40\nHawaiian Airlines Inc.\t14679\t0.0\t0\t31\nJetBlue Airways\t10154\t0.0\t0\t28\nSkywest Airlines Inc.\tBemidji Regional Airport\t0.004497751124437781\t3\t664\nDelta Air Lines Inc.\tOrlando International Airport\t0.005771725032425422\t89\t15331\nAtlantic Southeast Airlines\tLehigh Valley International Airport\t0.018315018315018316\t35\t1876\nSouthwest Airlines Co.\tDenver International Airport\t0.008822263663749821\t492\t55276\nAlaska Airlines Inc.\tSan Diego International Airport (Lindbergh Field)\t0.0021404942595835766\t11\t5128\nDelta Air Lines Inc.\tFort Lauderdale-Hollywood International Airport\t0.007087507087507087\t75\t10507\nAlaska Airlines Inc.\tHonolulu International Airport\t0.002545608824777259\t6\t2351\nAtlantic Southeast Airlines\tAlexandria International Airport\t0.01777970511708586\t41\t2265\nDelta Air Lines Inc.\tFairbanks International Airport\t0.0\t0\t232\nSkywest Airlines Inc.\t13796\t0.0\t0\t236\nSouthwest Airlines Co.\t12953\t0.0041025641025641026\t4\t971\nDelta Air Lines Inc.\t10423\t0.0030120481927710845\t1\t331\nAmerican Airlines Inc.\t15024\t0.0\t0\t98\nSkywest Airlines Inc.\t14814\t0.0\t0\t33\nFrontier Airlines Inc.\tPhoenix Sky Harbor International Airport\t0.008021390374331552\t15\t1855\nVirgin America\tSan Diego International Airport (Lindbergh Field)\t0.008610792192881744\t15\t1727\nSouthwest Airlines Co.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.016191709844559584\t25\t1519\nAtlantic Southeast Airlines\tFort Wayne International Airport\t0.015151515151515152\t5\t325\nSkywest Airlines Inc.\tCharleston International Airport/Charleston AFB\t0.014035087719298246\t8\t562\nDelta Air Lines Inc.\tJuneau International Airport\t0.0\t0\t139\nSkywest Airlines Inc.\t14487\t0.0\t0\t62\nDelta Air Lines Inc.\t10208\t0.0\t0\t33\nUnited Air Lines Inc.\t11292\t0.0010588733587462938\t5\t4717\nJetBlue Airways\t12954\t0.0030349013657056147\t2\t657\nAmerican Eagle Airlines Inc.\t15370\t0.0\t0\t89\nFrontier Airlines Inc.\t14908\t0.0\t0\t61\nSpirit Air Lines\t14025\t0.0\t0\t13\nUnited Air Lines Inc.\t15024\t0.0\t0\t2\nSkywest Airlines Inc.\tSalt Lake City International Airport\t0.005009659882284225\t223\t44291\nSouthwest Airlines Co.\tSan Diego International Airport (Lindbergh Field)\t0.013437378577904417\t415\t30469\nSkywest Airlines Inc.\tDickinson Theodore Roosevelt Regional Airport\t0.01340033500837521\t8\t589\nUnited Air Lines Inc.\tEagle County Regional Airport\t0.02734375\t7\t249\nDelta Air Lines Inc.\tPalm Springs International Airport\t0.0064516129032258064\t1\t154\nAmerican Airlines Inc.\t14057\t0.002777777777777778\t1\t359\nAtlantic Southeast Airlines\t11278\t0.011363636363636364\t3\t261\nAtlantic Southeast Airlines\t12945\t0.003246753246753247\t1\t307\nSkywest Airlines Inc.\t12523\t0.0967741935483871\t3\t28\nDelta Air Lines Inc.\t14321\t0.0\t0\t86\nSkywest Airlines Inc.\t11637\t0.0\t0\t141\nAlaska Airlines Inc.\t13495\t0.0\t0\t31\nSkywest Airlines Inc.\tRange Regional Airport (Chisholm-Hibbing Airport)\t0.022271714922048998\t20\t878\nSkywest Airlines Inc.\tTucson International Airport\t0.008917396745932416\t57\t6335\nAmerican Eagle Airlines Inc.\tWichita Falls Municipal Airport/Sheppard AFB\t0.04446742502585315\t43\t924\nAmerican Airlines Inc.\tRaleigh-Durham International Airport\t0.015723270440251572\t85\t5321\nSouthwest Airlines Co.\tTucson International Airport\t0.00476077124494168\t20\t4181\nAmerican Eagle Airlines Inc.\tGarden City Regional Airport\t0.036163522012578615\t23\t613\nJetBlue Airways\tRichmond International Airport\t0.017975402081362345\t38\t2076\nAmerican Eagle Airlines Inc.\tMonroe Regional Airport\t0.12244897959183673\t6\t43\nSkywest Airlines Inc.\tEl Paso International Airport\t0.011220196353436185\t16\t1410\nSkywest Airlines Inc.\tLafayette Regional Airport\t0.019230769230769232\t2\t102\nDelta Air Lines Inc.\t14492\t0.0\t0\t524\nUnited Air Lines Inc.\t14100\t0.005208333333333333\t2\t382\nFrontier Airlines Inc.\t12266\t0.0\t0\t149\nSkywest Airlines Inc.\t10693\t0.003968253968253968\t1\t251\nDelta Air Lines Inc.\t13244\t0.0\t0\t422\nHawaiian Airlines Inc.\t13796\t0.0\t0\t60\nDelta Air Lines Inc.\t12266\t0.0\t0\t221\nSkywest Airlines Inc.\t12954\t0.0\t0\t115\nAtlantic Southeast Airlines\t14952\t0.017543859649122806\t1\t56\nAmerican Eagle Airlines Inc.\t13061\t0.03508771929824561\t2\t55\nJetBlue Airways\t14831\t0.019230769230769232\t1\t51\nSkywest Airlines Inc.\t10469\t0.0\t0\t1\nAtlantic Southeast Airlines\tGeneral Mitchell International Airport\t0.0327683615819209\t87\t2568\nSouthwest Airlines Co.\tTheodore Francis Green State Airport\t0.02308078273958856\t138\t5841\nUS Airways Inc.\tBuffalo Niagara International Airport\t0.016541353383458645\t11\t654\nFrontier Airlines Inc.\tJohn Wayne Airport (Orange County Airport)\t0.002607561929595828\t2\t765\nSkywest Airlines Inc.\tKansas City International Airport\t0.021303258145363407\t34\t1562\nDelta Air Lines Inc.\tDallas Love Field\t0.009046624913013222\t13\t1424\nAmerican Eagle Airlines Inc.\t13367\t0.011363636363636364\t2\t174\nAtlantic Southeast Airlines\t13795\t0.0\t0\t112\nAmerican Airlines Inc.\t13342\t0.02027027027027027\t3\t145\nSkywest Airlines Inc.\t14107\t0.0035460992907801418\t5\t1405\nAmerican Eagle Airlines Inc.\t13158\t0.03333333333333333\t1\t29\nAtlantic Southeast Airlines\tRichmond International Airport\t0.04048201845226888\t215\t5096\nSouthwest Airlines Co.\tPittsburgh International Airport\t0.011378002528445006\t99\t8602\nUS Airways Inc.\tEppley Airfield\t0.011527377521613832\t4\t343\nAmerican Airlines Inc.\tEagle County Regional Airport\t0.033936651583710405\t30\t854\nUS Airways Inc.\tSan Antonio International Airport\t0.026785714285714284\t9\t327\nAlaska Airlines Inc.\tWiley Post-Will Rogers Memorial Airport\t0.031578947368421054\t27\t828\nAtlantic Southeast Airlines\tTexarkana Regional Airport (Webb Field)\t0.019736842105263157\t9\t447\nAtlantic Southeast Airlines\t11778\t0.025974025974025976\t4\t150\nAmerican Eagle Airlines Inc.\t13459\t0.0\t0\t26\nAmerican Eagle Airlines Inc.\t13487\t0.0\t0\t3\nFrontier Airlines Inc.\tMissoula International Airport\t0.02197802197802198\t2\t89\nAtlantic Southeast Airlines\tLawton-Fort Sill Regional Airport\t0.05952380952380952\t40\t632\nAtlantic Southeast Airlines\tGerald R. Ford International Airport\t0.044186046511627906\t76\t1644\nDelta Air Lines Inc.\tOntario International Airport\t0.0\t0\t211\nDelta Air Lines Inc.\tWilkes-Barre/Scranton International Airport\t0.0\t0\t125\nJetBlue Airways\tHenry E. Rohlsen Airport\t0.0029940119760479044\t1\t333\nAmerican Airlines Inc.\t14869\t0.012121212121212121\t4\t326\nSouthwest Airlines Co.\t10397\t0.001394700139470014\t5\t3580\nAmerican Airlines Inc.\t14307\t0.019230769230769232\t4\t204\nSkywest Airlines Inc.\t10279\t0.0\t0\t35\nAmerican Eagle Airlines Inc.\tJackson-Evers International Airport\t0.050724637681159424\t63\t1179\nAtlantic Southeast Airlines\tGunnison-Crested Butte Regional Airport\t0.07142857142857142\t12\t156\nAtlantic Southeast Airlines\tLea County Regional Airport\t0.040280210157618214\t23\t548\nSouthwest Airlines Co.\tGreater Rochester International Airport\t0.013436692506459949\t26\t1909\nSouthwest Airlines Co.\tNorthwest Florida Beaches International Airport\t0.003109452736318408\t5\t1603\nSouthwest Airlines Co.\tLubbock Preston Smith International Airport\t0.024171888988361683\t54\t2180\nAlaska Airlines Inc.\tAustin-Bergstrom International Airport\t0.0\t0\t400\nSkywest Airlines Inc.\tSouthwest Oregon Regional Airport (North Bend Municipal)\t0.03636363636363636\t10\t265\nSouthwest Airlines Co.\t10279\t0.013793103448275862\t2\t143\nUnited Air Lines Inc.\t14831\t0.0\t0\t136\nAtlantic Southeast Airlines\t13061\t0.02054794520547945\t3\t143\nSpirit Air Lines\tMinneapolis-Saint Paul International Airport\t0.024606580829756794\t86\t3409\nSkywest Airlines Inc.\tOntario International Airport\t0.016689847009735744\t84\t4949\nAmerican Airlines Inc.\tWill Rogers World Airport\t0.025398700531600708\t43\t1650\nJetBlue Airways\tLouis Armstrong New Orleans International Airport\t0.016\t18\t1107\nDelta Air Lines Inc.\tReno/Tahoe International Airport\t0.0\t0\t929\nAtlantic Southeast Airlines\tBill and Hillary Clinton National Airport (Adams Field)\t0.02629757785467128\t76\t2814\nDelta Air Lines Inc.\tCyril E. King Airport\t0.006382978723404255\t6\t934\nAlaska Airlines Inc.\tHartsfield-Jackson Atlanta International Airport\t0.002331002331002331\t1\t428\nFrontier Airlines Inc.\t14771\t0.0\t0\t192\nSkywest Airlines Inc.\t12003\t0.0\t0\t190\nSkywest Airlines Inc.\t10739\t0.0\t0\t53\nHawaiian Airlines Inc.\t14771\t0.0\t0\t62\nFrontier Airlines Inc.\tDenver International Airport\t0.002408500590318772\t51\t21124\nUnited Air Lines Inc.\tHartsfield-Jackson Atlanta International Airport\t0.026138032305433188\t89\t3316\nAmerican Eagle Airlines Inc.\tLa Crosse Regional Airport\t0.046834345186470075\t54\t1099\nAtlantic Southeast Airlines\tBishop International Airport\t0.030303030303030304\t28\t896\nDelta Air Lines Inc.\tBismarck Municipal Airport\t0.0\t0\t277\nDelta Air Lines Inc.\t12953\t0.0\t0\t2050\nSkywest Airlines Inc.\t14543\t0.0\t0\t57\nVirgin America\t12953\t0.01818181818181818\t2\t108\nAtlantic Southeast Airlines\t11953\t0.0\t0\t151\nAlaska Airlines Inc.\t15376\t0.0\t0\t31\nDelta Air Lines Inc.\tNashville International Airport\t0.005791505791505791\t27\t4635\nFrontier Airlines Inc.\tPhiladelphia International Airport\t0.013051823416506719\t34\t2571\nAmerican Airlines Inc.\tAustin-Bergstrom International Airport\t0.026106414719045252\t210\t7834\nAtlantic Southeast Airlines\tErie International Airport\t0.04825737265415549\t36\t710\nAmerican Airlines Inc.\tJohn Wayne Airport (Orange County Airport)\t0.017860726469997992\t89\t4894\nUS Airways Inc.\tHartsfield-Jackson Atlanta International Airport\t0.016332085743450152\t48\t2891\nUS Airways Inc.\tBradley International Airport\t0.026410564225690276\t22\t811\nSkywest Airlines Inc.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.03253968253968254\t82\t2438\nAmerican Airlines Inc.\t14524\t0.008849557522123894\t2\t224\nDelta Air Lines Inc.\t10721\t0.0\t0\t1201\nDelta Air Lines Inc.\t15016\t0.0\t0\t551\nDelta Air Lines Inc.\t13851\t0.0\t0\t168\nAmerican Airlines Inc.\t11109\t0.0\t0\t87\nAmerican Eagle Airlines Inc.\t11003\t0.011764705882352941\t2\t168\nAtlantic Southeast Airlines\t14711\t0.0\t0\t62\nJetBlue Airways\t14869\t0.0\t0\t124\nAmerican Eagle Airlines Inc.\t11278\t0.0\t0\t7\nSkywest Airlines Inc.\t10257\t0.0\t0\t6\nAtlantic Southeast Airlines\tCentral Wisconsin Airport\t0.03231017770597738\t20\t599\nAmerican Eagle Airlines Inc.\tJoplin Regional Airport\t0.06970509383378017\t26\t347\nAtlantic Southeast Airlines\tHattiesburg-Laurel Regional Airport\t0.012216404886561954\t7\t566\nSouthwest Airlines Co.\tAustin-Bergstrom International Airport\t0.011052268017499424\t192\t17180\nHawaiian Airlines Inc.\tSan Francisco International Airport\t0.005988023952095809\t4\t664\nSkywest Airlines Inc.\tDel Norte County Airport (Jack McNamara Field)\t0.08421052631578947\t16\t174\nJetBlue Airways\tSan Diego International Airport (Lindbergh Field)\t0.013513513513513514\t17\t1241\nSkywest Airlines Inc.\tColumbia Metropolitan Airport\t0.05714285714285714\t2\t33\nAtlantic Southeast Airlines\tAbraham Lincoln Capital Airport\t0.01775147928994083\t6\t332\nDelta Air Lines Inc.\t13486\t0.0\t0\t30\nAmerican Airlines Inc.\tGen. Edward Lawrence Logan International Airport\t0.022746610698281242\t401\t17228\nSkywest Airlines Inc.\tSt. Cloud Regional Airport\t0.060240963855421686\t5\t78\nDelta Air Lines Inc.\tGeneral Mitchell International Airport\t0.0017189514396218307\t8\t4646\nSouthwest Airlines Co.\tLos Angeles International Airport\t0.02122044200367892\t796\t36715\nHawaiian Airlines Inc.\tPhoenix Sky Harbor International Airport\t0.0\t0\t334\nAmerican Eagle Airlines Inc.\tLawton-Fort Sill Regional Airport\t0.0819423368740516\t54\t605\nAtlantic Southeast Airlines\tSpringfield-Branson National Airport\t0.02147820593809223\t34\t1549\nJetBlue Airways\t15096\t0.006756756756756757\t1\t147\nSkywest Airlines Inc.\t10408\t0.007575757575757576\t1\t131\nAlaska Airlines Inc.\t12982\t0.0\t0\t91\nDelta Air Lines Inc.\t10781\t0.0\t0\t24\nAlaska Airlines Inc.\tTed Stevens Anchorage International Airport\t0.008478064038192444\t103\t12046\nAmerican Airlines Inc.\tSalt Lake City International Airport\t0.015257048092868989\t46\t2969\nDelta Air Lines Inc.\tWill Rogers World Airport\t0.0033467202141900937\t5\t1489\nAtlantic Southeast Airlines\tBaton Rouge Metropolitan Airport\t0.020028612303290415\t126\t6165\nAmerican Airlines Inc.\tPhiladelphia International Airport\t0.007206182145735552\t152\t20941\nSouthwest Airlines Co.\tPortland International Airport\t0.0031138382635772506\t34\t10885\nAmerican Airlines Inc.\tJackson Hole Airport\t0.016826923076923076\t7\t409\nJetBlue Airways\tTed Stevens Anchorage International Airport\t0.0025906735751295338\t1\t385\nSkywest Airlines Inc.\t10779\t0.016129032258064516\t1\t61\nSkywest Airlines Inc.\tMobile Regional Airport\t0.029850746268656716\t2\t65\nAmerican Airlines Inc.\tOrlando International Airport\t0.009803170713027495\t128\t12929\nUnited Air Lines Inc.\tRonald Reagan Washington National Airport\t0.02266839378238342\t105\t4527\nAtlantic Southeast Airlines\tTucson International Airport\t0.0149812734082397\t8\t526\nUS Airways Inc.\tPort Columbus International Airport\t0.014\t7\t493\nDelta Air Lines Inc.\tGainesville Regional Airport\t0.003676470588235294\t1\t271\nUnited Air Lines Inc.\t13487\t0.0028735632183908046\t1\t347\nSouthwest Airlines Co.\t10257\t0.0\t0\t335\nSouthwest Airlines Co.\t11618\t0.007782101167315175\t4\t510\nAmerican Eagle Airlines Inc.\t11612\t0.0070921985815602835\t1\t140\nVirgin America\t11259\t0.014732965009208104\t8\t535\nAmerican Eagle Airlines Inc.\tFort Smith Regional Airport\t0.06227106227106227\t34\t512\nAtlantic Southeast Airlines\tLincoln Airport (Lincoln Municipal)\t0.03337783711615487\t50\t1448\nAmerican Eagle Airlines Inc.\tEl Paso International Airport\t0.03819444444444445\t22\t554\nSouthwest Airlines Co.\tMinneapolis-Saint Paul International Airport\t0.01155115511551155\t84\t7188\nAtlantic Southeast Airlines\tAkron-Canton Regional Airport\t0.027433050293925537\t42\t1489\nJetBlue Airways\tDallas/Fort Worth International Airport\t0.028428093645484948\t17\t581\nAlaska Airlines Inc.\tKing Salmon Airport\t0.0\t0\t63\nUnited Air Lines Inc.\t11278\t0.004301075268817204\t2\t463\nSkywest Airlines Inc.\t10423\t0.05855855855855856\t13\t209\nAlaska Airlines Inc.\t10397\t0.0\t0\t62\nJetBlue Airways\t13930\t0.0\t0\t205\nAtlantic Southeast Airlines\t11986\t0.0234375\t3\t125\nAmerican Airlines Inc.\t13830\t0.006172839506172839\t1\t161\nAtlantic Southeast Airlines\t10140\t0.0\t0\t1\nSkywest Airlines Inc.\tMidland International Airport\t0.03225806451612903\t43\t1290\nAmerican Eagle Airlines Inc.\tGerald R. Ford International Airport\t0.05309090909090909\t146\t2604\nSkywest Airlines Inc.\tMcCarran International Airport\t0.009913258983890954\t24\t2397\nAtlantic Southeast Airlines\tJames M. Cox Dayton International Airport\t0.051933701657458566\t94\t1716\nHawaiian Airlines Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.0\t0\t293\nHawaiian Airlines Inc.\tPortland International Airport\t0.0\t0\t334\nAlaska Airlines Inc.\tBaltimore-Washington International Airport\t0.0024096385542168677\t1\t414\nUnited Air Lines Inc.\tMcAllen-Miller International Airport (McAllen Miller International)\t0.029411764705882353\t8\t264\nAmerican Airlines Inc.\t12889\t0.0061823802163833074\t8\t1286\nSkywest Airlines Inc.\t11471\t0.0\t0\t62\nSkywest Airlines Inc.\t11865\t0.0\t0\t88\nSpirit Air Lines\t14100\t0.012903225806451613\t2\t153\nSouthwest Airlines Co.\t14679\t0.002609019754006709\t7\t2676\nDelta Air Lines Inc.\t11540\t0.0\t0\t87\nAtlantic Southeast Airlines\t11624\t0.0\t0\t66\n"
+          },
+          {
+            "type": "HTML",
+            "data": "<div class=\"result-alert alert-warning\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Output is truncated</strong> to 1000 rows. Learn more about <strong>zeppelin.spark.maxResult</strong></div>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=40",
+              "$$hashKey": "object:19353"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=41",
+              "$$hashKey": "object:19354"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=42",
+              "$$hashKey": "object:19355"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=43",
+              "$$hashKey": "object:19356"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=44",
+              "$$hashKey": "object:19357"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=45",
+              "$$hashKey": "object:19358"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632833190829_1081137483",
+      "id": "paragraph_1632833190829_1081137483",
+      "dateCreated": "2021-09-28T12:46:30+0000",
+      "dateStarted": "2021-09-30T07:24:48+0000",
+      "dateFinished": "2021-09-30T07:24:51+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7856"
+    },
+    {
+      "text": "%pyspark\n\n#test\ntest = report_df.withColumn('test', F.col('canceled_counts')+F.col('processed_counts'))\\\n                .groupBy('airline_name').sum('test')\n                \nz.show(test.orderBy('airline_name'))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-28T14:14:12+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airline_name": "string",
+                      "sum(test)": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "airline_name\tsum(test)\nAlaska Airlines Inc.\t172521\nAmerican Airlines Inc.\t725984\nAmerican Eagle Airlines Inc.\t294632\nAtlantic Southeast Airlines\t571977\nDelta Air Lines Inc.\t875881\nFrontier Airlines Inc.\t90836\nHawaiian Airlines Inc.\t76272\nJetBlue Airways\t267048\nSkywest Airlines Inc.\t588353\nSouthwest Airlines Co.\t1261855\nSpirit Air Lines\t117379\nUS Airways Inc.\t198715\nUnited Air Lines Inc.\t515723\nVirgin America\t61903\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=212",
+              "$$hashKey": "object:9043"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=213",
+              "$$hashKey": "object:9044"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=214",
+              "$$hashKey": "object:9045"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=215",
+              "$$hashKey": "object:9046"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632836610952_1594482665",
+      "id": "paragraph_1632836610952_1594482665",
+      "dateCreated": "2021-09-28T13:43:30+0000",
+      "dateStarted": "2021-09-28T13:48:50+0000",
+      "dateFinished": "2021-09-28T13:48:56+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7857"
+    },
+    {
+      "text": "%pyspark\n\n#test\nz.show(flights_df.join(airlines_df, flights_df.AIRLINE == airlines_df.IATA_CODE, how = 'left').groupBy(airlines_df.AIRLINE).count())",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-28T14:12:46+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "AIRLINE": "string",
+                      "count": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          },
+          "1": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "AIRLINE": "string",
+                      "count": "string"
+                    },
+                    "updated": true
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "AIRLINE\tcount\nSkywest Airlines Inc.\t588353\nAmerican Eagle Airlines Inc.\t294632\nVirgin America\t61903\nUnited Air Lines Inc.\t515723\nFrontier Airlines Inc.\t90836\nSouthwest Airlines Co.\t1261855\nJetBlue Airways\t267048\nUS Airways Inc.\t198715\nHawaiian Airlines Inc.\t76272\nAtlantic Southeast Airlines\t571977\nAlaska Airlines Inc.\t172521\nDelta Air Lines Inc.\t875881\nAmerican Airlines Inc.\t725984\nSpirit Air Lines\t117379\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=279",
+              "$$hashKey": "object:9156"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=280",
+              "$$hashKey": "object:9157"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=281",
+              "$$hashKey": "object:9158"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=282",
+              "$$hashKey": "object:9159"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=283",
+              "$$hashKey": "object:9160"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=284",
+              "$$hashKey": "object:9161"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632836965108_1048288848",
+      "id": "paragraph_1632836965108_1048288848",
+      "dateCreated": "2021-09-28T13:49:25+0000",
+      "dateStarted": "2021-09-28T14:12:39+0000",
+      "dateFinished": "2021-09-28T14:12:41+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7858"
+    },
+    {
+      "text": "%pyspark\n\nreport_df.where(F.col('origin_airport_name') != 'Waco Regional Airport')\\\n         .coalesce(1).write.format(\"json\")\\\n         .option(\"mode\", \"overwrite\").json(\"gs://procamp-test/datasets/reports/task2_1/\")\n                     \nreport_df.where(F.col('origin_airport_name') == 'Waco Regional Airport')\\\n         .coalesce(1).write.format(\"csv\")\\\n         .option(\"header\", \"true\")\\\n         .option(\"delimiter\", \",\")\\\n         .option(\"mode\", \"overwrite\").csv(\"gs://procamp-test/datasets/reports/task2_2/\")",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:25:15+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=46",
+              "$$hashKey": "object:19674"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=47",
+              "$$hashKey": "object:19675"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=48",
+              "$$hashKey": "object:19676"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=49",
+              "$$hashKey": "object:19677"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=50",
+              "$$hashKey": "object:19678"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=51",
+              "$$hashKey": "object:19679"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632837304907_988578102",
+      "id": "paragraph_1632837304907_988578102",
+      "dateCreated": "2021-09-28T13:55:04+0000",
+      "dateStarted": "2021-09-30T07:25:15+0000",
+      "dateFinished": "2021-09-30T07:25:26+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:7859"
+    },
+    {
+      "text": "%pyspark\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-28T13:56:49+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632837409399_431207414",
+      "id": "paragraph_1632837409399_431207414",
+      "dateCreated": "2021-09-28T13:56:49+0000",
+      "status": "READY",
+      "$$hashKey": "object:7860"
+    }
+  ],
+  "name": "lab1",
+  "id": "2GJM9U2TF",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0-preview2",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/labs/lab1"
+}
