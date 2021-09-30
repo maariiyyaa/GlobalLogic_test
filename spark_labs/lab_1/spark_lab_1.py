@@ -6,6 +6,10 @@ path_to_airlines = 'gs://procamp-test/datasets/airlines.csv'
 path_to_airports = 'gs://procamp-test/datasets/airports.csv'
 path_to_flights = 'gs://procamp-test/datasets/flights.csv'
 
+outcome_path_task_1 = "gs://procamp-test/datasets/reports/task1/"
+outcome_path_task_2_1 = "gs://procamp-test/datasets/reports/task2_1/"
+outcome_path_task_2_2 = "gs://procamp-test/datasets/reports/task2_2/"
+
 
 airlines_df = spark.read.format('CSV')\
                 .option('inferschema', True) \
@@ -41,7 +45,7 @@ report_df = airports_df.join(report_df, report_df.dest_airport == airports_df.IA
 report_df.coalesce(1).write.format("csv")\
                      .option("header", "true")\
                      .option("delimiter", "\t")\
-                     .option("mode", "overwrite").csv("gs://procamp-test/datasets/reports/task1/")
+                     .option("mode", "overwrite").csv(outcome_path_task_1)
 
 
 
@@ -66,10 +70,10 @@ report_df = perc_canceled_df.join(airports_df, perc_canceled_df.origin_airport =
 
 report_df.where(F.col('origin_airport_name') != 'Waco Regional Airport')\
          .coalesce(1).write.format("json")\
-         .option("mode", "overwrite").json("gs://procamp-test/datasets/reports/task2_1/")
+         .option("mode", "overwrite").json(outcome_path_task_2_1)
                      
 report_df.where(F.col('origin_airport_name') == 'Waco Regional Airport')\
          .coalesce(1).write.format("csv")\
          .option("header", "true")\
          .option("delimiter", ",")\
-         .option("mode", "overwrite").csv("gs://procamp-test/datasets/reports/task2_2/")
+         .option("mode", "overwrite").csv(outcome_path_task_2_2)
