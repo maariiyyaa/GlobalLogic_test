@@ -3,7 +3,7 @@
     {
       "text": "%pyspark\nimport pyspark.sql.functions as F\nimport pyspark.sql.functions as F\nfrom pyspark.sql.window import Window",
       "user": "anonymous",
-      "dateUpdated": "2021-09-30T07:04:55+0000",
+      "dateUpdated": "2021-10-04T15:09:40+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -31,16 +31,16 @@
       "jobName": "paragraph_1632819207721_192056699",
       "id": "paragraph_1632819207721_192056699",
       "dateCreated": "2021-09-28T08:53:27+0000",
-      "dateStarted": "2021-09-30T07:04:55+0000",
-      "dateFinished": "2021-09-30T07:05:23+0000",
+      "dateStarted": "2021-10-04T15:09:40+0000",
+      "dateFinished": "2021-10-04T15:10:10+0000",
       "status": "FINISHED",
       "focus": true,
-      "$$hashKey": "object:7849"
+      "$$hashKey": "object:229"
     },
     {
       "text": "%pyspark\n\npath_to_airlines = 'gs://procamp-test/datasets/airlines.csv'\npath_to_airports = 'gs://procamp-test/datasets/airports.csv'\npath_to_flights = 'gs://procamp-test/datasets/flights.csv'\n\n\nairlines_df = spark.read.format('CSV')\\\n                .option('inferschema', True) \\\n                .option('sep', ',')\\\n                .option('header', True)\\\n                .load(path_to_airlines).cache()\nairports_df = spark.read.format('CSV')\\\n                .option('inferschema', True) \\\n                .option('sep', ',')\\\n                .option('header', True)\\\n                .load(path_to_airports).cache()\nflights_df = spark.read.format('CSV')\\\n                .option('inferschema', True) \\\n                .option('sep', ',')\\\n                .option('header', True)\\\n                .load(path_to_flights).cache()",
       "user": "anonymous",
-      "dateUpdated": "2021-09-30T07:05:27+0000",
+      "dateUpdated": "2021-10-04T15:09:43+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -483,28 +483,28 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=0",
-              "$$hashKey": "object:8260"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=0",
+              "$$hashKey": "object:6724"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=1",
-              "$$hashKey": "object:8261"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=1",
+              "$$hashKey": "object:6725"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=2",
-              "$$hashKey": "object:8262"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=2",
+              "$$hashKey": "object:6726"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=3",
-              "$$hashKey": "object:8263"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=3",
+              "$$hashKey": "object:6727"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=4",
-              "$$hashKey": "object:8264"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=4",
+              "$$hashKey": "object:6728"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=5",
-              "$$hashKey": "object:8265"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=5",
+              "$$hashKey": "object:6729"
             }
           ],
           "interpreterSettingId": "spark"
@@ -514,15 +514,15 @@
       "jobName": "paragraph_1632819277670_1825459284",
       "id": "paragraph_1632819277670_1825459284",
       "dateCreated": "2021-09-28T08:54:37+0000",
-      "dateStarted": "2021-09-30T07:05:27+0000",
-      "dateFinished": "2021-09-30T07:06:04+0000",
+      "dateStarted": "2021-10-04T15:10:00+0000",
+      "dateFinished": "2021-10-04T15:10:52+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7850"
+      "$$hashKey": "object:230"
     },
     {
       "text": "%pyspark\nz.show(flights_df.select(flights_df.ORIGIN_AIRPORT).distinct())\n#Airport names have numbers",
       "user": "anonymous",
-      "dateUpdated": "2021-09-30T07:06:15+0000",
+      "dateUpdated": "2021-10-04T15:09:53+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -586,24 +586,24 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=6",
-              "$$hashKey": "object:8383"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=6",
+              "$$hashKey": "object:6968"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=7",
-              "$$hashKey": "object:8384"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=7",
+              "$$hashKey": "object:6969"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=8",
-              "$$hashKey": "object:8385"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=8",
+              "$$hashKey": "object:6970"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=9",
-              "$$hashKey": "object:8386"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=9",
+              "$$hashKey": "object:6971"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=10",
-              "$$hashKey": "object:8387"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=10",
+              "$$hashKey": "object:6972"
             }
           ],
           "interpreterSettingId": "spark"
@@ -613,16 +613,16 @@
       "jobName": "paragraph_1632830632321_498353946",
       "id": "paragraph_1632830632321_498353946",
       "dateCreated": "2021-09-28T12:03:52+0000",
-      "dateStarted": "2021-09-30T07:06:15+0000",
-      "dateFinished": "2021-09-30T07:06:57+0000",
+      "dateStarted": "2021-10-04T15:10:11+0000",
+      "dateFinished": "2021-10-04T15:11:40+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7851"
+      "$$hashKey": "object:231"
     },
     {
       "title": "Task 1",
-      "text": "%pyspark\n\npopular_flifhts_df = flights_df.groupBy( F.col('MONTH'), F.col('DESTINATION_AIRPORT')).count()\n\npopular_flifhts_df = popular_flifhts_df.withColumn(\"row_number\", \n                                                    F.row_number().over(Window.partitionBy('MONTH').orderBy(F.col('count').desc())))\n                                                    \nreport_df = popular_flifhts_df.where(popular_flifhts_df.row_number ==1).select(F.col('DESTINATION_AIRPORT').alias('dest_airport'), F.col('count').alias('max_count'))\nz.show(report_df)",
+      "text": "%pyspark\n\npopular_flifhts_df = flights_df.groupBy(F.col('YEAR'), F.col('MONTH'), F.col('DESTINATION_AIRPORT')).count()\n\npopular_flifhts_df = popular_flifhts_df.withColumn(\"row_number\", \n                                                    F.row_number().over(Window.partitionBy('YEAR','MONTH').orderBy(F.col('count').desc())))\n                                                    \nreport_df = popular_flifhts_df.where(popular_flifhts_df.row_number ==1).select(F.col('DESTINATION_AIRPORT').alias('dest_airport'), F.col('count').alias('max_count'))\nz.show(report_df)",
       "user": "anonymous",
-      "dateUpdated": "2021-09-30T07:20:43+0000",
+      "dateUpdated": "2021-10-04T15:12:47+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -761,7 +761,7 @@
         "msg": [
           {
             "type": "TABLE",
-            "data": "dest_airport\tmax_count\nATL\t31030\nATL\t29492\nATL\t32739\nATL\t32775\nATL\t32425\nATL\t31331\nATL\t31383\nATL\t33725\nATL\t33735\n10397\t32594\nATL\t30903\nATL\t27366\n"
+            "data": "dest_airport\tmax_count\nATL\t27366\nATL\t31030\nATL\t31383\nATL\t33725\nATL\t30903\nATL\t31331\n10397\t32594\nATL\t32775\nATL\t33735\nATL\t32739\nATL\t29492\nATL\t32425\n"
           }
         ]
       },
@@ -774,24 +774,24 @@
           "group": "spark",
           "values": [
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=16",
-              "$$hashKey": "object:13432"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=16",
+              "$$hashKey": "object:8885"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=17",
-              "$$hashKey": "object:13433"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=17",
+              "$$hashKey": "object:8886"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=18",
-              "$$hashKey": "object:13434"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=18",
+              "$$hashKey": "object:8887"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=19",
-              "$$hashKey": "object:13435"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=19",
+              "$$hashKey": "object:8888"
             },
             {
-              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=20",
-              "$$hashKey": "object:13436"
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45307/jobs/job?id=20",
+              "$$hashKey": "object:8889"
             }
           ],
           "interpreterSettingId": "spark"
@@ -801,10 +801,10 @@
       "jobName": "paragraph_1632827627648_299179097",
       "id": "paragraph_1632827627648_299179097",
       "dateCreated": "2021-09-28T11:13:47+0000",
-      "dateStarted": "2021-09-30T07:20:43+0000",
-      "dateFinished": "2021-09-30T07:20:48+0000",
+      "dateStarted": "2021-10-04T15:12:47+0000",
+      "dateFinished": "2021-10-04T15:12:52+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7852"
+      "$$hashKey": "object:232"
     },
     {
       "text": "%pyspark\n\nreport_df = report_df.join(airports_df, report_df.dest_airport == airports_df.IATA_CODE, how = 'left')\\\n                     .select(F.coalesce(F.col('AIRPORT'), F.col('dest_airport')).alias('dest_airport'), F.col('max_count'))\n\nz.show(report_df)",
@@ -902,27 +902,27 @@
           "values": [
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=21",
-              "$$hashKey": "object:14245"
+              "$$hashKey": "object:879"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=22",
-              "$$hashKey": "object:14246"
+              "$$hashKey": "object:880"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=23",
-              "$$hashKey": "object:14247"
+              "$$hashKey": "object:881"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=24",
-              "$$hashKey": "object:14248"
+              "$$hashKey": "object:882"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=25",
-              "$$hashKey": "object:14249"
+              "$$hashKey": "object:883"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=26",
-              "$$hashKey": "object:14250"
+              "$$hashKey": "object:884"
             }
           ],
           "interpreterSettingId": "spark"
@@ -935,7 +935,7 @@
       "dateStarted": "2021-09-30T07:20:48+0000",
       "dateFinished": "2021-09-30T07:20:53+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7853"
+      "$$hashKey": "object:233"
     },
     {
       "text": "%pyspark\nreport_df.coalesce(1).write.format(\"csv\")\\\n                     .option(\"header\", \"true\")\\\n                     .option(\"delimiter\", \"\\t\")\\\n                     .option(\"mode\", \"overwrite\").csv(\"gs://procamp-test/datasets/reports/task1/\")",
@@ -972,11 +972,11 @@
           "values": [
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=28",
-              "$$hashKey": "object:14871"
+              "$$hashKey": "object:950"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=29",
-              "$$hashKey": "object:14872"
+              "$$hashKey": "object:951"
             }
           ],
           "interpreterSettingId": "spark"
@@ -989,7 +989,7 @@
       "dateStarted": "2021-09-30T07:22:11+0000",
       "dateFinished": "2021-09-30T07:22:16+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7854"
+      "$$hashKey": "object:234"
     },
     {
       "text": "%pyspark\n\nperc_canceled_df = flights_df.groupBy(F.col('AIRLINE').alias('airline'), F.col('ORIGIN_AIRPORT').alias('origin_airport'))\\\n                             .agg(F.count(F.col('ORIGIN_AIRPORT')).alias('origin_counts'), \n                                  F.sum(F.col('CANCELLED')).alias('canceled_counts'))\n                                  \nperc_canceled_df = perc_canceled_df.withColumn('cancel_percentage', F.col('canceled_counts')/F.col('origin_counts'))\\\n                                   .withColumn('processed_counts', F.col('origin_counts') - F.col('canceled_counts'))\nz.show(perc_canceled_df)\n\n",
@@ -1098,19 +1098,19 @@
           "values": [
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=30",
-              "$$hashKey": "object:15118"
+              "$$hashKey": "object:1001"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=31",
-              "$$hashKey": "object:15119"
+              "$$hashKey": "object:1002"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=32",
-              "$$hashKey": "object:15120"
+              "$$hashKey": "object:1003"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=33",
-              "$$hashKey": "object:15121"
+              "$$hashKey": "object:1004"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1123,7 +1123,7 @@
       "dateStarted": "2021-09-30T07:22:35+0000",
       "dateFinished": "2021-09-30T07:22:38+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7855"
+      "$$hashKey": "object:235"
     },
     {
       "text": "%pyspark\nreport_df = perc_canceled_df.join(airports_df, perc_canceled_df.origin_airport == airports_df.IATA_CODE, how = 'left')\\\n                     .join(airlines_df, perc_canceled_df.airline == airlines_df.IATA_CODE, how = 'left')\\\n                     .select(airlines_df.AIRLINE.alias('airline_name'), F.coalesce(F.col('AIRPORT'), F.col('origin_airport')).alias('origin_airport_name'), F.col('cancel_percentage'), F.col('canceled_counts'), F.col('processed_counts'))\n                     \n                     \nz.show(report_df)                     ",
@@ -1397,27 +1397,27 @@
           "values": [
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=40",
-              "$$hashKey": "object:19353"
+              "$$hashKey": "object:1062"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=41",
-              "$$hashKey": "object:19354"
+              "$$hashKey": "object:1063"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=42",
-              "$$hashKey": "object:19355"
+              "$$hashKey": "object:1064"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=43",
-              "$$hashKey": "object:19356"
+              "$$hashKey": "object:1065"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=44",
-              "$$hashKey": "object:19357"
+              "$$hashKey": "object:1066"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=45",
-              "$$hashKey": "object:19358"
+              "$$hashKey": "object:1067"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1430,7 +1430,7 @@
       "dateStarted": "2021-09-30T07:24:48+0000",
       "dateFinished": "2021-09-30T07:24:51+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7856"
+      "$$hashKey": "object:236"
     },
     {
       "text": "%pyspark\n\n#test\ntest = report_df.withColumn('test', F.col('canceled_counts')+F.col('processed_counts'))\\\n                .groupBy('airline_name').sum('test')\n                \nz.show(test.orderBy('airline_name'))",
@@ -1501,19 +1501,19 @@
           "values": [
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=212",
-              "$$hashKey": "object:9043"
+              "$$hashKey": "object:1133"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=213",
-              "$$hashKey": "object:9044"
+              "$$hashKey": "object:1134"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=214",
-              "$$hashKey": "object:9045"
+              "$$hashKey": "object:1135"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=215",
-              "$$hashKey": "object:9046"
+              "$$hashKey": "object:1136"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1526,7 +1526,7 @@
       "dateStarted": "2021-09-28T13:48:50+0000",
       "dateFinished": "2021-09-28T13:48:56+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7857"
+      "$$hashKey": "object:237"
     },
     {
       "text": "%pyspark\n\n#test\nz.show(flights_df.join(airlines_df, flights_df.AIRLINE == airlines_df.IATA_CODE, how = 'left').groupBy(airlines_df.AIRLINE).count())",
@@ -1625,27 +1625,27 @@
           "values": [
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=279",
-              "$$hashKey": "object:9156"
+              "$$hashKey": "object:1194"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=280",
-              "$$hashKey": "object:9157"
+              "$$hashKey": "object:1195"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=281",
-              "$$hashKey": "object:9158"
+              "$$hashKey": "object:1196"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=282",
-              "$$hashKey": "object:9159"
+              "$$hashKey": "object:1197"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=283",
-              "$$hashKey": "object:9160"
+              "$$hashKey": "object:1198"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:45629/jobs/job?id=284",
-              "$$hashKey": "object:9161"
+              "$$hashKey": "object:1199"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1658,7 +1658,7 @@
       "dateStarted": "2021-09-28T14:12:39+0000",
       "dateFinished": "2021-09-28T14:12:41+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7858"
+      "$$hashKey": "object:238"
     },
     {
       "text": "%pyspark\n\nreport_df.where(F.col('origin_airport_name') != 'Waco Regional Airport')\\\n         .coalesce(1).write.format(\"json\")\\\n         .option(\"mode\", \"overwrite\").json(\"gs://procamp-test/datasets/reports/task2_1/\")\n                     \nreport_df.where(F.col('origin_airport_name') == 'Waco Regional Airport')\\\n         .coalesce(1).write.format(\"csv\")\\\n         .option(\"header\", \"true\")\\\n         .option(\"delimiter\", \",\")\\\n         .option(\"mode\", \"overwrite\").csv(\"gs://procamp-test/datasets/reports/task2_2/\")",
@@ -1695,27 +1695,27 @@
           "values": [
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=46",
-              "$$hashKey": "object:19674"
+              "$$hashKey": "object:1265"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=47",
-              "$$hashKey": "object:19675"
+              "$$hashKey": "object:1266"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=48",
-              "$$hashKey": "object:19676"
+              "$$hashKey": "object:1267"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=49",
-              "$$hashKey": "object:19677"
+              "$$hashKey": "object:1268"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=50",
-              "$$hashKey": "object:19678"
+              "$$hashKey": "object:1269"
             },
             {
               "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=51",
-              "$$hashKey": "object:19679"
+              "$$hashKey": "object:1270"
             }
           ],
           "interpreterSettingId": "spark"
@@ -1728,12 +1728,123 @@
       "dateStarted": "2021-09-30T07:25:15+0000",
       "dateFinished": "2021-09-30T07:25:26+0000",
       "status": "FINISHED",
-      "$$hashKey": "object:7859"
+      "$$hashKey": "object:239"
+    },
+    {
+      "text": "%pyspark\nz.show(report_df.where(F.col('origin_airport_name') != 'Waco Regional Airport'))",
+      "user": "anonymous",
+      "dateUpdated": "2021-09-30T07:38:04+0000",
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "airline_name": "string",
+                      "origin_airport_name": "string",
+                      "cancel_percentage": "string",
+                      "canceled_counts": "string",
+                      "processed_counts": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/python"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "airline_name\torigin_airport_name\tcancel_percentage\tcanceled_counts\tprocessed_counts\nAtlantic Southeast Airlines\tJacksonville International Airport\t0.028913260219341975\t58\t1948\nUnited Air Lines Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.014902676399026763\t49\t3239\nDelta Air Lines Inc.\tLouis Armstrong New Orleans International Airport\t0.005170185264971995\t36\t6927\nAlaska Airlines Inc.\tSalt Lake City International Airport\t0.0014423076923076924\t3\t2077\nSouthwest Airlines Co.\tAlbany International Airport\t0.017361111111111112\t70\t3962\nSouthwest Airlines Co.\tBaltimore-Washington International Airport\t0.018840828559386853\t1207\t62856\nVirgin America\tMcCarran International Airport\t0.009028146574614976\t34\t3732\nAtlantic Southeast Airlines\tLafayette Regional Airport\t0.02058319039451115\t72\t3426\nDelta Air Lines Inc.\tSt. Louis International Airport at Lambert Field\t0.0017237664296487825\t8\t4633\nAtlantic Southeast Airlines\tSyracuse Hancock International Airport\t0.03294117647058824\t42\t1233\nSkywest Airlines Inc.\tTulsa International Airport\t0.015221707478491065\t23\t1488\nUS Airways Inc.\tGreater Rochester International Airport\t0.01282051282051282\t2\t154\nJetBlue Airways\tSarasota-Bradenton International Airport\t0.024734982332155476\t21\t828\nVirgin America\tOrlando International Airport\t0.0\t0\t334\nAlaska Airlines Inc.\tGeorge Bush Intercontinental Airport\t0.005249343832020997\t2\t379\nSouthwest Airlines Co.\t10792\t0.0\t0\t491\nAmerican Eagle Airlines Inc.\t12953\t0.033628318584070796\t19\t546\nVirgin America\t14679\t0.011299435028248588\t2\t175\nJetBlue Airways\t14122\t0.0\t0\t143\nAmerican Eagle Airlines Inc.\t10980\t0.03225806451612903\t1\t30\nUS Airways Inc.\tChicago O'Hare International Airport\t0.02809965237543453\t97\t3355\nSkywest Airlines Inc.\tChippewa Valley Regional Airport\t0.04940119760479042\t33\t635\nAmerican Eagle Airlines Inc.\tHuntsville International Airport\t0.054252199413489736\t37\t645\nAtlantic Southeast Airlines\tDickinson Theodore Roosevelt Regional Airport\t0.026392961876832845\t9\t332\nSouthwest Airlines Co.\tMidland International Airport\t0.02061211742660837\t66\t3136\nDelta Air Lines Inc.\tOakland International Airport\t0.0\t0\t919\nUnited Air Lines Inc.\t14057\t0.0018148820326678765\t1\t550\nDelta Air Lines Inc.\t10397\t1.4305469457822706E-4\t3\t20968\nSpirit Air Lines\t11298\t0.003937007874015748\t3\t759\nAmerican Eagle Airlines Inc.\t12197\t0.0\t0\t88\nVirgin America\t14262\t0.0\t0\t18\nAmerican Eagle Airlines Inc.\tDestin-Fort Walton Beach Airport/Eglin AFB\t0.068359375\t35\t477\nJetBlue Airways\tPortland International Airport\t0.003076923076923077\t4\t1296\nUS Airways Inc.\tMiami International Airport\t0.01950947603121516\t35\t1759\nDelta Air Lines Inc.\t12278\t0.0\t0\t92\nAtlantic Southeast Airlines\t11193\t0.026905829596412557\t6\t217\nUnited Air Lines Inc.\t11057\t0.0\t0\t53\nSkywest Airlines Inc.\t13303\t0.0\t0\t22\nAmerican Eagle Airlines Inc.\t12891\t0.03333333333333333\t1\t29\nAmerican Airlines Inc.\tBaltimore-Washington International Airport\t0.013336566440349175\t55\t4069\nSouthwest Airlines Co.\tChicago Midway International Airport\t0.025003274394237066\t1909\t74441\nSkywest Airlines Inc.\tElko Regional Airport\t0.026365348399246705\t14\t517\nSouthwest Airlines Co.\tNashville International Airport\t0.017446964155084125\t477\t26863\nAmerican Eagle Airlines Inc.\tKey West International Airport\t0.023679417122040074\t13\t536\nAmerican Airlines Inc.\tLouisville International Airport (Standiford Field)\t0.030201342281879196\t9\t289\nDelta Air Lines Inc.\tManchester-Boston Regional Airport\t0.011160714285714286\t5\t443\nDelta Air Lines Inc.\t14783\t0.0\t0\t31\nAmerican Airlines Inc.\t10792\t0.009009009009009009\t1\t110\nVirgin America\t12892\t0.0\t0\t1141\nSkywest Airlines Inc.\tSloulin Field International Airport\t0.009086320040383645\t18\t1963\nAmerican Eagle Airlines Inc.\tSanta Fe Municipal Airport\t0.0456989247311828\t34\t710\nAtlantic Southeast Airlines\tCherry Capital Airport\t0.0327313769751693\t29\t857\nSkywest Airlines Inc.\tCedar City Regional Airport\t0.0017452006980802793\t1\t572\nVirgin America\tNewark Liberty International Airport\t0.010917030567685589\t20\t1812\nAlaska Airlines Inc.\tNome Airport\t0.04072398190045249\t27\t636\nUnited Air Lines Inc.\tKansas City International Airport\t0.01669449081803005\t10\t589\nAmerican Airlines Inc.\t11292\t0.008641975308641974\t7\t803\nAmerican Eagle Airlines Inc.\t11203\t0.0\t0\t84\nAtlantic Southeast Airlines\t14683\t0.02564102564102564\t1\t38\nAtlantic Southeast Airlines\t14633\t0.0\t0\t62\nFrontier Airlines Inc.\tSalt Lake City International Airport\t0.006220839813374806\t8\t1278\nUnited Air Lines Inc.\tBradley International Airport\t0.027972027972027972\t16\t556\nUS Airways Inc.\tTampa International Airport\t0.01238390092879257\t44\t3509\nAlaska Airlines Inc.\tDeadhorse Airport (Prudhoe Bay Airport)\t0.021052631578947368\t18\t837\nDelta Air Lines Inc.\tDuluth International Airport\t0.0\t0\t199\nAmerican Airlines Inc.\tTheodore Francis Green State Airport\t0.002570694087403599\t2\t776\nUnited Air Lines Inc.\t13930\t0.0011315874555447786\t7\t6179\nHawaiian Airlines Inc.\t14831\t0.0\t0\t62\nSpirit Air Lines\tOakland International Airport\t0.019801980198019802\t32\t1584\nUS Airways Inc.\tDallas/Fort Worth International Airport\t0.020765736534717714\t64\t3018\nVirgin America\tRonald Reagan Washington National Airport\t0.01620745542949757\t20\t1214\nSkywest Airlines Inc.\tBaton Rouge Metropolitan Airport\t0.06666666666666667\t1\t14\nAmerican Eagle Airlines Inc.\t10792\t0.0\t0\t113\nSouthwest Airlines Co.\t14492\t0.0\t0\t823\nSouthwest Airlines Co.\t14635\t0.0\t0\t323\nSkywest Airlines Inc.\t14262\t0.0\t0\t418\nSouthwest Airlines Co.\t11140\t0.008771929824561403\t1\t113\nAmerican Airlines Inc.\t13851\t0.0364963503649635\t5\t132\nDelta Air Lines Inc.\t14814\t0.0\t0\t26\nAtlantic Southeast Airlines\t13184\t0.0\t0\t3\nAtlantic Southeast Airlines\t11109\t0.0\t0\t2\nSkywest Airlines Inc.\tRedding Municipal Airport\t0.02888583218707015\t21\t706\nJetBlue Airways\tTheodore Francis Green State Airport\t0.019114688128772636\t19\t975\nAmerican Eagle Airlines Inc.\tTyler Pounds Regional Airport\t0.0728476821192053\t44\t560\nDelta Air Lines Inc.\tGlacier Park International Airport\t0.0034129692832764505\t1\t292\nAmerican Airlines Inc.\t14492\t0.009523809523809525\t7\t728\nAmerican Airlines Inc.\t12478\t0.002\t3\t1497\nAmerican Eagle Airlines Inc.\t14492\t0.046875\t3\t61\nFrontier Airlines Inc.\t14057\t0.011627906976744186\t1\t85\nFrontier Airlines Inc.\t12339\t0.0\t0\t91\nAlaska Airlines Inc.\t13796\t0.0\t0\t182\nDelta Air Lines Inc.\t13342\t0.0\t0\t463\nSouthwest Airlines Co.\t11042\t0.0\t0\t435\nAtlantic Southeast Airlines\t12451\t0.007575757575757576\t1\t131\nAlaska Airlines Inc.\t13873\t0.06451612903225806\t4\t58\nJetBlue Airways\tOakland International Airport\t0.006470165348670022\t9\t1382\nDelta Air Lines Inc.\tHarrisburg International Airport\t0.0032397408207343412\t3\t923\nUS Airways Inc.\tPhiladelphia International Airport\t0.024584166626018242\t504\t19997\nDelta Air Lines Inc.\tPiedmont Triad International Airport\t0.00421274354923644\t8\t1891\nAtlantic Southeast Airlines\tLake Charles Regional Airport\t0.024267782426778243\t29\t1166\nSkywest Airlines Inc.\tTheodore Francis Green State Airport\t0.0\t0\t37\nDelta Air Lines Inc.\t13487\t3.6423238025860496E-4\t2\t5489\nFrontier Airlines Inc.\t11298\t0.0\t0\t142\nAlaska Airlines Inc.\t12819\t0.021505376344086023\t4\t182\nSkywest Airlines Inc.\tDallas/Fort Worth International Airport\t0.023238925199709513\t96\t4035\nAmerican Eagle Airlines Inc.\tNorfolk International Airport\t0.12534435261707988\t91\t635\nAtlantic Southeast Airlines\tEppley Airfield\t0.030570652173913044\t90\t2854\nAtlantic Southeast Airlines\tRaleigh-Durham International Airport\t0.0348\t87\t2413\nUS Airways Inc.\tKona International Airport at Keahole\t0.005494505494505495\t1\t181\nDelta Air Lines Inc.\t14107\t0.0\t0\t600\nDelta Air Lines Inc.\t13296\t0.0\t0\t54\nAtlantic Southeast Airlines\t10397\t0.0011892963330029733\t6\t5039\nJetBlue Airways\t14986\t0.010752688172043012\t1\t92\nAtlantic Southeast Airlines\tDaytona Beach International Airport\t0.0\t0\t2\nSpirit Air Lines\tPlattsburgh International Airport\t0.0071174377224199285\t2\t279\nUS Airways Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.04219409282700422\t60\t1362\nUnited Air Lines Inc.\tGuam International Airport\t0.008982035928143712\t3\t331\nSouthwest Airlines Co.\tEppley Airfield\t0.008920098690453597\t47\t5222\nHawaiian Airlines Inc.\tSan Diego International Airport (Lindbergh Field)\t0.0\t0\t334\nAmerican Eagle Airlines Inc.\tMontrose Regional Airport\t0.03125\t2\t62\nDelta Air Lines Inc.\t10990\t0.0\t0\t31\nAtlantic Southeast Airlines\t12992\t0.004201680672268907\t1\t237\nUS Airways Inc.\tGeneral Mitchell International Airport\t0.014245014245014245\t5\t346\nAmerican Eagle Airlines Inc.\tBaton Rouge Metropolitan Airport\t0.06629834254143646\t36\t507\nSkywest Airlines Inc.\tJacksonville International Airport\t0.018779342723004695\t4\t209\nJetBlue Airways\tReno/Tahoe International Airport\t0.005917159763313609\t1\t168\nSkywest Airlines Inc.\t10747\t0.10526315789473684\t4\t34\nSkywest Airlines Inc.\t13184\t0.014388489208633094\t2\t137\nSpirit Air Lines\tMcCarran International Airport\t0.01471727343144849\t133\t8904\nSpirit Air Lines\tGen. Edward Lawrence Logan International Airport\t0.02021563342318059\t45\t2181\nSkywest Airlines Inc.\tWill Rogers World Airport\t0.015\t39\t2561\nSkywest Airlines Inc.\tSouth Bend International Airport (South Bend Regional)\t0.019883040935672516\t68\t3352\nDelta Air Lines Inc.\tEl Paso International Airport\t0.001430615164520744\t1\t698\nUnited Air Lines Inc.\tKona International Airport at Keahole\t0.011583011583011582\t15\t1280\nFrontier Airlines Inc.\tCentral Illinois Regional Airport at Bloomington-Normal\t0.02702702702702703\t1\t36\nAtlantic Southeast Airlines\tAustin-Bergstrom International Airport\t0.01524390243902439\t5\t323\nSkywest Airlines Inc.\tMcGhee Tyson Airport\t0.02666666666666667\t2\t73\nAlaska Airlines Inc.\tDillingham Airport\t0.0\t0\t77\nUnited Air Lines Inc.\tNorfolk International Airport\t0.038834951456310676\t4\t99\nSpirit Air Lines\t10721\t0.012096774193548387\t3\t245\nAtlantic Southeast Airlines\t12915\t0.017699115044247787\t2\t111\nJetBlue Airways\t14057\t0.0\t0\t93\nFrontier Airlines Inc.\t10693\t0.0\t0\t53\nAmerican Eagle Airlines Inc.\tDetroit Metropolitan Airport\t0.09278785322648671\t220\t2151\nUS Airways Inc.\tSan Diego International Airport (Lindbergh Field)\t0.010452961672473868\t18\t1704\nSouthwest Airlines Co.\tCleveland Hopkins International Airport\t0.01485148514851485\t66\t4378\nFrontier Airlines Inc.\tRonald Reagan Washington National Airport\t0.004044489383215369\t4\t985\nAmerican Eagle Airlines Inc.\tMemphis International Airport\t0.05664652567975831\t75\t1249\nDelta Air Lines Inc.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.004645760743321719\t4\t857\nUnited Air Lines Inc.\tDes Moines International Airport\t0.015804597701149427\t11\t685\nSkywest Airlines Inc.\tAlbany International Airport\t0.02247191011235955\t2\t87\nAmerican Airlines Inc.\tPensacola International Airport (Pensacola Gulf Coast Regional Airport)\t0.00964630225080386\t3\t308\nSkywest Airlines Inc.\t12892\t0.003946329913180742\t10\t2524\nAtlantic Southeast Airlines\t12511\t0.0\t0\t58\nSpirit Air Lines\t13198\t0.007751937984496124\t1\t128\nSpirit Air Lines\t13495\t0.012903225806451613\t2\t153\nAmerican Eagle Airlines Inc.\t14457\t0.037037037037037035\t2\t52\nUS Airways Inc.\tLos Angeles International Airport\t0.007321041214750542\t27\t3661\nSkywest Airlines Inc.\tJohn Wayne Airport (Orange County Airport)\t0.02211874272409779\t57\t2520\nSkywest Airlines Inc.\tAspen-Pitkin County Airport\t0.06571994715984147\t199\t2829\nAmerican Eagle Airlines Inc.\tGeneral Mitchell International Airport\t0.06666666666666667\t3\t42\nFrontier Airlines Inc.\tWilmington Airport\t0.05\t5\t95\nAlaska Airlines Inc.\tMerle K. (Mudhole) Smith Airport\t0.013595166163141994\t9\t653\nHawaiian Airlines Inc.\tPago Pago International Airport (Tafuna Airport)\t0.0\t0\t107\nDelta Air Lines Inc.\tDes Moines International Airport\t0.0042643923240938165\t4\t934\nAmerican Airlines Inc.\t10721\t0.014106583072100314\t36\t2516\nAtlantic Southeast Airlines\t13931\t0.005780346820809248\t1\t172\nFrontier Airlines Inc.\t11193\t0.0\t0\t237\nAtlantic Southeast Airlines\t10208\t0.0\t0\t190\nAtlantic Southeast Airlines\t14027\t0.0\t0\t17\nSkywest Airlines Inc.\t10792\t0.0\t0\t7\nHawaiian Airlines Inc.\tKahului Airport\t0.0041892940263770365\t54\t12836\nSpirit Air Lines\tRafael Hernández Airport\t0.012195121951219513\t2\t162\nAtlantic Southeast Airlines\t11982\t0.028368794326241134\t8\t274\nJetBlue Airways\t14321\t0.0\t0\t108\nDelta Air Lines Inc.\t12448\t0.0\t0\t204\nAmerican Eagle Airlines Inc.\t10529\t0.0\t0\t30\nFrontier Airlines Inc.\tGeorge Bush Intercontinental Airport\t0.004578155657292348\t7\t1522\nAtlantic Southeast Airlines\tSioux Falls Regional Airport\t0.029825548677546426\t53\t1724\nSkywest Airlines Inc.\tSyracuse Hancock International Airport\t0.04838709677419355\t6\t118\nUnited Air Lines Inc.\tNashville International Airport\t0.009876543209876543\t4\t401\nDelta Air Lines Inc.\t11193\t0.0\t0\t500\nHawaiian Airlines Inc.\t12402\t0.0\t0\t480\nAtlantic Southeast Airlines\t15919\t0.0\t0\t297\nAmerican Eagle Airlines Inc.\t10397\t0.0\t0\t31\nAlaska Airlines Inc.\tPhoenix Sky Harbor International Airport\t4.3956043956043956E-4\t1\t2274\nAmerican Eagle Airlines Inc.\tColumbia Metropolitan Airport\t0.0898876404494382\t16\t162\nAtlantic Southeast Airlines\tMidland International Airport\t0.027127659574468086\t51\t1829\nSkywest Airlines Inc.\tSpokane International Airport\t0.009995835068721367\t24\t2377\nSkywest Airlines Inc.\tRick Husband Amarillo International Airport\t0.013100436681222707\t6\t452\nDelta Air Lines Inc.\t11775\t0.0\t0\t91\nSouthwest Airlines Co.\t14321\t0.0\t0\t97\nSouthwest Airlines Co.\t12451\t0.0\t0\t362\nAmerican Airlines Inc.\t11540\t0.0\t0\t124\nSpirit Air Lines\t11042\t0.014760147601476014\t4\t267\nSkywest Airlines Inc.\t12884\t0.008771929824561403\t1\t113\nJetBlue Airways\t11292\t0.0\t0\t87\nAlaska Airlines Inc.\t12266\t0.0\t0\t31\nAmerican Airlines Inc.\t13230\t0.0\t0\t27\nUnited Air Lines Inc.\t15376\t0.0\t0\t5\nAmerican Airlines Inc.\tOntario International Airport\t0.018974358974358976\t37\t1913\nAtlantic Southeast Airlines\tAppleton International Airport\t0.04068241469816273\t62\t1462\nSkywest Airlines Inc.\tBarkley Regional Airport\t0.06606606606606606\t44\t622\nDelta Air Lines Inc.\tAustin-Bergstrom International Airport\t0.0028993911278631487\t10\t3439\nSouthwest Airlines Co.\tBradley International Airport\t0.022982804232804233\t139\t5909\nAmerican Eagle Airlines Inc.\t14524\t0.015625\t4\t252\nSkywest Airlines Inc.\t14905\t0.016129032258064516\t1\t61\nDelta Air Lines Inc.\tMinneapolis-Saint Paul International Airport\t0.0017164619428203616\t96\t55833\nDelta Air Lines Inc.\tGeorge Bush Intercontinental Airport\t0.0013665869490946361\t4\t2923\nAmerican Eagle Airlines Inc.\tKalamazoo/Battle Creek International Airport\t0.058544303797468354\t74\t1190\nDelta Air Lines Inc.\tNorthwest Florida Beaches International Airport\t0.002652519893899204\t5\t1880\nUnited Air Lines Inc.\tCharlotte Douglas International Airport\t0.007380073800738007\t2\t269\nDelta Air Lines Inc.\tNewport News/Williamsburg International Airport\t0.03571428571428571\t3\t81\nAmerican Eagle Airlines Inc.\t10693\t0.01507537688442211\t6\t392\nAtlantic Southeast Airlines\t10980\t0.0033783783783783786\t1\t295\nUnited Air Lines Inc.\t14635\t0.0\t0\t165\nSkywest Airlines Inc.\t11267\t0.0\t0\t167\nUS Airways Inc.\tDenver International Airport\t0.010304851867754402\t24\t2305\nAmerican Eagle Airlines Inc.\tKilleen-Fort Hood Regional Airport\t0.06041666666666667\t87\t1353\nUS Airways Inc.\tMemphis International Airport\t0.03160270880361174\t14\t429\nAtlantic Southeast Airlines\tRoanoke Regional Airport (Woodrum Field)\t0.03009503695881732\t57\t1837\nFrontier Airlines Inc.\tNewport News/Williamsburg International Airport\t0.0\t0\t3\nDelta Air Lines Inc.\tSioux Falls Regional Airport\t0.0\t0\t425\nSkywest Airlines Inc.\t12278\t0.013636363636363636\t3\t217\nDelta Air Lines Inc.\t13232\t0.0\t0\t241\nDelta Air Lines Inc.\t10529\t0.0\t0\t412\nAmerican Airlines Inc.\t14262\t0.0\t0\t85\nDelta Air Lines Inc.\t13891\t0.0\t0\t31\nDelta Air Lines Inc.\t11973\t0.0\t0\t102\nUS Airways Inc.\tSacramento International Airport\t0.006048387096774193\t6\t986\nUnited Air Lines Inc.\tDenver International Airport\t0.00997446882167121\t461\t45757\nAmerican Airlines Inc.\tMcAllen-Miller International Airport (McAllen Miller International)\t0.03305785123966942\t48\t1404\nFrontier Airlines Inc.\tSan Diego International Airport (Lindbergh Field)\t0.005361930294906166\t4\t742\nAmerican Eagle Airlines Inc.\tLouisville International Airport (Standiford Field)\t0.09042553191489362\t68\t684\nDelta Air Lines Inc.\t13931\t0.0\t0\t287\nAmerican Eagle Airlines Inc.\t15380\t0.0\t0\t96\nSpirit Air Lines\t12898\t0.017094017094017096\t2\t115\nAtlantic Southeast Airlines\t14574\t0.0\t0\t166\nAmerican Eagle Airlines Inc.\t13342\t0.0\t0\t24\nAmerican Airlines Inc.\tPalm Beach International Airport\t0.013347022587268994\t39\t2883\nJetBlue Airways\tWestchester County Airport\t0.023500138236107273\t85\t3532\nUS Airways Inc.\tCleveland Hopkins International Airport\t0.009782608695652175\t9\t911\nUnited Air Lines Inc.\tPort Columbus International Airport\t0.015647226173541962\t11\t692\nDelta Air Lines Inc.\tChicago Midway International Airport\t0.004752475247524752\t12\t2513\nSouthwest Airlines Co.\tBishop International Airport\t0.011409395973154362\t17\t1473\nUnited Air Lines Inc.\tGreater Rochester International Airport\t0.019417475728155338\t8\t404\nAmerican Airlines Inc.\t11057\t0.0021797045289416324\t18\t8240\nDelta Air Lines Inc.\t12951\t0.0\t0\t31\nJetBlue Airways\t12892\t0.005249343832020997\t2\t379\nJetBlue Airways\t10994\t0.0\t0\t159\nAlaska Airlines Inc.\tCharleston International Airport/Charleston AFB\t0.0\t0\t26\nAmerican Eagle Airlines Inc.\tCincinnati/Northern Kentucky International Airport\t0.04749232343909928\t232\t4653\nSkywest Airlines Inc.\tAbraham Lincoln Capital Airport\t0.04208416833667335\t42\t956\nSkywest Airlines Inc.\tNashville International Airport\t0.01843781428092524\t55\t2928\nUnited Air Lines Inc.\tGeorge Bush Intercontinental Airport\t0.011003056404556821\t594\t53391\nDelta Air Lines Inc.\tLafayette Regional Airport\t0.0029239766081871343\t1\t341\nDelta Air Lines Inc.\tGreen Bay-Austin Straubel International Airport\t0.0016207455429497568\t1\t616\nAlaska Airlines Inc.\t10423\t0.0\t0\t31\nJetBlue Airways\tJohn F. Kennedy International Airport (New York International Airport)\t0.019058212829069335\t771\t39684\nDelta Air Lines Inc.\tGreater Rochester International Airport\t0.003249390739236393\t4\t1227\nSkywest Airlines Inc.\tHelena Regional Airport\t0.0062717770034843206\t9\t1426\nSkywest Airlines Inc.\tReno/Tahoe International Airport\t0.02084108671380722\t56\t2631\nAmerican Eagle Airlines Inc.\tCentral Wisconsin Airport\t0.0472972972972973\t35\t705\nSkywest Airlines Inc.\tLouis Armstrong New Orleans International Airport\t0.008802816901408451\t5\t563\nSkywest Airlines Inc.\tPhiladelphia International Airport\t0.0\t0\t10\nDelta Air Lines Inc.\t14869\t0.0\t0\t3117\nAtlantic Southeast Airlines\t12266\t0.009936575052854123\t47\t4683\nFrontier Airlines Inc.\t13871\t0.0\t0\t17\nUnited Air Lines Inc.\tMinneapolis-Saint Paul International Airport\t0.014339152119700748\t46\t3162\nAtlantic Southeast Airlines\tPensacola International Airport (Pensacola Gulf Coast Regional Airport)\t0.018743109151047408\t34\t1780\nUS Airways Inc.\tOntario International Airport\t0.008375209380234505\t5\t592\nAtlantic Southeast Airlines\tTheodore Francis Green State Airport\t0.06318681318681318\t69\t1023\nHawaiian Airlines Inc.\tNorman Y. Mineta San José International Airport\t0.005997001499250375\t4\t663\nJetBlue Airways\tNantucket Memorial Airport\t0.012195121951219513\t6\t486\nDelta Air Lines Inc.\t12892\t0.0\t0\t2646\nDelta Air Lines Inc.\t13204\t7.412898443291327E-4\t1\t1348\nFrontier Airlines Inc.\t15356\t0.0\t0\t277\nJetBlue Airways\t14492\t0.0\t0\t256\nSkywest Airlines Inc.\t14100\t0.0\t0\t21\nJetBlue Airways\t15024\t0.0\t0\t69\nJetBlue Airways\tLuis Muñoz Marín International Airport\t0.009467684281711911\t98\t10253\nUnited Air Lines Inc.\tSan Antonio International Airport\t0.01074074074074074\t29\t2671\nSouthwest Airlines Co.\tLuis Muñoz Marín International Airport\t9.671179883945841E-4\t3\t3099\nAmerican Airlines Inc.\tJames M. Cox Dayton International Airport\t0.024731182795698924\t23\t907\nSouthwest Airlines Co.\tMemphis International Airport\t0.014169323414806943\t40\t2783\nJetBlue Airways\t14843\t0.0011918951132300357\t1\t838\nDelta Air Lines Inc.\t11721\t0.0\t0\t88\nSpirit Air Lines\t12953\t0.01466275659824047\t5\t336\nUnited Air Lines Inc.\t10140\t0.0\t0\t108\nUnited Air Lines Inc.\t12339\t0.0\t0\t168\nAmerican Eagle Airlines Inc.\t12896\t0.037037037037037035\t1\t26\nAmerican Airlines Inc.\tHarrisburg International Airport\t0.0\t0\t49\nAmerican Eagle Airlines Inc.\tPort Columbus International Airport\t0.05666089965397924\t262\t4362\nAmerican Eagle Airlines Inc.\tSan Angelo Regional Airport (Mathis Field)\t0.04288631722260041\t63\t1406\nDelta Air Lines Inc.\tSavannah/Hilton Head International Airport\t0.004137492043284532\t13\t3129\nAtlantic Southeast Airlines\tMobile Regional Airport\t0.01630735212824765\t59\t3559\nUnited Air Lines Inc.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.010845986984815618\t5\t456\nDelta Air Lines Inc.\tHenry E. Rohlsen Airport\t0.0\t0\t37\nUnited Air Lines Inc.\tAlbuquerque International Sunport\t0.008746355685131196\t3\t340\nAtlantic Southeast Airlines\t12197\t0.0\t0\t318\nDelta Air Lines Inc.\t11953\t0.0\t0\t26\nSkywest Airlines Inc.\t11823\t0.0\t0\t314\nJetBlue Airways\t14747\t0.005952380952380952\t1\t167\nHawaiian Airlines Inc.\t14107\t0.0\t0\t31\nUnited Air Lines Inc.\t12278\t0.0\t0\t39\nJetBlue Airways\t15027\t0.0\t0\t31\nSouthwest Airlines Co.\tNorman Y. Mineta San José International Airport\t0.01408649105507818\t300\t20997\nSkywest Airlines Inc.\tBrainerd Lakes Regional Airport\t0.011884550084889643\t7\t582\nSouthwest Airlines Co.\tNorfolk International Airport\t0.018823529411764704\t40\t2085\nAlaska Airlines Inc.\tKetchikan International Airport\t0.011802088061733999\t26\t2177\nAtlantic Southeast Airlines\tEasterwood Airport\t0.0335195530726257\t24\t692\nSkywest Airlines Inc.\t13198\t0.0\t0\t177\nJetBlue Airways\t12451\t0.01090909090909091\t3\t272\nAmerican Eagle Airlines Inc.\t14674\t0.03225806451612903\t2\t60\nSkywest Airlines Inc.\tEppley Airfield\t0.011090573012939002\t24\t2140\nAmerican Eagle Airlines Inc.\tThe Eastern Iowa Airport\t0.053577981651376144\t146\t2579\nSkywest Airlines Inc.\tSioux Falls Regional Airport\t0.026522593320235755\t54\t1982\nUS Airways Inc.\tCharlotte Douglas International Airport\t0.013409055056002523\t595\t43778\nAmerican Airlines Inc.\tEl Paso International Airport\t0.01913171449595291\t26\t1333\nUnited Air Lines Inc.\tWill Rogers World Airport\t0.00510204081632653\t3\t585\nAtlantic Southeast Airlines\tSanta Fe Municipal Airport\t0.02830188679245283\t15\t515\nAmerican Eagle Airlines Inc.\tShreveport Regional Airport\t0.0963855421686747\t24\t225\nAtlantic Southeast Airlines\tPort Columbus International Airport\t0.03927855711422846\t98\t2397\nSkywest Airlines Inc.\tPalm Beach International Airport\t0.02564102564102564\t2\t76\nAlaska Airlines Inc.\t14747\t4.3393360815795185E-4\t2\t4607\nAmerican Airlines Inc.\t12266\t0.006097560975609756\t5\t815\nAtlantic Southeast Airlines\t11617\t0.0\t0\t55\nAlaska Airlines Inc.\t14057\t0.0\t0\t1215\nSkywest Airlines Inc.\t14893\t0.0074962518740629685\t5\t662\nAtlantic Southeast Airlines\t13244\t0.015306122448979591\t6\t386\nSkywest Airlines Inc.\t15041\t0.03225806451612903\t2\t60\nFrontier Airlines Inc.\tHartsfield-Jackson Atlanta International Airport\t0.005117935024477081\t23\t4471\nAlaska Airlines Inc.\tBob Hope Airport (Hollywood Burbank Airport)\t0.0\t0\t1011\nAmerican Eagle Airlines Inc.\tSt. Louis International Airport at Lambert Field\t0.07954545454545454\t105\t1215\nUS Airways Inc.\tSyracuse Hancock International Airport\t0.01557632398753894\t5\t316\nFrontier Airlines Inc.\tChicago Midway International Airport\t0.0196078431372549\t1\t50\nFrontier Airlines Inc.\tDes Moines International Airport\t0.0\t0\t173\nAmerican Airlines Inc.\tSpokane International Airport\t0.0038022813688212928\t1\t262\nAtlantic Southeast Airlines\t10599\t0.006644518272425249\t2\t299\nAtlantic Southeast Airlines\t10785\t0.01\t2\t198\nSpirit Air Lines\t10397\t0.00473186119873817\t3\t631\nAmerican Eagle Airlines Inc.\t11423\t0.0\t0\t176\nDelta Air Lines Inc.\t12478\t0.0\t0\t2326\nAtlantic Southeast Airlines\t13241\t0.011904761904761904\t1\t83\nUnited Air Lines Inc.\tMiami International Airport\t0.01829652996845426\t58\t3112\nUS Airways Inc.\tJohn Wayne Airport (Orange County Airport)\t0.009067357512953367\t7\t765\nSouthwest Airlines Co.\tLouis Armstrong New Orleans International Airport\t0.00972985347985348\t170\t17302\nJetBlue Airways\tPittsburgh International Airport\t0.0160857908847185\t24\t1468\nAmerican Eagle Airlines Inc.\tRochester International Airport\t0.050642479213907785\t67\t1256\nAtlantic Southeast Airlines\tDes Moines International Airport\t0.026484751203852328\t33\t1213\nFrontier Airlines Inc.\t12889\t0.0044444444444444444\t2\t448\nAmerican Eagle Airlines Inc.\t12915\t0.058823529411764705\t5\t80\nAmerican Eagle Airlines Inc.\t13422\t0.03409090909090909\t3\t85\nSkywest Airlines Inc.\t12992\t0.0\t0\t111\nUnited Air Lines Inc.\t10299\t0.0\t0\t57\nAmerican Eagle Airlines Inc.\tUniversity of Illinois - Willard Airport\t0.055293005671077505\t117\t1999\nSouthwest Airlines Co.\tNewark Liberty International Airport\t0.038636777838527425\t212\t5275\nUnited Air Lines Inc.\tIndianapolis International Airport\t0.011659192825112108\t13\t1102\nAtlantic Southeast Airlines\tLouisville International Airport (Standiford Field)\t0.03992303992303992\t83\t1996\nAmerican Eagle Airlines Inc.\tCharlottesville-Albemarle Airport\t0.11363636363636363\t30\t234\nAtlantic Southeast Airlines\tBangor International Airport\t0.01694915254237288\t3\t174\nAtlantic Southeast Airlines\t10185\t0.0044444444444444444\t1\t224\nAmerican Eagle Airlines Inc.\t11823\t0.0\t0\t181\nSkywest Airlines Inc.\t10157\t0.02459016393442623\t3\t119\nAtlantic Southeast Airlines\t12448\t0.013812154696132596\t5\t357\nSkywest Airlines Inc.\tMontgomery Regional Airport\t0.0\t0\t15\nSkywest Airlines Inc.\tGillette-Campbell County Airport\t0.011033099297893681\t11\t986\nSouthwest Airlines Co.\tCharlotte Douglas International Airport\t0.017308766052484645\t31\t1760\nSkywest Airlines Inc.\tGrand Junction Regional Airport (Walker Field)\t0.0045385779122541605\t9\t1974\nJetBlue Airways\tSavannah/Hilton Head International Airport\t0.01996007984031936\t20\t982\nAmerican Eagle Airlines Inc.\tAspen-Pitkin County Airport\t0.1441947565543071\t77\t457\nAmerican Eagle Airlines Inc.\tChattanooga Metropolitan Airport (Lovell Field)\t0.05192878338278932\t35\t639\nDelta Air Lines Inc.\tMissoula International Airport\t0.0\t0\t597\nAtlantic Southeast Airlines\tCity of Colorado Springs Municipal Airport\t0.025590551181102362\t13\t495\nDelta Air Lines Inc.\t14683\t0.0\t0\t275\nFrontier Airlines Inc.\t13930\t0.0\t0\t455\nSkywest Airlines Inc.\t10627\t0.004807692307692308\t1\t207\nAmerican Airlines Inc.\t11423\t0.02608695652173913\t3\t112\nSpirit Air Lines\t14679\t0.0\t0\t186\nSkywest Airlines Inc.\t13256\t0.05\t1\t19\nAmerican Eagle Airlines Inc.\t15249\t0.0\t0\t20\nSkywest Airlines Inc.\t11066\t0.0\t0\t91\nUS Airways Inc.\tTheodore Francis Green State Airport\t0.045\t27\t573\nFrontier Airlines Inc.\tSouthwest Florida International Airport\t0.013245033112582781\t18\t1341\nAtlantic Southeast Airlines\tBurlington International Airport\t0.03460011344299489\t61\t1702\nAlaska Airlines Inc.\tChicago O'Hare International Airport\t0.005148741418764302\t9\t1739\nAlaska Airlines Inc.\tFort Lauderdale-Hollywood International Airport\t0.0\t0\t334\nSkywest Airlines Inc.\tLincoln Airport (Lincoln Municipal)\t0.015817223198594025\t18\t1120\nAmerican Airlines Inc.\t12339\t0.010126582278481013\t4\t391\nUnited Air Lines Inc.\t10529\t0.0\t0\t78\nSkywest Airlines Inc.\t11921\t0.0\t0\t151\nSpirit Air Lines\t14057\t0.0\t0\t62\nFrontier Airlines Inc.\t13485\t0.0\t0\t18\nSkywest Airlines Inc.\tMonroe Regional Airport\t0.0\t0\t4\nUnited Air Lines Inc.\tSan Francisco International Airport\t0.010573189725140939\t482\t45105\nSpirit Air Lines\tPhoenix Sky Harbor International Airport\t0.025879917184265012\t25\t941\nDelta Air Lines Inc.\tChicago O'Hare International Airport\t0.003878195920712439\t27\t6935\nAmerican Eagle Airlines Inc.\tMobile Regional Airport\t0.03986332574031891\t35\t843\nAlaska Airlines Inc.\tBellingham International Airport\t0.004219409282700422\t3\t708\nSpirit Air Lines\tArnold Palmer Regional Airport\t0.02810304449648712\t36\t1245\nSkywest Airlines Inc.\tBert Mooney Airport\t0.02848575712143928\t19\t648\nAlaska Airlines Inc.\tRonald Reagan Washington National Airport\t0.0015094339622641509\t2\t1323\nSouthwest Airlines Co.\tWashington Dulles International Airport\t0.012300683371298405\t27\t2168\nDelta Air Lines Inc.\t14747\t0.0\t0\t1274\nAmerican Airlines Inc.\t13930\t0.0035218156916454707\t18\t5093\nSouthwest Airlines Co.\t15016\t0.0019646365422396855\t5\t2540\nSouthwest Airlines Co.\t13931\t0.0\t0\t216\nAtlantic Southeast Airlines\t14524\t0.011278195488721804\t6\t526\nAmerican Airlines Inc.\t13495\t0.009765625\t5\t507\nJetBlue Airways\t13796\t0.00819672131147541\t1\t121\nAmerican Airlines Inc.\t14730\t0.0\t0\t26\nSkywest Airlines Inc.\tIthaca Tompkins Regional Airport\t0.09090909090909091\t2\t20\nAmerican Eagle Airlines Inc.\tMidland International Airport\t0.08183453237410072\t91\t1021\nAtlantic Southeast Airlines\tKey West International Airport\t0.004651162790697674\t2\t428\nSkywest Airlines Inc.\tCharlottesville-Albemarle Airport\t0.04807692307692308\t50\t990\nFrontier Airlines Inc.\tBismarck Municipal Airport\t0.00980392156862745\t1\t101\nAtlantic Southeast Airlines\tBillings Logan International Airport\t0.036585365853658534\t3\t79\nAtlantic Southeast Airlines\tIthaca Tompkins Regional Airport\t0.16666666666666666\t2\t10\nSouthwest Airlines Co.\t11278\t0.0015313935681470138\t2\t1304\nDelta Air Lines Inc.\t10792\t0.004761904761904762\t1\t209\nAlaska Airlines Inc.\t14679\t0.0\t0\t477\nVirgin America\t10721\t0.0\t0\t142\nUnited Air Lines Inc.\t11423\t0.0\t0\t62\nAmerican Eagle Airlines Inc.\t10747\t0.0\t0\t4\nAmerican Eagle Airlines Inc.\tRick Husband Amarillo International Airport\t0.07599629286376275\t82\t997\nAtlantic Southeast Airlines\tAugusta Regional Airport (Bush Field)\t0.009074410163339383\t15\t1638\nSkywest Airlines Inc.\tCherry Capital Airport\t0.017391304347826087\t6\t339\nDelta Air Lines Inc.\t14771\t0.0\t0\t1036\nDelta Air Lines Inc.\t12217\t0.0\t0\t172\nAtlantic Southeast Airlines\t14321\t0.013245033112582781\t2\t149\nFrontier Airlines Inc.\t15497\t0.0\t0\t14\nSkywest Airlines Inc.\tDelta County Airport\t0.029668411867364748\t17\t556\nSkywest Airlines Inc.\tMinneapolis-Saint Paul International Airport\t0.007172813859600988\t183\t25330\nSpirit Air Lines\tTampa International Airport\t0.018680899733130005\t49\t2574\nSouthwest Airlines Co.\tHartsfield-Jackson Atlanta International Airport\t0.012805911978336243\t506\t39007\nFrontier Airlines Inc.\tPalm Beach International Airport\t0.026455026455026454\t5\t184\nVirgin America\tPortland International Airport\t0.0\t0\t342\nDelta Air Lines Inc.\tMinot International Airport\t0.0\t0\t4\nAlaska Airlines Inc.\tWashington Dulles International Airport\t0.0037735849056603774\t1\t264\nAtlantic Southeast Airlines\t11308\t0.0\t0\t118\nAtlantic Southeast Airlines\t13277\t0.0\t0\t221\nJetBlue Airways\t14771\t0.0\t0\t468\nSouthwest Airlines Co.\t12391\t0.0\t0\t366\nAmerican Eagle Airlines Inc.\t13076\t0.0\t0\t92\nDelta Air Lines Inc.\t13830\t0.0\t0\t85\nSkywest Airlines Inc.\tPiedmont Triad International Airport\t0.0\t0\t3\nSkywest Airlines Inc.\tFort Wayne International Airport\t0.020584329349269587\t62\t2950\nAlaska Airlines Inc.\tKodiak Airport\t0.05\t23\t437\nSkywest Airlines Inc.\tBradley International Airport\t0.020754716981132074\t11\t519\nJetBlue Airways\t14027\t0.007380073800738007\t4\t538\nDelta Air Lines Inc.\t10849\t0.0\t0\t91\nDelta Air Lines Inc.\t14635\t0.0\t0\t341\nSkywest Airlines Inc.\t14150\t0.0\t0\t62\nAlaska Airlines Inc.\t10821\t0.0\t0\t62\nVirgin America\t13930\t0.0\t0\t146\nAmerican Eagle Airlines Inc.\tBirmingham-Shuttlesworth International Airport\t0.02465166130760986\t23\t910\nAmerican Airlines Inc.\tHenry E. Rohlsen Airport\t0.0018315018315018315\t1\t545\nFrontier Airlines Inc.\tFort Lauderdale-Hollywood International Airport\t0.016973125884016973\t12\t695\nFrontier Airlines Inc.\tFresno Yosemite International Airport\t0.0\t0\t2\nAmerican Eagle Airlines Inc.\tBrownsville/South Padre Island International Airport\t0.0970873786407767\t10\t93\nAtlantic Southeast Airlines\tSouthwest Florida International Airport\t0.03636363636363636\t2\t53\nSpirit Air Lines\tYeager Airport\t0.0\t0\t64\nSkywest Airlines Inc.\tWesterly State Airport\t0.0\t0\t208\nUnited Air Lines Inc.\t14908\t0.0\t0\t487\nAmerican Eagle Airlines Inc.\t15016\t0.0\t0\t52\nAlaska Airlines Inc.\t13891\t0.0\t0\t92\nAtlantic Southeast Airlines\tGeorge Bush Intercontinental Airport\t0.017675295731184638\t1031\t57299\nAmerican Eagle Airlines Inc.\tBuffalo Niagara International Airport\t0.05167173252279635\t51\t936\nUS Airways Inc.\tKahului Airport\t0.029508196721311476\t9\t296\nAmerican Airlines Inc.\tBuffalo Niagara International Airport\t0.0073937153419593345\t4\t537\nDelta Air Lines Inc.\t11637\t0.01834862385321101\t2\t107\nUnited Air Lines Inc.\t13495\t0.0016474464579901153\t1\t606\nDelta Air Lines Inc.\t14057\t0.0\t0\t531\nDelta Air Lines Inc.\t15370\t0.0\t0\t120\nUnited Air Lines Inc.\t14027\t0.0\t0\t129\nAtlantic Southeast Airlines\t15380\t0.0\t0\t53\nAmerican Eagle Airlines Inc.\tGeorge Bush Intercontinental Airport\t0.07407407407407407\t2\t25\nUS Airways Inc.\tMcCarran International Airport\t0.010912698412698412\t33\t2991\nFrontier Airlines Inc.\tDane County Regional Airport\t0.009345794392523364\t2\t212\nAmerican Airlines Inc.\tReno/Tahoe International Airport\t0.01702127659574468\t28\t1617\nSpirit Air Lines\tDenver International Airport\t0.020861555134109998\t77\t3614\nDelta Air Lines Inc.\t15304\t0.0\t0\t848\nSouthwest Airlines Co.\t14576\t0.0\t0\t150\nSouthwest Airlines Co.\t14869\t0.0\t0\t853\nAmerican Eagle Airlines Inc.\t12951\t0.03389830508474576\t4\t114\nFrontier Airlines Inc.\t13303\t0.0\t0\t185\nVirgin America\t11697\t0.0\t0\t89\nAmerican Airlines Inc.\t12896\t0.03225806451612903\t1\t30\nSkywest Airlines Inc.\t15096\t0.0\t0\t27\nAtlantic Southeast Airlines\tCharleston International Airport/Charleston AFB\t0.03988183161004431\t108\t2600\nFrontier Airlines Inc.\tWashington Dulles International Airport\t0.011831275720164609\t23\t1921\nAmerican Airlines Inc.\tJacksonville International Airport\t0.011864406779661017\t28\t2332\nSkywest Airlines Inc.\tPocatello Regional Airport\t0.0030581039755351682\t2\t652\nAtlantic Southeast Airlines\tFort Smith Regional Airport\t0.016842105263157894\t24\t1401\nAmerican Eagle Airlines Inc.\tHarrisburg International Airport\t0.044740024183796856\t37\t790\nSkywest Airlines Inc.\tBrownsville/South Padre Island International Airport\t0.018867924528301886\t1\t52\nAmerican Airlines Inc.\t15370\t0.009259259259259259\t2\t214\nSouthwest Airlines Co.\t11066\t0.0\t0\t905\nJetBlue Airways\t10821\t0.0\t0\t163\nJetBlue Airways\t15304\t0.0064516129032258064\t3\t462\nAmerican Airlines Inc.\tMcCarran International Airport\t0.009331807377409983\t106\t11253\nJetBlue Airways\tRafael Hernández Airport\t0.00563063063063063\t5\t883\nSkywest Airlines Inc.\tMeadows Field\t0.015927189988623434\t42\t2595\nFrontier Airlines Inc.\tKansas City International Airport\t0.005747126436781609\t2\t346\nUS Airways Inc.\tFort Lauderdale-Hollywood International Airport\t0.01536\t48\t3077\nAmerican Eagle Airlines Inc.\tBill and Hillary Clinton National Airport (Adams Field)\t0.04956629491945477\t120\t2301\nFrontier Airlines Inc.\tMemphis International Airport\t0.0027472527472527475\t1\t363\nFrontier Airlines Inc.\tSanta Barbara Municipal Airport (Santa Barbara Airport)\t0.0\t0\t3\nAlaska Airlines Inc.\tAdak Airport\t0.07291666666666667\t7\t89\nVirgin America\tPalm Springs International Airport\t0.004739336492890996\t1\t210\nAlaska Airlines Inc.\tGustavus Airport\t0.012987012987012988\t1\t76\nSouthwest Airlines Co.\t10529\t0.002066115702479339\t1\t483\nAlaska Airlines Inc.\t14869\t0.0\t0\t186\nJetBlue Airways\t13204\t0.006540222367560497\t10\t1519\nUnited Air Lines Inc.\t13931\t0.0\t0\t27\nFrontier Airlines Inc.\t11995\t0.0\t0\t18\nAmerican Eagle Airlines Inc.\tEasterwood Airport\t0.05329153605015674\t85\t1510\nAmerican Eagle Airlines Inc.\tPiedmont Triad International Airport\t0.07758620689655173\t99\t1177\nJetBlue Airways\tWashington Dulles International Airport\t0.03171247357293869\t60\t1832\nAtlantic Southeast Airlines\tWill Rogers World Airport\t0.029034059184812954\t52\t1739\nAmerican Airlines Inc.\tGunnison-Crested Butte Regional Airport\t0.0423728813559322\t5\t113\nDelta Air Lines Inc.\t15624\t0.0\t0\t115\nSkywest Airlines Inc.\t12888\t0.018867924528301886\t1\t52\nSpirit Air Lines\t12892\t0.004098360655737705\t2\t486\nAmerican Eagle Airlines Inc.\t14730\t0.0\t0\t31\nUS Airways Inc.\tSalt Lake City International Airport\t0.013513513513513514\t17\t1241\nAtlantic Southeast Airlines\tDallas Love Field\t0.0335195530726257\t18\t519\nUS Airways Inc.\tLihue Airport\t0.016216216216216217\t3\t182\nSkywest Airlines Inc.\t14952\t0.0\t0\t93\nJetBlue Airways\tMercedita Airport\t0.014686248331108143\t11\t738\nAmerican Eagle Airlines Inc.\tCharleston International Airport/Charleston AFB\t0.04142011834319527\t21\t486\nUnited Air Lines Inc.\tLouis Armstrong New Orleans International Airport\t0.00954283177984909\t43\t4463\nAmerican Eagle Airlines Inc.\tHector International Airport\t0.04285714285714286\t57\t1273\nAlaska Airlines Inc.\tJuneau International Airport\t0.010526315789473684\t41\t3854\nAtlantic Southeast Airlines\tWestchester County Airport\t0.04159384830478854\t119\t2742\nHawaiian Airlines Inc.\tOakland International Airport\t0.0039011703511053317\t3\t766\nAtlantic Southeast Airlines\tAlbuquerque International Sunport\t0.019184652278177457\t8\t409\nDelta Air Lines Inc.\tTallahassee International Airport\t0.0040290088638195\t5\t1236\nAlaska Airlines Inc.\tPetersburg James A. Johnson Airport\t0.01355421686746988\t9\t655\nAtlantic Southeast Airlines\tCharlottesville-Albemarle Airport\t0.029462738301559793\t17\t560\nUnited Air Lines Inc.\tSarasota-Bradenton International Airport\t0.02877697841726619\t12\t405\nAmerican Eagle Airlines Inc.\tSan Antonio International Airport\t0.039603960396039604\t4\t97\nAmerican Airlines Inc.\t14683\t0.0273972602739726\t14\t497\nUnited Air Lines Inc.\t13871\t0.0\t0\t114\nDelta Air Lines Inc.\t14908\t0.0\t0\t257\nUnited Air Lines Inc.\t11066\t0.011627906976744186\t1\t85\nAtlantic Southeast Airlines\t14960\t0.0\t0\t6\nSkywest Airlines Inc.\t13502\t0.0\t0\t6\nDelta Air Lines Inc.\tDallas/Fort Worth International Airport\t0.002944062806673209\t15\t5080\nSpirit Air Lines\tSan Diego International Airport (Lindbergh Field)\t0.01789587852494577\t33\t1811\nUS Airways Inc.\tPortland International Jetport\t0.049723756906077346\t9\t172\nVirgin America\tGen. Edward Lawrence Logan International Airport\t0.015065913370998116\t24\t1569\nAtlantic Southeast Airlines\tKilleen-Fort Hood Regional Airport\t0.026610104126494408\t69\t2524\nAmerican Airlines Inc.\tBoise Airport (Boise Air Terminal)\t0.005571030640668524\t2\t357\nAtlantic Southeast Airlines\t13377\t0.014336917562724014\t4\t275\nJetBlue Airways\tRonald Reagan Washington National Airport\t0.01712544652237865\t163\t9355\nSkywest Airlines Inc.\tHoughton County Memorial Airport\t0.06736526946107785\t45\t623\nUnited Air Lines Inc.\tDallas/Fort Worth International Airport\t0.015977175463623396\t56\t3449\nAmerican Eagle Airlines Inc.\tMinneapolis-Saint Paul International Airport\t0.10695187165775401\t20\t167\nAtlantic Southeast Airlines\tBrunswick Golden Isles Airport\t0.010250569476082005\t9\t869\nUnited Air Lines Inc.\tBillings Logan International Airport\t0.004601226993865031\t3\t649\nFrontier Airlines Inc.\tWill Rogers World Airport\t0.07142857142857142\t4\t52\nAtlantic Southeast Airlines\tRochester International Airport\t0.01443001443001443\t10\t683\nAmerican Airlines Inc.\t10821\t0.005747126436781609\t3\t519\nSkywest Airlines Inc.\t10990\t0.008333333333333333\t1\t119\nAtlantic Southeast Airlines\t12206\t0.034782608695652174\t4\t111\nAtlantic Southeast Airlines\t14576\t0.006802721088435374\t1\t146\nDelta Air Lines Inc.\t15919\t0.0\t0\t62\nDelta Air Lines Inc.\t15376\t0.0\t0\t61\nDelta Air Lines Inc.\tLos Angeles International Airport\t0.002145325970362719\t54\t25117\nUnited Air Lines Inc.\tNewark Liberty International Airport\t0.01641784103064974\t706\t42296\nAmerican Airlines Inc.\tYampa Valley Airport (Yampa Valley Regional)\t0.04316546762589928\t6\t133\nSkywest Airlines Inc.\tLaGuardia Airport (Marine Air Terminal)\t0.0392156862745098\t4\t98\nSkywest Airlines Inc.\tLouisville International Airport (Standiford Field)\t0.024390243902439025\t8\t320\nAmerican Airlines Inc.\tGreater Rochester International Airport\t0.006493506493506494\t1\t153\nAmerican Eagle Airlines Inc.\t13851\t0.013100436681222707\t3\t226\nSouthwest Airlines Co.\t10140\t0.0\t0\t1006\nUnited Air Lines Inc.\t12478\t0.003401360544217687\t1\t293\nDelta Air Lines Inc.\t12264\t0.0\t0\t264\nUnited Air Lines Inc.\t13204\t9.784735812133072E-4\t1\t1021\nUnited Air Lines Inc.\tSacramento International Airport\t0.012911843276936777\t29\t2217\nAmerican Airlines Inc.\tPortland International Airport\t0.010646108663729809\t29\t2695\nAlaska Airlines Inc.\tMinneapolis-Saint Paul International Airport\t0.0034071550255536627\t2\t585\nAmerican Eagle Airlines Inc.\tWill Rogers World Airport\t0.03973192915270465\t83\t2006\nAmerican Airlines Inc.\tWilliam P. Hobby Airport\t0.05325443786982249\t9\t160\nDelta Air Lines Inc.\tPortland International Jetport\t0.0073964497041420114\t5\t671\nFrontier Airlines Inc.\tPiedmont Triad International Airport\t0.0\t0\t133\nUnited Air Lines Inc.\tCharleston International Airport/Charleston AFB\t0.0\t0\t3\nDelta Air Lines Inc.\t10257\t0.0\t0\t146\nAmerican Eagle Airlines Inc.\tSpringfield-Branson National Airport\t0.03437759911283615\t124\t3483\nDelta Air Lines Inc.\tPalm Beach International Airport\t0.0077111812127585\t44\t5662\nSouthwest Airlines Co.\tGerald R. Ford International Airport\t0.01342642320085929\t25\t1837\nJetBlue Airways\tPhiladelphia International Airport\t0.02551337896701929\t41\t1566\nAmerican Eagle Airlines Inc.\tMiami International Airport\t0.02046948356807512\t109\t5216\nJetBlue Airways\tCharleston International Airport/Charleston AFB\t0.020011117287381877\t36\t1763\nSkywest Airlines Inc.\tCanyonlands Field\t0.0048543689320388345\t1\t205\nSkywest Airlines Inc.\t13342\t0.0013812154696132596\t1\t723\nSouthwest Airlines Co.\t12339\t0.0\t0\t826\nAlaska Airlines Inc.\t13930\t0.0\t0\t181\nAtlantic Southeast Airlines\t14588\t0.0\t0\t4\nAlaska Airlines Inc.\tRaleigh-Durham International Airport\t0.0\t0\t61\nAmerican Airlines Inc.\tTampa International Airport\t0.008899183225649152\t73\t8130\nFrontier Airlines Inc.\tSan Francisco International Airport\t0.0020554984583761563\t4\t1942\nAtlantic Southeast Airlines\tNewark Liberty International Airport\t0.05660795742524075\t1787\t29781\nSkywest Airlines Inc.\tPhoenix Sky Harbor International Airport\t0.012020267356619232\t223\t18329\nDelta Air Lines Inc.\tAsheville Regional Airport\t0.006220839813374806\t4\t639\nDelta Air Lines Inc.\tKey West International Airport\t0.004024144869215292\t4\t990\nAlaska Airlines Inc.\tTampa International Airport\t0.0\t0\t334\nDelta Air Lines Inc.\tKona International Airport at Keahole\t0.002881844380403458\t1\t346\nAmerican Eagle Airlines Inc.\t11111\t0.0\t0\t123\nFrontier Airlines Inc.\t14107\t0.0\t0\t144\nAmerican Eagle Airlines Inc.\t14960\t0.034482758620689655\t4\t112\nSouthwest Airlines Co.\t11884\t0.0037174721189591076\t1\t268\nSouthwest Airlines Co.\t11721\t0.0\t0\t93\nAmerican Eagle Airlines Inc.\t11413\t0.010869565217391304\t1\t91\nHawaiian Airlines Inc.\t14057\t0.0\t0\t31\nSkywest Airlines Inc.\tRapid City Regional Airport\t0.008849557522123894\t20\t2240\nJetBlue Airways\tBurlington International Airport\t0.02541544477028348\t26\t997\nSkywest Airlines Inc.\tBob Hope Airport (Hollywood Burbank Airport)\t0.014895729890764648\t60\t3968\nUnited Air Lines Inc.\tMontrose Regional Airport\t0.013513513513513514\t1\t73\nSkywest Airlines Inc.\tPittsburgh International Airport\t0.018947368421052633\t9\t466\nDelta Air Lines Inc.\t14252\t0.0\t0\t59\nJetBlue Airways\t11618\t0.007312614259597806\t4\t543\nSkywest Airlines Inc.\t13487\t0.0012345679012345679\t3\t2427\nSouthwest Airlines Co.\tGen. Edward Lawrence Logan International Airport\t0.0221976697468863\t221\t9735\nUS Airways Inc.\tNorman Y. Mineta San José International Airport\t0.007594936708860759\t6\t784\nAlaska Airlines Inc.\tLouis Armstrong New Orleans International Airport\t0.008982035928143712\t3\t331\nSkywest Airlines Inc.\tNewark Liberty International Airport\t0.0\t0\t2\nSpirit Air Lines\t13930\t0.0020491803278688526\t2\t974\nUnited Air Lines Inc.\t11298\t0.00303951367781155\t1\t328\nAtlantic Southeast Airlines\t13930\t0.002082248828735034\t8\t3834\nAmerican Airlines Inc.\t13256\t0.03361344537815126\t4\t115\nAtlantic Southeast Airlines\t15376\t0.0\t0\t30\nVirgin America\tHonolulu International Airport\t0.016666666666666666\t1\t59\nSkywest Airlines Inc.\tSan Antonio International Airport\t0.012093291102792975\t42\t3431\nSkywest Airlines Inc.\tSacramento International Airport\t0.02074074074074074\t126\t5949\nUS Airways Inc.\tReno/Tahoe International Airport\t0.0070052539404553416\t4\t567\nVirgin America\tAustin-Bergstrom International Airport\t0.020014295925661188\t28\t1371\nSouthwest Airlines Co.\tCharleston International Airport/Charleston AFB\t0.016722408026755852\t40\t2352\nAmerican Airlines Inc.\tMontrose Regional Airport\t0.06451612903225806\t2\t29\nDelta Air Lines Inc.\tSouth Bend International Airport (South Bend Regional)\t0.0\t0\t14\nSouthwest Airlines Co.\t11697\t0.006791171477079796\t8\t1170\nSkywest Airlines Inc.\t10620\t0.009433962264150943\t1\t105\nUnited Air Lines Inc.\t12016\t0.06451612903225806\t2\t29\nAmerican Airlines Inc.\t12441\t0.0\t0\t9\nSkywest Airlines Inc.\t11292\t0.003723932472691162\t15\t4013\nUnited Air Lines Inc.\t15016\t0.0\t0\t32\nAmerican Eagle Airlines Inc.\tWaterloo Regional Airport\t0.05672609400324149\t35\t582\nUnited Air Lines Inc.\tJackson Hole Airport\t0.013793103448275862\t14\t1001\nDelta Air Lines Inc.\tSarasota-Bradenton International Airport\t0.0028517110266159697\t6\t2098\nUS Airways Inc.\tAlbuquerque International Sunport\t0.0\t0\t48\nSkywest Airlines Inc.\t13871\t0.005952380952380952\t1\t167\nAmerican Airlines Inc.\t11066\t0.017699115044247787\t4\t222\nAmerican Airlines Inc.\t12323\t0.015151515151515152\t1\t65\nAtlantic Southeast Airlines\t14307\t0.027777777777777776\t2\t70\nAmerican Eagle Airlines Inc.\tLaredo International Airport\t0.043897216274089934\t41\t893\nJetBlue Airways\tDetroit Metropolitan Airport\t0.016764459346186086\t20\t1173\nUS Airways Inc.\tPalm Beach International Airport\t0.018269747447608814\t34\t1827\nDelta Air Lines Inc.\tBuffalo Niagara International Airport\t0.0012583892617449664\t3\t2381\nDelta Air Lines Inc.\tBillings Logan International Airport\t0.0\t0\t982\nDelta Air Lines Inc.\tNorthwest Arkansas Regional Airport\t0.0037174721189591076\t2\t536\nSkywest Airlines Inc.\tLa Crosse Regional Airport\t0.018292682926829267\t9\t483\nSkywest Airlines Inc.\t11315\t0.0\t0\t61\nDelta Air Lines Inc.\t15380\t0.0\t0\t31\nDelta Air Lines Inc.\t11423\t0.0\t0\t88\nSkywest Airlines Inc.\t11122\t0.007246376811594203\t1\t137\nAmerican Eagle Airlines Inc.\t11995\t0.05660377358490566\t3\t50\nAtlantic Southeast Airlines\t10728\t0.022988505747126436\t2\t85\nAtlantic Southeast Airlines\t12339\t0.011194029850746268\t3\t265\nJetBlue Airways\t11057\t0.0\t0\t116\nHawaiian Airlines Inc.\tHilo International Airport\t0.0016477480776272428\t9\t5453\nSkywest Airlines Inc.\tHays Regional Airport\t0.02617801047120419\t15\t558\nAmerican Eagle Airlines Inc.\tBismarck Municipal Airport\t0.03303303303303303\t22\t644\nSouthwest Airlines Co.\tBoise Airport (Boise Air Terminal)\t0.003728813559322034\t11\t2939\nAtlantic Southeast Airlines\tLaredo International Airport\t0.018138801261829655\t23\t1245\nSkywest Airlines Inc.\tJackson Hole Airport\t0.02517162471395881\t33\t1278\nAlaska Airlines Inc.\tKona International Airport at Keahole\t7.194244604316547E-4\t1\t1389\nSkywest Airlines Inc.\tCentral Wisconsin Airport\t0.01639344262295082\t1\t60\nDelta Air Lines Inc.\tEvansville Regional Airport\t0.0\t0\t354\nUnited Air Lines Inc.\tMemphis International Airport\t0.044642857142857144\t5\t107\nSkywest Airlines Inc.\t14570\t0.010471204188481676\t2\t189\nSouthwest Airlines Co.\t11292\t3.8095238095238096E-4\t2\t5248\nVirgin America\t14747\t0.0\t0\t194\nAlaska Airlines Inc.\t10721\t0.0\t0\t124\nAtlantic Southeast Airlines\t11066\t0.015151515151515152\t3\t195\nAmerican Eagle Airlines Inc.\t12451\t0.0\t0\t89\nAlaska Airlines Inc.\t13970\t0.016129032258064516\t1\t61\nSkywest Airlines Inc.\t10918\t0.0\t0\t53\nAtlantic Southeast Airlines\tMeridian Regional Airport\t0.015435501653803748\t14\t893\nSkywest Airlines Inc.\tQuad City International Airport\t0.04609218436873747\t23\t476\nDelta Air Lines Inc.\tTri-Cities Regional Airport\t0.006263048016701462\t3\t476\nAtlantic Southeast Airlines\tKalamazoo/Battle Creek International Airport\t0.047244094488188976\t12\t242\nSkywest Airlines Inc.\tMcAllen-Miller International Airport (McAllen Miller International)\t0.04929577464788732\t21\t405\nAtlantic Southeast Airlines\tMontrose Regional Airport\t0.0\t0\t151\nAmerican Airlines Inc.\t10693\t0.012552301255230125\t6\t472\nDelta Air Lines Inc.\t14986\t0.0\t0\t177\nSouthwest Airlines Co.\t10800\t0.0088\t11\t1239\nAtlantic Southeast Airlines\tCapital Region International Airport ( Lansing Capital City)\t0.03561387066541706\t38\t1029\nFrontier Airlines Inc.\tSeattle-Tacoma International Airport\t0.008771929824561403\t7\t791\nDelta Air Lines Inc.\tLehigh Valley International Airport\t0.00964630225080386\t3\t308\nAmerican Airlines Inc.\tNorthwest Arkansas Regional Airport\t0.0\t0\t18\nAmerican Airlines Inc.\t14100\t0.003975616220514179\t15\t3758\nSkywest Airlines Inc.\t11140\t0.0\t0\t51\nFrontier Airlines Inc.\t13486\t0.0\t0\t13\nAmerican Airlines Inc.\tEppley Airfield\t0.023506988564167726\t37\t1537\nDelta Air Lines Inc.\tRichmond International Airport\t0.005798221878623889\t15\t2572\nFrontier Airlines Inc.\tDallas/Fort Worth International Airport\t0.0038819875776397515\t5\t1283\nSouthwest Airlines Co.\tPort Columbus International Airport\t0.010083865814696485\t101\t9915\nDelta Air Lines Inc.\tPittsburgh International Airport\t0.004575350300257364\t16\t3481\nAmerican Airlines Inc.\tCity of Colorado Springs Municipal Airport\t0.022222222222222223\t24\t1056\nDelta Air Lines Inc.\tSouthwest Florida International Airport\t0.004343105320304018\t24\t5502\nDelta Air Lines Inc.\tAlbuquerque International Sunport\t8.071025020177562E-4\t1\t1238\nAtlantic Southeast Airlines\tWashington Dulles International Airport\t0.05104477611940299\t171\t3179\nAmerican Airlines Inc.\tLubbock Preston Smith International Airport\t0.016722408026755852\t5\t294\nDelta Air Lines Inc.\t11697\t0.0\t0\t903\nSouthwest Airlines Co.\t11423\t0.0\t0\t88\nSkywest Airlines Inc.\t14794\t0.0\t0\t203\nAtlantic Southeast Airlines\t10868\t0.05217391304347826\t18\t327\nUnited Air Lines Inc.\t14869\t0.0\t0\t136\nSkywest Airlines Inc.\t14685\t0.0\t0\t4\nAlaska Airlines Inc.\tLihue Airport\t0.0016722408026755853\t2\t1194\nSkywest Airlines Inc.\t14869\t0.0015368852459016393\t6\t3898\nSkywest Airlines Inc.\t12389\t0.005128205128205128\t1\t194\nDelta Air Lines Inc.\t10874\t0.0\t0\t118\nSkywest Airlines Inc.\t12519\t0.0\t0\t75\nSkywest Airlines Inc.\tDane County Regional Airport\t0.029573590096286108\t43\t1411\nAtlantic Southeast Airlines\tSan Angelo Regional Airport (Mathis Field)\t0.0880503144654088\t14\t145\nAtlantic Southeast Airlines\tAsheville Regional Airport\t0.024513338139870222\t34\t1353\nDelta Air Lines Inc.\tYeager Airport\t0.00946372239747634\t3\t314\nAtlantic Southeast Airlines\t10577\t0.0\t0\t62\nSkywest Airlines Inc.\t10713\t0.002793296089385475\t2\t714\nUnited Air Lines Inc.\t14122\t0.0\t0\t236\nDelta Air Lines Inc.\t11884\t0.0\t0\t115\nUnited Air Lines Inc.\t13244\t0.0\t0\t50\nJetBlue Airways\t10732\t0.0\t0\t62\nDelta Air Lines Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.011931952429707805\t303\t25091\nVirgin America\tSan Francisco International Airport\t0.005771643663739021\t92\t15848\nAmerican Airlines Inc.\tTucson International Airport\t0.022939068100358423\t64\t2726\nAtlantic Southeast Airlines\tEl Paso International Airport\t0.012345679012345678\t19\t1520\nSkywest Airlines Inc.\tCleveland Hopkins International Airport\t0.021367521367521368\t10\t458\nSouthwest Airlines Co.\t14307\t0.0\t0\t538\nSouthwest Airlines Co.\t15376\t0.0\t0\t357\nAlaska Airlines Inc.\t11618\t0.0\t0\t62\nAlaska Airlines Inc.\t11292\t0.0\t0\t127\nAmerican Eagle Airlines Inc.\tTexarkana Regional Airport (Webb Field)\t0.09770114942528736\t51\t471\nDelta Air Lines Inc.\tRaleigh-Durham International Airport\t0.005098039215686275\t26\t5074\nSkywest Airlines Inc.\tDurango-La Plata County Airport\t0.025295109612141653\t30\t1156\nAmerican Eagle Airlines Inc.\tSioux Gateway Airport\t0.0467741935483871\t29\t591\nSouthwest Airlines Co.\tValley International Airport\t0.010638297872340425\t20\t1860\nAmerican Eagle Airlines Inc.\tDurango-La Plata County Airport\t0.016290726817042606\t13\t785\nAmerican Eagle Airlines Inc.\tCleveland Hopkins International Airport\t0.05778894472361809\t115\t1875\nAtlantic Southeast Airlines\tGreater Binghamton Airport\t0.015\t3\t197\nUnited Air Lines Inc.\t10423\t0.019880715705765408\t10\t493\nSouthwest Airlines Co.\t12191\t0.004624277456647399\t20\t4305\nSouthwest Airlines Co.\t13891\t0.0\t0\t903\nDelta Air Lines Inc.\t11298\t0.0\t0\t465\nAtlantic Southeast Airlines\t15412\t0.012684989429175475\t6\t467\nSkywest Airlines Inc.\t13486\t0.0\t0\t128\nUnited Air Lines Inc.\t10257\t0.0\t0\t57\nUnited Air Lines Inc.\t14524\t0.0\t0\t31\nAlaska Airlines Inc.\t13198\t0.0\t0\t31\nSkywest Airlines Inc.\tAustin-Bergstrom International Airport\t0.01718213058419244\t50\t2860\nSpirit Air Lines\tDallas/Fort Worth International Airport\t0.014907853034393709\t127\t8392\nSkywest Airlines Inc.\tMcClellan-Palomar Airport\t0.0202808112324493\t13\t628\nAmerican Airlines Inc.\tNorman Y. Mineta San José International Airport\t0.01564673157162726\t45\t2831\nFrontier Airlines Inc.\tCincinnati/Northern Kentucky International Airport\t0.0049261083743842365\t10\t2020\nAmerican Airlines Inc.\tSouthwest Florida International Airport\t0.011587078651685394\t33\t2815\nAmerican Eagle Airlines Inc.\tSawyer International Airport\t0.027972027972027972\t8\t278\nSkywest Airlines Inc.\tMemphis International Airport\t0.028054298642533938\t31\t1074\nSkywest Airlines Inc.\tChicago Midway International Airport\t0.011267605633802818\t4\t351\nDelta Air Lines Inc.\t12889\t0.0\t0\t1089\nAtlantic Southeast Airlines\t11921\t0.0\t0\t30\nSkywest Airlines Inc.\t10721\t0.0\t0\t21\nAtlantic Southeast Airlines\tSloulin Field International Airport\t0.0196078431372549\t11\t550\nAtlantic Southeast Airlines\tBirmingham-Shuttlesworth International Airport\t0.029025358997861288\t95\t3178\nSkywest Airlines Inc.\tPueblo Memorial Airport\t0.041666666666666664\t11\t253\nAtlantic Southeast Airlines\tGen. Edward Lawrence Logan International Airport\t0.03695652173913044\t85\t2215\nSouthwest Airlines Co.\tPortland International Jetport\t0.01972386587771203\t20\t994\nAlaska Airlines Inc.\tPhiladelphia International Airport\t0.0029940119760479044\t1\t333\nAtlantic Southeast Airlines\t11775\t0.0\t0\t88\nSouthwest Airlines Co.\t10994\t0.0\t0\t253\nAmerican Eagle Airlines Inc.\t13290\t0.006622516556291391\t1\t150\nAtlantic Southeast Airlines\t14696\t0.0\t0\t40\nHawaiian Airlines Inc.\t14679\t0.0\t0\t31\nJetBlue Airways\t10154\t0.0\t0\t28\nSkywest Airlines Inc.\tBemidji Regional Airport\t0.004497751124437781\t3\t664\nDelta Air Lines Inc.\tOrlando International Airport\t0.005771725032425422\t89\t15331\nAtlantic Southeast Airlines\tLehigh Valley International Airport\t0.018315018315018316\t35\t1876\nSouthwest Airlines Co.\tDenver International Airport\t0.008822263663749821\t492\t55276\nAlaska Airlines Inc.\tSan Diego International Airport (Lindbergh Field)\t0.0021404942595835766\t11\t5128\nDelta Air Lines Inc.\tFort Lauderdale-Hollywood International Airport\t0.007087507087507087\t75\t10507\nAlaska Airlines Inc.\tHonolulu International Airport\t0.002545608824777259\t6\t2351\nAtlantic Southeast Airlines\tAlexandria International Airport\t0.01777970511708586\t41\t2265\nDelta Air Lines Inc.\tFairbanks International Airport\t0.0\t0\t232\nSkywest Airlines Inc.\t13796\t0.0\t0\t236\nSouthwest Airlines Co.\t12953\t0.0041025641025641026\t4\t971\nDelta Air Lines Inc.\t10423\t0.0030120481927710845\t1\t331\nAmerican Airlines Inc.\t15024\t0.0\t0\t98\nSkywest Airlines Inc.\t14814\t0.0\t0\t33\nFrontier Airlines Inc.\tPhoenix Sky Harbor International Airport\t0.008021390374331552\t15\t1855\nVirgin America\tSan Diego International Airport (Lindbergh Field)\t0.008610792192881744\t15\t1727\nSouthwest Airlines Co.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.016191709844559584\t25\t1519\nAtlantic Southeast Airlines\tFort Wayne International Airport\t0.015151515151515152\t5\t325\nSkywest Airlines Inc.\tCharleston International Airport/Charleston AFB\t0.014035087719298246\t8\t562\nDelta Air Lines Inc.\tJuneau International Airport\t0.0\t0\t139\nSkywest Airlines Inc.\t14487\t0.0\t0\t62\nDelta Air Lines Inc.\t10208\t0.0\t0\t33\nUnited Air Lines Inc.\t11292\t0.0010588733587462938\t5\t4717\nJetBlue Airways\t12954\t0.0030349013657056147\t2\t657\nAmerican Eagle Airlines Inc.\t15370\t0.0\t0\t89\nFrontier Airlines Inc.\t14908\t0.0\t0\t61\nSpirit Air Lines\t14025\t0.0\t0\t13\nUnited Air Lines Inc.\t15024\t0.0\t0\t2\nSkywest Airlines Inc.\tSalt Lake City International Airport\t0.005009659882284225\t223\t44291\nSouthwest Airlines Co.\tSan Diego International Airport (Lindbergh Field)\t0.013437378577904417\t415\t30469\nSkywest Airlines Inc.\tDickinson Theodore Roosevelt Regional Airport\t0.01340033500837521\t8\t589\nUnited Air Lines Inc.\tEagle County Regional Airport\t0.02734375\t7\t249\nDelta Air Lines Inc.\tPalm Springs International Airport\t0.0064516129032258064\t1\t154\nAmerican Airlines Inc.\t14057\t0.002777777777777778\t1\t359\nAtlantic Southeast Airlines\t11278\t0.011363636363636364\t3\t261\nAtlantic Southeast Airlines\t12945\t0.003246753246753247\t1\t307\nSkywest Airlines Inc.\t12523\t0.0967741935483871\t3\t28\nDelta Air Lines Inc.\t14321\t0.0\t0\t86\nSkywest Airlines Inc.\t11637\t0.0\t0\t141\nAlaska Airlines Inc.\t13495\t0.0\t0\t31\nSkywest Airlines Inc.\tRange Regional Airport (Chisholm-Hibbing Airport)\t0.022271714922048998\t20\t878\nSkywest Airlines Inc.\tTucson International Airport\t0.008917396745932416\t57\t6335\nAmerican Eagle Airlines Inc.\tWichita Falls Municipal Airport/Sheppard AFB\t0.04446742502585315\t43\t924\nAmerican Airlines Inc.\tRaleigh-Durham International Airport\t0.015723270440251572\t85\t5321\nSouthwest Airlines Co.\tTucson International Airport\t0.00476077124494168\t20\t4181\nAmerican Eagle Airlines Inc.\tGarden City Regional Airport\t0.036163522012578615\t23\t613\nJetBlue Airways\tRichmond International Airport\t0.017975402081362345\t38\t2076\nAmerican Eagle Airlines Inc.\tMonroe Regional Airport\t0.12244897959183673\t6\t43\nSkywest Airlines Inc.\tEl Paso International Airport\t0.011220196353436185\t16\t1410\nSkywest Airlines Inc.\tLafayette Regional Airport\t0.019230769230769232\t2\t102\nDelta Air Lines Inc.\t14492\t0.0\t0\t524\nUnited Air Lines Inc.\t14100\t0.005208333333333333\t2\t382\nFrontier Airlines Inc.\t12266\t0.0\t0\t149\nSkywest Airlines Inc.\t10693\t0.003968253968253968\t1\t251\nDelta Air Lines Inc.\t13244\t0.0\t0\t422\nHawaiian Airlines Inc.\t13796\t0.0\t0\t60\nDelta Air Lines Inc.\t12266\t0.0\t0\t221\nSkywest Airlines Inc.\t12954\t0.0\t0\t115\nAtlantic Southeast Airlines\t14952\t0.017543859649122806\t1\t56\nAmerican Eagle Airlines Inc.\t13061\t0.03508771929824561\t2\t55\nJetBlue Airways\t14831\t0.019230769230769232\t1\t51\nSkywest Airlines Inc.\t10469\t0.0\t0\t1\nAtlantic Southeast Airlines\tGeneral Mitchell International Airport\t0.0327683615819209\t87\t2568\nSouthwest Airlines Co.\tTheodore Francis Green State Airport\t0.02308078273958856\t138\t5841\nUS Airways Inc.\tBuffalo Niagara International Airport\t0.016541353383458645\t11\t654\nFrontier Airlines Inc.\tJohn Wayne Airport (Orange County Airport)\t0.002607561929595828\t2\t765\nSkywest Airlines Inc.\tKansas City International Airport\t0.021303258145363407\t34\t1562\nDelta Air Lines Inc.\tDallas Love Field\t0.009046624913013222\t13\t1424\nAmerican Eagle Airlines Inc.\t13367\t0.011363636363636364\t2\t174\nAtlantic Southeast Airlines\t13795\t0.0\t0\t112\nAmerican Airlines Inc.\t13342\t0.02027027027027027\t3\t145\nSkywest Airlines Inc.\t14107\t0.0035460992907801418\t5\t1405\nAmerican Eagle Airlines Inc.\t13158\t0.03333333333333333\t1\t29\nAtlantic Southeast Airlines\tRichmond International Airport\t0.04048201845226888\t215\t5096\nSouthwest Airlines Co.\tPittsburgh International Airport\t0.011378002528445006\t99\t8602\nUS Airways Inc.\tEppley Airfield\t0.011527377521613832\t4\t343\nAmerican Airlines Inc.\tEagle County Regional Airport\t0.033936651583710405\t30\t854\nUS Airways Inc.\tSan Antonio International Airport\t0.026785714285714284\t9\t327\nAlaska Airlines Inc.\tWiley Post-Will Rogers Memorial Airport\t0.031578947368421054\t27\t828\nAtlantic Southeast Airlines\tTexarkana Regional Airport (Webb Field)\t0.019736842105263157\t9\t447\nAtlantic Southeast Airlines\t11778\t0.025974025974025976\t4\t150\nAmerican Eagle Airlines Inc.\t13459\t0.0\t0\t26\nAmerican Eagle Airlines Inc.\t13487\t0.0\t0\t3\nFrontier Airlines Inc.\tMissoula International Airport\t0.02197802197802198\t2\t89\nAtlantic Southeast Airlines\tLawton-Fort Sill Regional Airport\t0.05952380952380952\t40\t632\nAtlantic Southeast Airlines\tGerald R. Ford International Airport\t0.044186046511627906\t76\t1644\nDelta Air Lines Inc.\tOntario International Airport\t0.0\t0\t211\nDelta Air Lines Inc.\tWilkes-Barre/Scranton International Airport\t0.0\t0\t125\nJetBlue Airways\tHenry E. Rohlsen Airport\t0.0029940119760479044\t1\t333\nAmerican Airlines Inc.\t14869\t0.012121212121212121\t4\t326\nSouthwest Airlines Co.\t10397\t0.001394700139470014\t5\t3580\nAmerican Airlines Inc.\t14307\t0.019230769230769232\t4\t204\nSkywest Airlines Inc.\t10279\t0.0\t0\t35\nAmerican Eagle Airlines Inc.\tJackson-Evers International Airport\t0.050724637681159424\t63\t1179\nAtlantic Southeast Airlines\tGunnison-Crested Butte Regional Airport\t0.07142857142857142\t12\t156\nAtlantic Southeast Airlines\tLea County Regional Airport\t0.040280210157618214\t23\t548\nSouthwest Airlines Co.\tGreater Rochester International Airport\t0.013436692506459949\t26\t1909\nSouthwest Airlines Co.\tNorthwest Florida Beaches International Airport\t0.003109452736318408\t5\t1603\nSouthwest Airlines Co.\tLubbock Preston Smith International Airport\t0.024171888988361683\t54\t2180\nAlaska Airlines Inc.\tAustin-Bergstrom International Airport\t0.0\t0\t400\nSkywest Airlines Inc.\tSouthwest Oregon Regional Airport (North Bend Municipal)\t0.03636363636363636\t10\t265\nSouthwest Airlines Co.\t10279\t0.013793103448275862\t2\t143\nUnited Air Lines Inc.\t14831\t0.0\t0\t136\nAtlantic Southeast Airlines\t13061\t0.02054794520547945\t3\t143\nSpirit Air Lines\tMinneapolis-Saint Paul International Airport\t0.024606580829756794\t86\t3409\nSkywest Airlines Inc.\tOntario International Airport\t0.016689847009735744\t84\t4949\nAmerican Airlines Inc.\tWill Rogers World Airport\t0.025398700531600708\t43\t1650\nJetBlue Airways\tLouis Armstrong New Orleans International Airport\t0.016\t18\t1107\nDelta Air Lines Inc.\tReno/Tahoe International Airport\t0.0\t0\t929\nAtlantic Southeast Airlines\tBill and Hillary Clinton National Airport (Adams Field)\t0.02629757785467128\t76\t2814\nDelta Air Lines Inc.\tCyril E. King Airport\t0.006382978723404255\t6\t934\nAlaska Airlines Inc.\tHartsfield-Jackson Atlanta International Airport\t0.002331002331002331\t1\t428\nFrontier Airlines Inc.\t14771\t0.0\t0\t192\nSkywest Airlines Inc.\t12003\t0.0\t0\t190\nSkywest Airlines Inc.\t10739\t0.0\t0\t53\nHawaiian Airlines Inc.\t14771\t0.0\t0\t62\nFrontier Airlines Inc.\tDenver International Airport\t0.002408500590318772\t51\t21124\nUnited Air Lines Inc.\tHartsfield-Jackson Atlanta International Airport\t0.026138032305433188\t89\t3316\nAmerican Eagle Airlines Inc.\tLa Crosse Regional Airport\t0.046834345186470075\t54\t1099\nAtlantic Southeast Airlines\tBishop International Airport\t0.030303030303030304\t28\t896\nDelta Air Lines Inc.\tBismarck Municipal Airport\t0.0\t0\t277\nDelta Air Lines Inc.\t12953\t0.0\t0\t2050\nSkywest Airlines Inc.\t14543\t0.0\t0\t57\nVirgin America\t12953\t0.01818181818181818\t2\t108\nAtlantic Southeast Airlines\t11953\t0.0\t0\t151\nAlaska Airlines Inc.\t15376\t0.0\t0\t31\nDelta Air Lines Inc.\tNashville International Airport\t0.005791505791505791\t27\t4635\nFrontier Airlines Inc.\tPhiladelphia International Airport\t0.013051823416506719\t34\t2571\nAmerican Airlines Inc.\tAustin-Bergstrom International Airport\t0.026106414719045252\t210\t7834\nAtlantic Southeast Airlines\tErie International Airport\t0.04825737265415549\t36\t710\nAmerican Airlines Inc.\tJohn Wayne Airport (Orange County Airport)\t0.017860726469997992\t89\t4894\nUS Airways Inc.\tHartsfield-Jackson Atlanta International Airport\t0.016332085743450152\t48\t2891\nUS Airways Inc.\tBradley International Airport\t0.026410564225690276\t22\t811\nSkywest Airlines Inc.\tWichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)\t0.03253968253968254\t82\t2438\nAmerican Airlines Inc.\t14524\t0.008849557522123894\t2\t224\nDelta Air Lines Inc.\t10721\t0.0\t0\t1201\nDelta Air Lines Inc.\t15016\t0.0\t0\t551\nDelta Air Lines Inc.\t13851\t0.0\t0\t168\nAmerican Airlines Inc.\t11109\t0.0\t0\t87\nAmerican Eagle Airlines Inc.\t11003\t0.011764705882352941\t2\t168\nAtlantic Southeast Airlines\t14711\t0.0\t0\t62\nJetBlue Airways\t14869\t0.0\t0\t124\nAmerican Eagle Airlines Inc.\t11278\t0.0\t0\t7\nSkywest Airlines Inc.\t10257\t0.0\t0\t6\nAtlantic Southeast Airlines\tCentral Wisconsin Airport\t0.03231017770597738\t20\t599\nAmerican Eagle Airlines Inc.\tJoplin Regional Airport\t0.06970509383378017\t26\t347\nAtlantic Southeast Airlines\tHattiesburg-Laurel Regional Airport\t0.012216404886561954\t7\t566\nSouthwest Airlines Co.\tAustin-Bergstrom International Airport\t0.011052268017499424\t192\t17180\nHawaiian Airlines Inc.\tSan Francisco International Airport\t0.005988023952095809\t4\t664\nSkywest Airlines Inc.\tDel Norte County Airport (Jack McNamara Field)\t0.08421052631578947\t16\t174\nJetBlue Airways\tSan Diego International Airport (Lindbergh Field)\t0.013513513513513514\t17\t1241\nSkywest Airlines Inc.\tColumbia Metropolitan Airport\t0.05714285714285714\t2\t33\nAtlantic Southeast Airlines\tAbraham Lincoln Capital Airport\t0.01775147928994083\t6\t332\nDelta Air Lines Inc.\t13486\t0.0\t0\t30\nAmerican Airlines Inc.\tGen. Edward Lawrence Logan International Airport\t0.022746610698281242\t401\t17228\nSkywest Airlines Inc.\tSt. Cloud Regional Airport\t0.060240963855421686\t5\t78\nDelta Air Lines Inc.\tGeneral Mitchell International Airport\t0.0017189514396218307\t8\t4646\nSouthwest Airlines Co.\tLos Angeles International Airport\t0.02122044200367892\t796\t36715\nHawaiian Airlines Inc.\tPhoenix Sky Harbor International Airport\t0.0\t0\t334\nAmerican Eagle Airlines Inc.\tLawton-Fort Sill Regional Airport\t0.0819423368740516\t54\t605\nAtlantic Southeast Airlines\tSpringfield-Branson National Airport\t0.02147820593809223\t34\t1549\nJetBlue Airways\t15096\t0.006756756756756757\t1\t147\nSkywest Airlines Inc.\t10408\t0.007575757575757576\t1\t131\nAlaska Airlines Inc.\t12982\t0.0\t0\t91\nDelta Air Lines Inc.\t10781\t0.0\t0\t24\nAlaska Airlines Inc.\tTed Stevens Anchorage International Airport\t0.008478064038192444\t103\t12046\nAmerican Airlines Inc.\tSalt Lake City International Airport\t0.015257048092868989\t46\t2969\nDelta Air Lines Inc.\tWill Rogers World Airport\t0.0033467202141900937\t5\t1489\nAtlantic Southeast Airlines\tBaton Rouge Metropolitan Airport\t0.020028612303290415\t126\t6165\nAmerican Airlines Inc.\tPhiladelphia International Airport\t0.007206182145735552\t152\t20941\nSouthwest Airlines Co.\tPortland International Airport\t0.0031138382635772506\t34\t10885\nAmerican Airlines Inc.\tJackson Hole Airport\t0.016826923076923076\t7\t409\nJetBlue Airways\tTed Stevens Anchorage International Airport\t0.0025906735751295338\t1\t385\nSkywest Airlines Inc.\t10779\t0.016129032258064516\t1\t61\nSkywest Airlines Inc.\tMobile Regional Airport\t0.029850746268656716\t2\t65\nAmerican Airlines Inc.\tOrlando International Airport\t0.009803170713027495\t128\t12929\nUnited Air Lines Inc.\tRonald Reagan Washington National Airport\t0.02266839378238342\t105\t4527\nAtlantic Southeast Airlines\tTucson International Airport\t0.0149812734082397\t8\t526\nUS Airways Inc.\tPort Columbus International Airport\t0.014\t7\t493\nDelta Air Lines Inc.\tGainesville Regional Airport\t0.003676470588235294\t1\t271\nUnited Air Lines Inc.\t13487\t0.0028735632183908046\t1\t347\nSouthwest Airlines Co.\t10257\t0.0\t0\t335\nSouthwest Airlines Co.\t11618\t0.007782101167315175\t4\t510\nAmerican Eagle Airlines Inc.\t11612\t0.0070921985815602835\t1\t140\nVirgin America\t11259\t0.014732965009208104\t8\t535\nAmerican Eagle Airlines Inc.\tFort Smith Regional Airport\t0.06227106227106227\t34\t512\nAtlantic Southeast Airlines\tLincoln Airport (Lincoln Municipal)\t0.03337783711615487\t50\t1448\nAmerican Eagle Airlines Inc.\tEl Paso International Airport\t0.03819444444444445\t22\t554\nSouthwest Airlines Co.\tMinneapolis-Saint Paul International Airport\t0.01155115511551155\t84\t7188\nAtlantic Southeast Airlines\tAkron-Canton Regional Airport\t0.027433050293925537\t42\t1489\nJetBlue Airways\tDallas/Fort Worth International Airport\t0.028428093645484948\t17\t581\nAlaska Airlines Inc.\tKing Salmon Airport\t0.0\t0\t63\nUnited Air Lines Inc.\t11278\t0.004301075268817204\t2\t463\nSkywest Airlines Inc.\t10423\t0.05855855855855856\t13\t209\nAlaska Airlines Inc.\t10397\t0.0\t0\t62\nJetBlue Airways\t13930\t0.0\t0\t205\nAtlantic Southeast Airlines\t11986\t0.0234375\t3\t125\nAmerican Airlines Inc.\t13830\t0.006172839506172839\t1\t161\nAtlantic Southeast Airlines\t10140\t0.0\t0\t1\nSkywest Airlines Inc.\tMidland International Airport\t0.03225806451612903\t43\t1290\nAmerican Eagle Airlines Inc.\tGerald R. Ford International Airport\t0.05309090909090909\t146\t2604\nSkywest Airlines Inc.\tMcCarran International Airport\t0.009913258983890954\t24\t2397\nAtlantic Southeast Airlines\tJames M. Cox Dayton International Airport\t0.051933701657458566\t94\t1716\nHawaiian Airlines Inc.\tJohn F. Kennedy International Airport (New York International Airport)\t0.0\t0\t293\nHawaiian Airlines Inc.\tPortland International Airport\t0.0\t0\t334\nAlaska Airlines Inc.\tBaltimore-Washington International Airport\t0.0024096385542168677\t1\t414\nUnited Air Lines Inc.\tMcAllen-Miller International Airport (McAllen Miller International)\t0.029411764705882353\t8\t264\nAmerican Airlines Inc.\t12889\t0.0061823802163833074\t8\t1286\nSkywest Airlines Inc.\t11471\t0.0\t0\t62\nSkywest Airlines Inc.\t11865\t0.0\t0\t88\nSpirit Air Lines\t14100\t0.012903225806451613\t2\t153\nSouthwest Airlines Co.\t14679\t0.002609019754006709\t7\t2676\nDelta Air Lines Inc.\t11540\t0.0\t0\t87\nAtlantic Southeast Airlines\t11624\t0.0\t0\t66\nFrontier Airlines Inc.\t14635\t0.009708737864077669\t1\t102\n"
+          },
+          {
+            "type": "HTML",
+            "data": "<div class=\"result-alert alert-warning\" role=\"alert\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button><strong>Output is truncated</strong> to 1000 rows. Learn more about <strong>zeppelin.spark.maxResult</strong></div>\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=52",
+              "$$hashKey": "object:1336"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=53",
+              "$$hashKey": "object:1337"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=54",
+              "$$hashKey": "object:1338"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=55",
+              "$$hashKey": "object:1339"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=56",
+              "$$hashKey": "object:1340"
+            },
+            {
+              "jobUrl": "http://procamp-cluster-m.us-east1-b.c.bigdata-procamp-f8f52afe.internal:39453/jobs/job?id=57",
+              "$$hashKey": "object:1341"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1632837409399_431207414",
+      "id": "paragraph_1632837409399_431207414",
+      "dateCreated": "2021-09-28T13:56:49+0000",
+      "dateStarted": "2021-09-30T07:37:55+0000",
+      "dateFinished": "2021-09-30T07:37:59+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:240"
     },
     {
       "text": "%pyspark\n",
       "user": "anonymous",
-      "dateUpdated": "2021-09-28T13:56:49+0000",
+      "dateUpdated": "2021-09-30T07:37:55+0000",
       "config": {
         "colWidth": 12,
         "fontSize": 9,
@@ -1754,11 +1865,11 @@
       "apps": [],
       "runtimeInfos": {},
       "progressUpdateIntervalMs": 500,
-      "jobName": "paragraph_1632837409399_431207414",
-      "id": "paragraph_1632837409399_431207414",
-      "dateCreated": "2021-09-28T13:56:49+0000",
+      "jobName": "paragraph_1632987475662_887747142",
+      "id": "paragraph_1632987475662_887747142",
+      "dateCreated": "2021-09-30T07:37:55+0000",
       "status": "READY",
-      "$$hashKey": "object:7860"
+      "$$hashKey": "object:241"
     }
   ],
   "name": "lab1",

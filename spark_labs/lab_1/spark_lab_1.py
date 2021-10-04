@@ -6,9 +6,9 @@ path_to_airlines = 'gs://procamp-test/datasets/airlines.csv'
 path_to_airports = 'gs://procamp-test/datasets/airports.csv'
 path_to_flights = 'gs://procamp-test/datasets/flights.csv'
 
-outcome_path_task_1 = "gs://procamp-test/datasets/reports/task1/"
-outcome_path_task_2_1 = "gs://procamp-test/datasets/reports/task2_1/"
-outcome_path_task_2_2 = "gs://procamp-test/datasets/reports/task2_2/"
+outcome_path_task_1 = "gs://procamp-test/reports/task1/"
+outcome_path_task_2_1 = "gs://procamp-test/reports/task2_1/"
+outcome_path_task_2_2 = "gs://procamp-test/reports/task2_2/"
 
 
 airlines_df = spark.read.format('CSV')\
@@ -30,16 +30,20 @@ flights_df = spark.read.format('CSV')\
 
 
 # Task 1
-popular_flifhts_df = flights_df.groupBy( F.col('MONTH'), F.col('DESTINATION_AIRPORT')).count()
+popular_flifhts_df = flights_df.groupBy(F.col('YEAR'), F.col('MONTH'), F.col('DESTINATION_AIRPORT')).count()
 
 popular_flifhts_df = popular_flifhts_df.withColumn("row_number", 
-                                                    F.row_number().over(Window.partitionBy('MONTH').orderBy(F.col('count').desc())))
+                                                    F.row_number().over(Window.partitionBy('YEAR', 'MONTH').orderBy(F.col('count').desc())))
                                                     
-report_df = popular_flifhts_df.where(popular_flifhts_df.row_number ==1).select(F.col('DESTINATION_AIRPORT').alias('dest_airport'), F.col('count').alias('max_count'))
+report_df = popular_flifhts_df.where(popular_flifhts_df.row_number ==1)\
+                              .select(F.col('DESTINATION_AIRPORT').alias('dest_airport'),
+                                      F.col('count').alias('max_count'))
 
 
 report_df = airports_df.join(report_df, report_df.dest_airport == airports_df.IATA_CODE, how = 'right')\
-                     .select(F.coalesce(F.col('AIRPORT'), F.col('dest_airport')).alias('dest_airport'), F.col('max_count'))
+                     .select(F.coalesce(F.col('AIRPORT'),
+                             F.col('dest_airport')).alias('dest_airport'),
+                             F.col('max_count'))
 
 
 report_df.coalesce(1).write.format("csv")\
